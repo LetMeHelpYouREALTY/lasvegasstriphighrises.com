@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 
 export const metadata: Metadata = {
   title: "Real Estate Services Las Vegas | Berkshire Hathaway HomeServices",
@@ -211,6 +212,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Core Real Estate Services
             </h2>
+            <SectionVisual heading="Core Real Estate Services" className="max-w-3xl mx-auto" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               These foundational services cover the majority of real estate transactions in Las Vegas. 
               Each service is delivered with the professionalism, resources, and ethical standards 
@@ -224,8 +226,10 @@ export default function ServicesPage() {
                   <Link
                     key={service.slug}
                     href={`/${service.slug}`}
-                    className="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-lg hover:border-blue-300 transition-all group"
+                    className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all group"
                   >
+                    <CardVisual heading={service.title} />
+                    <div className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="bg-blue-100 rounded-lg p-3 group-hover:bg-blue-600 transition-colors flex-shrink-0">
                         <Icon className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
@@ -252,6 +256,7 @@ export default function ServicesPage() {
                         </div>
                       </div>
                     </div>
+                    </div>
                   </Link>
                 );
               })}
@@ -263,10 +268,11 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Specialized Real Estate Services
             </h2>
+            <SectionVisual heading="Specialized Real Estate Services" className="max-w-3xl mx-auto" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Beyond traditional buying and selling, Dr. Jan Duffy offers specialized services 
               for unique situations. Whether you're an investor building a rental portfolio, 
-              a California family relocating for tax savings, or a retiree seeking the perfect 
+              a California buyer relocating for tax savings, or a retiree seeking the perfect 
               55+ community, these focused services ensure you receive expert guidance tailored 
               to your specific needs.
             </p>
@@ -277,8 +283,10 @@ export default function ServicesPage() {
                   <Link
                     key={service.slug}
                     href={`/${service.slug}`}
-                    className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg hover:border-blue-300 transition-all group"
+                    className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all group"
                   >
+                    <CardVisual heading={service.title} />
+                    <div className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="bg-slate-100 rounded-lg p-3 group-hover:bg-blue-600 transition-colors flex-shrink-0">
                         <Icon className="h-5 w-5 text-slate-600 group-hover:text-white transition-colors" />
@@ -299,6 +307,7 @@ export default function ServicesPage() {
                           ))}
                         </div>
                       </div>
+                    </div>
                     </div>
                   </Link>
                 );

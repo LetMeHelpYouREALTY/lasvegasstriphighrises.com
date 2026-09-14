@@ -33,10 +33,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is Centennial Hills a good family neighborhood?",
+      name: "What parks and amenities does Centennial Hills offer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Centennial Hills is one of Las Vegas's best family neighborhoods with highly-rated schools, safe streets, multiple parks including Centennial Hills Park, and convenient shopping at Centennial Center.",
+        text: "Centennial Hills includes Centennial Hills Park, trail miles, and shopping at Centennial Center. Ask Dr. Jan for named-school boundaries and commute times from a specific street.",
       },
     },
     {
@@ -90,7 +90,7 @@ export default function CentennialHillsPage() {
             <SectionVisual heading="Berkshire Hathaway HomeServices Centennial Hills" className="max-w-4xl mx-auto my-6" />
 
             <p className="text-xl text-slate-600">
-              Family-friendly northwest Las Vegas living. Find your Centennial Hills home with{" "}
+              Northwest Las Vegas living with trail miles and mountain views. Find your Centennial Hills home with{" "}
               <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
             </p>
           </div>
@@ -339,12 +339,12 @@ export default function CentennialHillsPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Centennial Hills a good family neighborhood?
+                  What parks and amenities does Centennial Hills offer?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Centennial Hills is one of Las Vegas's best family neighborhoods with
-                  highly-rated schools, safe streets, multiple parks including Centennial Hills
-                  Park, and convenient shopping at Centennial Center.
+                  Centennial Hills includes Centennial Hills Park, trail miles, and shopping at
+                  Centennial Center. Ask Dr. Jan for named-school boundaries and commute times from
+                  a specific street.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">

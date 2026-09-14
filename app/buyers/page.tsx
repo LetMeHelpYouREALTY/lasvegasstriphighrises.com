@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 
 export const metadata: Metadata = {
   title: "Home Buying Guide Las Vegas | Berkshire Hathaway HomeServices",
@@ -84,7 +85,7 @@ const buyingSteps = [
 
 const neighborhoods = [
   { name: "Summerlin", price: "$625K", description: "Master-planned community with Red Rock views" },
-  { name: "Henderson", price: "$485K", description: "Family-friendly with low crime rates" },
+  { name: "Henderson", price: "$485K", description: "Lake Las Vegas, Green Valley, and master-planned streets" },
   { name: "Green Valley", price: "$520K", description: "Established with mature landscaping" },
   { name: "The Ridges", price: "$2.5M", description: "Ultra-luxury guard-gated estates" },
   { name: "North Las Vegas", price: "$385K", description: "Affordable new construction" },
@@ -210,23 +211,27 @@ export default function BuyersPage() {
               Las Vegas Neighborhoods for Home Buyers
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
-              or affordable new construction, Dr. Jan helps you find the perfect neighborhood. Here's 
-              a quick guide to median prices and what each area offers.
+              Las Vegas offers diverse neighborhoods for every budget and commute. Whether you're 
+              seeking guard-gated estates, golf-course lots, or new construction, Dr. Jan helps you find 
+              square footage and amenities that match. Here's 
+              a quick guide to recent median asking ranges and what each area offers.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {neighborhoods.map((neighborhood) => (
-                <div
+                <Link
                   key={neighborhood.name}
-                  className="bg-white rounded-lg p-4 border border-slate-200"
+                  href={`/neighborhoods/${neighborhood.name.toLowerCase().replace(/ /g, "-")}`}
+                  className="group bg-white rounded-lg overflow-hidden border border-slate-200"
                 >
+                  <CardVisual heading={`${neighborhood.name} Homes`} />
+                  <div className="p-4">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-bold text-slate-900">{neighborhood.name}</h3>
                     <span className="text-blue-600 font-semibold">{neighborhood.price}</span>
                   </div>
                   <p className="text-slate-600 text-sm">{neighborhood.description}</p>
-                </div>
+                  </div>
+                </Link>
               ))}
             </div>
             <div className="text-center mt-6">
@@ -424,8 +429,8 @@ export default function BuyersPage() {
                   a: "The Las Vegas market is moderately competitive with 2.1 months of inventory—a slight seller's market. Well-priced homes in desirable areas like Summerlin and Henderson often receive multiple offers within the first week. Having a pre-approval and experienced agent gives you a significant advantage.",
                 },
                 {
-                  q: "What are the best neighborhoods for families in Las Vegas?",
-                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering excellent schools, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which Las Vegas neighborhoods have parks, trails, and named schools nearby?",
+                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills have extensive parks and trail miles. Dr. Jan can match you to a street using commute times, square footage, and named-school boundaries—not marketing labels.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

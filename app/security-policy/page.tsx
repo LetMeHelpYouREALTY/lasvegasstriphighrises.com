@@ -1,5 +1,9 @@
 import type { Metadata } from 'next'
+import Navbar from "@/components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
 import SectionVisual from "@/components/images/SectionVisual";
+import GbpActions from "@/components/gbp/GbpActions";
+import { nap } from "@/lib/nap";
 
 export const metadata: Metadata = {
   title: 'Security Policy',
@@ -12,12 +16,15 @@ export const metadata: Metadata = {
 
 export default function SecurityPolicyPage() {
   return (
-    <div className="min-h-screen bg-white py-12">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-white pt-32 pb-16">
       <div className="container mx-auto max-w-4xl px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
           Security Policy
         </h1>
             <SectionVisual heading="Security Policy" className="max-w-4xl mx-auto my-6" />
+            <GbpActions className="mb-8" />
 
 
         <div className="prose prose-lg max-w-none">
@@ -263,16 +270,18 @@ export default function SecurityPolicyPage() {
           </section>
 
           {/* Last Updated */}
-          <footer className="border-t pt-6 mt-12">
+          <section className="border-t pt-6 mt-12">
             <p className="text-sm text-gray-500">
-              Last updated: February 14, 2026
+              Last updated: September 14, 2026
             </p>
             <p className="text-sm text-gray-500">
-              This policy is reviewed and updated regularly.
+              This policy is reviewed and updated regularly. {nap.businessName} | {nap.addressFull} | {nap.phoneDisplay}
             </p>
-          </footer>
+          </section>
         </div>
       </div>
-    </div>
+      </main>
+      <Footer />
+    </>
   )
 }

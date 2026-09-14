@@ -41,10 +41,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is Skye Canyon good for families?",
+      name: "What amenities does Skye Canyon offer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts family-friendly events throughout the year at Skye Center.",
+        text: "Skye Canyon includes Skye Center, parks, trail miles, and community events. Named schools serve the northwest corridor—ask Dr. Jan which campus maps to a specific lot.",
       },
     },
     {
@@ -349,12 +349,11 @@ export default function SkyeCanyonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Skye Canyon good for families?
+                  What amenities does Skye Canyon offer?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Skye Canyon is designed for families with new schools, extensive children's
-                  amenities, community events, and safe neighborhoods. The community hosts family-friendly
-                  events throughout the year at Skye Center.
+                  Skye Canyon includes Skye Center, parks, trail miles, and community events. Named
+                  schools serve the northwest corridor—ask Dr. Jan which campus maps to a specific lot.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">

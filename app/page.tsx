@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import FeaturedProperties from "@/components/sections/FeaturedProperties";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -126,30 +127,21 @@ export default async function Home() {
                 {config.neighborhood} Real Estate Market
               </h2>
               <SectionVisual heading={`${config.neighborhood} Real Estate Market`} className="max-w-3xl mx-auto mb-6" />
-              <p className="text-slate-400">Current data — updated regularly</p>
+              <p className="text-slate-300 max-w-2xl mx-auto">
+                Sale prices, days on market, and inventory change weekly. Search live MLS listings
+                below or call {nap.phoneDisplay} for comps on a specific street — we do not publish
+                stale averages as if they were current.
+              </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              {[
-                { value: "$450K", label: "Median Price", sub: "+4.2% YoY" },
-                { value: "28", label: "Avg Days on Market", sub: "" },
-                { value: "4,850", label: "Active Listings", sub: "" },
-                { value: "2.1", label: "Months Inventory", sub: "" },
-              ].map(({ value, label, sub }) => (
-                <div key={label} className="text-center">
-                  <div className="text-4xl font-bold text-blue-400 mb-1">{value}</div>
-                  <div className="text-slate-300 text-sm">{label}</div>
-                  {sub && <div className="text-green-400 text-xs mt-1">{sub}</div>}
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-8">
+            <div className="text-center">
               <Link href="/market-report" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors">
-                Full Market Report
+                Market notes
               </Link>
             </div>
           </div>
         </section>
 
+        <FeaturedProperties />
         <RealScoutListings />
         <WhyChooseUs />
         <ReviewsSection />

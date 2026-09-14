@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
@@ -71,13 +72,13 @@ const priceRanges = [
 const neighborhoods = [
   {
     name: "Summerlin",
-    description: "Master-planned community with Red Rock views, top schools, and 150+ parks",
+    description: "Master-planned community with Red Rock views, 150+ parks, and trail miles",
     medianPrice: "$625,000",
     daysOnMarket: 22,
   },
   {
     name: "Henderson",
-    description: "Nevada's second-largest city with family-friendly communities and low crime",
+    description: "Nevada's second-largest city with Lake Las Vegas, Green Valley, and master-planned streets",
     medianPrice: "$485,000",
     daysOnMarket: 24,
   },
@@ -161,11 +162,10 @@ export default function ListingsPage() {
               Popular Property Searches in Las Vegas
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
-              or affordable new construction, our comprehensive search tools help you find exactly 
-              what you're looking for. Browse the most popular searches below or use the advanced 
-              filters to customize your home search experience.
+              Las Vegas offers diverse neighborhoods for every budget and commute. Whether you're 
+              seeking guard-gated estates, golf-course lots, or new construction, our MLS search tools help you find 
+              square footage and amenities that match. Browse the most popular searches below or use the advanced 
+              filters to customize your home search.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               {popularSearches.map((search) => (
@@ -222,26 +222,30 @@ export default function ListingsPage() {
               Las Vegas Neighborhoods & Communities
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Each Las Vegas neighborhood offers a unique lifestyle, from the resort-style living 
-              of Summerlin to the family-friendly communities of Henderson. Understanding these 
-              differences is crucial to finding a home that fits your needs. As a Berkshire 
+              Each Las Vegas neighborhood offers a unique mix of amenities, from Summerlin trail miles 
+              to Henderson's Lake Las Vegas corridor. Understanding commute times, HOA fees, and 
+              square-footage ranges is crucial to finding a home that fits. As a Berkshire 
               Hathaway HomeServices agent serving Las Vegas since 2008, Dr. Jan Duffy provides 
-              expert guidance on which neighborhoods match your priorities—whether that's schools, 
+              expert guidance on which neighborhoods match your priorities—named schools, 
               commute times, amenities, or investment potential.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {neighborhoods.map((neighborhood) => (
-                <div
+                <Link
                   key={neighborhood.name}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+                  href={`/neighborhoods/${neighborhood.name.toLowerCase().replace(/ /g, "-")}`}
+                  className="group bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                 >
+                  <CardVisual heading={`${neighborhood.name} Homes`} />
+                  <div className="p-6">
                   <h3 className="font-bold text-lg text-slate-900 mb-2">{neighborhood.name}</h3>
                   <p className="text-slate-600 text-sm mb-4">{neighborhood.description}</p>
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-500">Median: <strong className="text-slate-900">{neighborhood.medianPrice}</strong></span>
                     <span className="text-slate-500">DOM: <strong className="text-slate-900">{neighborhood.daysOnMarket} days</strong></span>
                   </div>
-                </div>
+                  </div>
+                </Link>
               ))}
             </div>
             <div className="text-center mt-8">

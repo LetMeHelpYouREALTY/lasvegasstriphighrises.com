@@ -34,6 +34,8 @@ describe("heading image catalog", () => {
     expect(imageForHeading("Contact Dr. Jan Duffy").key).toBe("office-lake-mead");
     expect(imageForHeading("55+ Communities in Las Vegas").key).toBe("active-adult-clubhouse");
     expect(imageForHeading("First-Time Home Buyers").key).toBe("first-time-buyer");
-    expect(imageForHeading("Las Vegas Market Report").key).toBe("market-skyline");
+    expect(imageForHeading("Golf Course Communities").key).toBe("golf-course");
+    expect(imageForHeading("Del Webb at Lake Las Vegas").key).toBe("lake-las-vegas");
+    expect(imageForHeading("Luxury Pool Estates").key).toBe("luxury-pool-terrace");
   });
 });

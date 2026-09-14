@@ -24,6 +24,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import type { ImageKey } from "@/lib/images";
 
 export const metadata: Metadata = {
   title:
@@ -148,6 +150,7 @@ const communities = [
     description:
       "Nevada's largest 55+ community with unparalleled amenities against the backdrop of the Spring Mountains.",
     color: "amber",
+    imageKey: "golf-course" as ImageKey,
   },
   {
     name: "Sun City Anthem",
@@ -162,11 +165,12 @@ const communities = [
       "Henderson's premier 55+ community",
       "2 championship golf courses",
       "Stunning mountain views",
-      "America's safest large city location",
+      "Henderson mountain views and golf",
     ],
     description:
       "Henderson's premier 55+ community with stunning mountain views and championship golf.",
     color: "green",
+    imageKey: "golf-course" as ImageKey,
   },
   {
     name: "Sun City Aliante",
@@ -184,8 +188,9 @@ const communities = [
       "Easy freeway access",
     ],
     description:
-      "The most affordable Sun City in Las Vegas with full amenities and great value.",
+      "The most affordable Sun City in Las Vegas with full amenities and golf.",
     color: "blue",
+    imageKey: "north-las-vegas" as ImageKey,
   },
   {
     name: "Del Webb at Lake Las Vegas",
@@ -205,6 +210,7 @@ const communities = [
     description:
       "The newest Del Webb community combines modern construction with stunning Lake Las Vegas setting.",
     color: "blue",
+    imageKey: "lake-las-vegas" as ImageKey,
   },
   {
     name: "Heritage at Stonebridge",
@@ -224,6 +230,7 @@ const communities = [
     description:
       "A boutique 55+ community offering guard-gated privacy in the heart of Summerlin.",
     color: "purple",
+    imageKey: "summerlin" as ImageKey,
   },
   {
     name: "Solera at Anthem",
@@ -241,8 +248,9 @@ const communities = [
       "Henderson location",
     ],
     description:
-      "A more intimate alternative to larger 55+ communities with guard-gated security.",
+      "A more intimate alternative to larger 55+ communities with guard-gated entries.",
     color: "teal",
+    imageKey: "henderson" as ImageKey,
   },
   {
     name: "Trilogy at Summerlin",
@@ -260,8 +268,9 @@ const communities = [
       "Contemporary home designs",
     ],
     description:
-      "Luxury resort-style 55+ living with upscale amenities and contemporary designs.",
+      "Resort-style 55+ living with upscale amenities and contemporary designs.",
     color: "rose",
+    imageKey: "luxury-pool-terrace" as ImageKey,
   },
   {
     name: "Siena",
@@ -281,6 +290,7 @@ const communities = [
     description:
       "Siena offers the Summerlin lifestyle at more accessible price points.",
     color: "slate",
+    imageKey: "golf-course" as ImageKey,
   },
 ];
 
@@ -532,6 +542,7 @@ export default function FiftyFiveCommunitiesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Las Vegas 55+ Communities
             </h2>
+            <SectionVisual heading="Las Vegas 55+ Communities" className="max-w-3xl mx-auto" />
             <p className="text-lg text-slate-600 text-center mb-8">
               Click "View Homes" to explore each community in detail
             </p>
@@ -539,8 +550,9 @@ export default function FiftyFiveCommunitiesPage() {
               {communities.map((community) => (
                 <div
                   key={community.name}
-                  className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+                  className="group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
+                  <CardVisual heading={community.name} imageKey={community.imageKey} />
                   <div className="bg-slate-900 text-white p-6">
                     <h3 className="text-xl font-bold mb-1">{community.name}</h3>
                     <div className="flex items-center text-slate-300 text-sm">

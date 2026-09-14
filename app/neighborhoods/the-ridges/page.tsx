@@ -259,8 +259,7 @@ export default function TheRidgesPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Schools Serving The Ridges</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  The Ridges is served by top-rated public schools in the Palo Verde cluster, plus Las Vegas's
-                  finest private school options:
+                  The Ridges is served by public campuses in the Palo Verde cluster, plus named private options:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>

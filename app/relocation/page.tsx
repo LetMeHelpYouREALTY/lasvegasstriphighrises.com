@@ -53,14 +53,14 @@ const relocationSchema = {
 const popularRelocationAreas = [
   {
     name: "Summerlin",
-    best: "Families, professionals",
-    highlights: "Top-rated schools, 150+ parks, Red Rock Canyon proximity, master-planned living",
+    best: "Professionals, parks and trails",
+    highlights: "150+ parks, Red Rock Canyon proximity, master-planned living, named CCSD campuses",
     from: "$500K",
   },
   {
     name: "Henderson",
-    best: "Families, retirees",
-    highlights: "Lowest crime rates, excellent schools, community feel, diverse neighborhoods",
+    best: "Retirees, Lake Las Vegas, Green Valley",
+    highlights: "60+ parks, Lake Las Vegas, Green Valley, Inspirada, no state income tax",
     from: "$450K",
   },
   {
@@ -249,15 +249,14 @@ export default function RelocationPage() {
               Las Vegas Schools & Education
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              For families with children, school quality is often the top priority when 
-              relocating. Las Vegas offers a range of public, charter, and private school 
-              options. Dr. Jan provides detailed school research to help you make informed decisions.
+              For buyers who want named-school boundaries, Las Vegas offers public, charter, and private
+              campuses. Dr. Jan maps the school that serves a specific address—no marketing labels.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <School className="h-5 w-5 text-blue-600 mr-2" />
-                  Top-Rated School Areas
+                  Named School Areas
                 </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
@@ -392,8 +391,8 @@ export default function RelocationPage() {
                   a: "Absolutely. Dr. Jan provides virtual tours, video walkthroughs, and detailed neighborhood analysis so you can purchase confidently before relocating. Many clients buy their Las Vegas home without ever visiting in person until closing day.",
                 },
                 {
-                  q: "What are the best areas for families relocating to Las Vegas?",
-                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently rank highest for families due to excellent schools, low crime, and family-friendly amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which areas have parks, trails, and named schools for relocators?",
+                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon have extensive parks and trail miles. Dr. Jan matches streets using commute times, square footage, and named-school boundaries.",
                 },
                 {
                   q: "How does the cost of living compare to California?",
@@ -408,8 +407,8 @@ export default function RelocationPage() {
                   a: "Las Vegas has diversified beyond gaming and hospitality. Major growth sectors include healthcare (Intermountain Health, UMC), technology (Switch, various startups), sports (Raiders, Golden Knights, Aces), logistics (Amazon), and professional services. The economy is growing faster than the national average.",
                 },
                 {
-                  q: "Is Las Vegas safe for families?",
-                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very low crime rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
+                  q: "How do I compare neighborhoods beyond marketing claims?",
+                  a: "Tour streets at the hours you would actually live there. Dr. Jan shares commute times, HOA rules, and named-school boundaries. We do not use crime slogans or 'safe neighborhood' language on this site.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

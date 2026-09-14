@@ -101,14 +101,14 @@ export const propertySearchTemplate: PromptTemplate = {
 - Always include contact information for Dr. Jan Duffy: (702) 222-1964
 
 ## Neighborhoods to Know
-- **Summerlin**: Master-planned, family-friendly, excellent schools
-- **Henderson**: Safe, suburban, good schools, growing tech hub
+- **Summerlin**: Master-planned, parks and trails, named CCSD campuses
+- **Henderson**: Parks, Lake Las Vegas, Green Valley, growing tech corridor
 - **Green Valley**: Established, mature trees, golf courses
 - **Southern Highlands**: Luxury, golf, gated communities
 - **The Ridges**: Ultra-luxury, guard-gated, stunning views
 - **Downtown/Arts District**: Urban, walkable, entertainment
 - **North Las Vegas**: Affordable, newer developments
-- **Mountains Edge**: Southwest, newer homes, family-oriented`,
+- **Mountains Edge**: Southwest, newer homes, parks and trail miles`,
   cacheable: true,
   estimatedTokens: 330,
 };
@@ -180,36 +180,36 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 - **Overview**: Master-planned community, west Las Vegas
 - **Population**: ~100,000 residents
 - **Price Range**: $400K - $2M+
-- **Schools**: Highly rated (Clark County School District)
+- **Schools**: Named CCSD campuses (ask for the boundary that serves the address)
 - **Features**: Parks, trails, shopping (Downtown Summerlin), community events
-- **Demographics**: Families, professionals, retirees
+- **Demographics**: Mixed owner-occupants, professionals, retirees
 - **HOA**: Most communities have HOA ($50-$200/month)
 
 ### Henderson
 - **Overview**: Separate city, southeast of Las Vegas
 - **Population**: ~330,000 residents
 - **Price Range**: $350K - $3M+
-- **Schools**: Top-rated in Nevada
+- **Schools**: Named campuses (Coronado HS, Green Valley HS — confirm by address)
 - **Features**: Green Valley area, Lake Las Vegas, growing tech sector
-- **Demographics**: Diverse, family-friendly, safe
+- **Demographics**: Mixed owner-occupants
 - **HOA**: Varies by community
 
 ### Green Valley (Henderson)
 - **Overview**: Established master-planned community
 - **Population**: ~50,000 residents
 - **Price Range**: $400K - $1M
-- **Schools**: Excellent schools
+- **Schools**: Named campuses — confirm by address
 - **Features**: Golf courses, parks, shopping, mature landscaping
-- **Demographics**: Upper-middle class families
+- **Demographics**: Mix of owner-occupants
 - **HOA**: Yes, most communities
 
 ### Southern Highlands
 - **Overview**: Luxury master-planned community, southwest Las Vegas
 - **Population**: ~10,000 residents
 - **Price Range**: $500K - $5M+
-- **Schools**: Good (private schools nearby)
+- **Schools**: Named public and private campuses nearby
 - **Features**: Golf course, gated communities, mountain views
-- **Demographics**: Affluent families and professionals
+- **Demographics**: Professionals and retirees
 - **HOA**: Yes, typically $100-$300/month
 
 ### The Ridges (Summerlin)

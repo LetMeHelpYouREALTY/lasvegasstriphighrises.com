@@ -26,6 +26,9 @@ export const IMAGE_KEYS = [
   "relocation",
   "market-skyline",
   "first-time-buyer",
+  "golf-course",
+  "lake-las-vegas",
+  "luxury-pool-terrace",
 ] as const;
 
 export type ImageKey = (typeof IMAGE_KEYS)[number];
@@ -232,9 +235,38 @@ export const imageCatalog: Record<ImageKey, SiteImageAsset> = {
     height: 768,
     heading: "First-Time Home Buyers",
   },
+  "golf-course": {
+    key: "golf-course",
+    src: "/images/neighborhoods/golf-course.webp",
+    cloudflareId: "neighborhoods/golf-course",
+    alt: "Championship desert golf course in Las Vegas with mountain views at golden hour",
+    width: 1376,
+    height: 768,
+    heading: "Golf Course Communities",
+  },
+  "lake-las-vegas": {
+    key: "lake-las-vegas",
+    src: "/images/neighborhoods/lake-las-vegas.webp",
+    cloudflareId: "neighborhoods/lake-las-vegas",
+    alt: "Lake Las Vegas waterfront and resort architecture at dusk in Henderson",
+    width: 1376,
+    height: 768,
+    heading: "Lake Las Vegas Homes",
+  },
+  "luxury-pool-terrace": {
+    key: "luxury-pool-terrace",
+    src: "/images/neighborhoods/luxury-pool-terrace.webp",
+    cloudflareId: "neighborhoods/luxury-pool-terrace",
+    alt: "Luxury Las Vegas estate pool terrace at twilight with valley lights on the horizon",
+    width: 1376,
+    height: 768,
+    heading: "Luxury Pool Estates",
+  },
 };
 
 const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
+  { pattern: /lake las vegas|del webb/i, key: "lake-las-vegas" },
+  { pattern: /golf|siena|sun city anthem/i, key: "golf-course" },
   { pattern: /summerlin/i, key: "summerlin" },
   { pattern: /ridges/i, key: "the-ridges" },
   { pattern: /green valley/i, key: "green-valley" },
@@ -245,9 +277,9 @@ const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
   { pattern: /mountains.?edge|mountain.?s edge/i, key: "mountains-edge" },
   { pattern: /north las vegas|aliante/i, key: "north-las-vegas" },
   { pattern: /henderson/i, key: "henderson" },
-  { pattern: /55\+|sun city|del webb|trilogy|solera|heritage|active adult/i, key: "active-adult-clubhouse" },
+  { pattern: /55\+|sun city|trilogy|solera|heritage|active adult/i, key: "active-adult-clubhouse" },
   { pattern: /new construction|builder/i, key: "new-construction" },
-  { pattern: /luxury|\$1m|estate/i, key: "the-ridges" },
+  { pattern: /luxury|\$1m|estate|pool terrace/i, key: "luxury-pool-terrace" },
   { pattern: /invest|rental|cap rate|1031/i, key: "investment-rentals" },
   { pattern: /relocat|moving|california/i, key: "relocation" },
   { pattern: /first.?time|first time/i, key: "first-time-buyer" },

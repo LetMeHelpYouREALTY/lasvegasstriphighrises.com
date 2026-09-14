@@ -230,7 +230,7 @@ export default function MoveUpSellerPage() {
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Sell First, Then Buy</h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  The safest approach: sell your home, secure your equity, then purchase with
+                  The lower-risk approach: sell your home, secure your equity, then purchase with
                   confidence and negotiating power.
                 </p>
                 <div className="text-sm">

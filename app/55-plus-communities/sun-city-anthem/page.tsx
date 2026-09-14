@@ -167,9 +167,9 @@ export default function SunCityAnthemPage() {
               </h2>
               <p>
                 <strong>Sun City Anthem</strong> brings the legendary Sun City lifestyle to Henderson,
-                Nevada's safest and most desirable city. Built by Del Webb from 1998-2008, this
+                Nevada's second-largest city. Built by Del Webb from 1998-2008, this
                 7,100+ home community offers stunning mountain views, championship golf, and
-                resort-caliber amenities—all within Henderson's renowned safety and quality of life.
+                resort-caliber amenities inside Henderson city limits.
               </p>
               <p>
                 The community's centerpiece is the Anthem Center, a 64,000 sq ft clubhouse featuring
@@ -195,14 +195,14 @@ export default function SunCityAnthemPage() {
                     Why Henderson Matters
                   </h3>
                   <p className="text-slate-700 mb-4">
-                    Henderson consistently ranks as one of America's safest cities. For 55+ buyers,
-                    this translates to peace of mind, stable property values, and a community that
-                    attracts similar residents who value safety and quality of life.
+                    Henderson offers 60+ parks, Lake Las Vegas, and master-planned 55+ communities.
+                    For 55+ buyers, that means golf, clubhouses, and commute times you can verify
+                    street by street.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">#2</div>
-                      <div className="text-sm text-slate-600">Safest Large City</div>
+                      <div className="text-2xl font-bold text-green-600">60+</div>
+                      <div className="text-sm text-slate-600">City parks</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
                       <div className="text-2xl font-bold text-green-600">A+</div>

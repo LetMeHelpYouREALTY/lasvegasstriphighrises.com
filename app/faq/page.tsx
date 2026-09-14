@@ -129,8 +129,8 @@ const faqCategories = [
         a: "Absolutely! Our global network of 50,000+ agents makes relocations seamless. Dr. Jan can coordinate with BHHS agents in your current city while providing expert guidance on Las Vegas neighborhoods, schools, and communities.",
       },
       {
-        q: "What are the best neighborhoods for families?",
-        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering excellent schools, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities.",
+        q: "Which neighborhoods have parks, trails, and named schools nearby?",
+        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills have extensive parks and trail miles. Dr. Jan can match you to a street using commute times, square footage, and named-school boundaries.",
       },
       {
         q: "How is the cost of living in Las Vegas?",

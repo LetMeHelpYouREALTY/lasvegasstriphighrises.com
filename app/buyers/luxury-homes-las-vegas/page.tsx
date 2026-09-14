@@ -201,7 +201,7 @@ export default function LuxuryHomesPage() {
                   </div>
                   <p className="text-slate-600 mb-4">
                     Elevated luxury with dramatic Strip and valley views. DragonRidge Country Club,
-                    modern architecture, and Henderson's low crime rates create an unmatched combination.
+                    modern architecture, and Lake Las Vegas or DragonRidge golf nearby.
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-center text-sm text-slate-700">
@@ -306,7 +306,7 @@ export default function LuxuryHomesPage() {
                     </li>
                     <li className="flex items-center text-sm text-slate-700">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      Top-rated schools
+                      Named school campuses
                     </li>
                   </ul>
                   <Link
