@@ -2,6 +2,8 @@
 
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
+import { nap } from "@/lib/nap";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export interface Review {
   id: number;
@@ -21,7 +23,7 @@ export const defaultReviews: Review[] = [
     location: "Las Vegas, NV",
     rating: 5,
     text: "Dr. Duffy made our home buying experience seamless. Her knowledge of the Las Vegas market is unmatched, and she guided us through every step with professionalism and care.",
-    image: "/Image/person1.jpeg",
+    image: undefined,
     date: "2025-11-15",
   },
   {
@@ -30,7 +32,7 @@ export const defaultReviews: Review[] = [
     location: "Henderson, NV",
     rating: 5,
     text: "We couldn't be happier with our new home! The entire process was smooth, and Dr. Duffy's attention to detail and negotiation skills saved us thousands. Highly recommend!",
-    image: "/Image/person_2-min.jpg",
+    image: undefined,
     date: "2025-10-22",
   },
   {
@@ -39,7 +41,7 @@ export const defaultReviews: Review[] = [
     location: "Summerlin, NV",
     rating: 5,
     text: "As first-time homebuyers, we were nervous about the process. Dr. Duffy patiently explained everything and helped us find the perfect home in our budget. Thank you!",
-    image: "/Image/person_4-min.jpg",
+    image: undefined,
     date: "2025-09-08",
   },
 ];
@@ -69,7 +71,7 @@ export default function ReviewsSection({
   reviews = defaultReviews,
   title = "What Our Clients Say",
   subtitle = "Real testimonials from satisfied clients across Las Vegas and Henderson",
-  googleReviewsUrl = "https://g.page/r/heyberkshire/review",
+  googleReviewsUrl = nap.googleReviews,
   className = "",
 }: ReviewsSectionProps) {
   return (
@@ -79,6 +81,7 @@ export default function ReviewsSection({
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             {title}
           </h2>
+          <SectionVisual heading={title} className="max-w-3xl mx-auto" />
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
           {/* Aggregate Rating Display */}
           <div className="flex items-center justify-center gap-2 mt-4">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export interface FAQ {
   question: string;
@@ -72,6 +73,7 @@ export default function FAQSection({
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             {title}
           </h2>
+          <SectionVisual heading={title} className="max-w-3xl mx-auto" />
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
         </div>
 

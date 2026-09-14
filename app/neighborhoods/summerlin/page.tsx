@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Phone, MapPin, TreePine, Mountain, GraduationCap, ShoppingBag } from "lucide-react";
 import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
+import SectionVisual from "@/components/images/SectionVisual";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -15,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Summerlin | Las Vegas Luxury Real Estate",
   description:
-    "Find Summerlin homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy offers expert guidance in Las Vegas's premier master-planned community. Median price $625K. Call (702) 500-1942.",
+    "Find Summerlin homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy offers expert guidance in Las Vegas's premier master-planned community. Median price $625K. Call (702) 222-1964.",
   keywords: [
     "Berkshire Hathaway HomeServices Summerlin",
     "Summerlin homes for sale",
@@ -47,7 +48,7 @@ const summerlinFaqs = [
   {
     question: "What makes Summerlin different from other Las Vegas communities?",
     answer:
-      "Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with careful planning since 1990, creating distinct villages each with unique character.",
+      "Summerlin offers 150+ parks, 150+ miles of trails, Red Rock Canyon access, and distinct villages with their own recreation centers. The Howard Hughes Corporation has developed Summerlin with careful planning since 1990, creating unique character in each village.",
   },
   {
     question: "Why should I use a Berkshire Hathaway HomeServices agent in Summerlin?",
@@ -63,7 +64,7 @@ const pageSchemas = combineSchemas(
     name: "Summerlin",
     slug: "summerlin",
     description:
-      "Premier master-planned community in Las Vegas featuring Red Rock Canyon views, 150+ parks, top-rated schools, and luxury homes from $400K to $10M+.",
+      "Premier master-planned community in Las Vegas featuring Red Rock Canyon views, 150+ parks, and luxury homes from $400K to $10M+.",
     latitude: 36.1672,
     longitude: -115.331,
     containedIn: "Las Vegas",
@@ -77,7 +78,7 @@ export default function SummerlinPage() {
       {/* Combined JSON-LD Schema: Breadcrumb + Place + FAQ */}
       <SchemaScript schema={pageSchemas} id="summerlin-schema" />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -98,6 +99,8 @@ export default function SummerlinPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Berkshire Hathaway HomeServices Summerlin
             </h1>
+            <SectionVisual heading="Berkshire Hathaway HomeServices Summerlin" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               Discover Las Vegas's premier master-planned community with Dr. Jan Duffy, your trusted{" "}
               <strong>Berkshire Hathaway HomeServices</strong> Summerlin expert.
@@ -135,10 +138,11 @@ export default function SummerlinPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Summerlin Is Las Vegas's Most Sought-After Community
               </h2>
+              <SectionVisual heading="Why Summerlin Is Las Vegas's Most Sought-After Community" className="max-w-4xl my-6" />
               <p>
                 When homebuyers search for the best neighborhoods in Las Vegas, <strong>Summerlin</strong> consistently
                 ranks at the top. As a <strong>Berkshire Hathaway HomeServices</strong> agent specializing in Summerlin
-                real estate, Dr. Jan Duffy has helped hundreds of families find their perfect home in this
+                real estate, Dr. Jan Duffy has helped hundreds of clients find their perfect home in this
                 award-winning master-planned community.
               </p>
               <p>
@@ -150,7 +154,7 @@ export default function SummerlinPage() {
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has deep roots in Summerlin,
-                and our agents understand the nuances of each village—from the family-friendly atmosphere of
+                and our agents understand the nuances of each village—from the parks and trail miles of
                 The Paseos to the luxury estates of The Ridges. Whether you're a first-time buyer looking at
                 condos in Affinity or a move-up buyer seeking a custom home in Red Rock Country Club, BHHS
                 has the expertise to guide you through the process.
@@ -174,13 +178,12 @@ export default function SummerlinPage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <GraduationCap className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Top-Rated Schools</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">Named Schools Nearby</h4>
                   </div>
                   <p className="text-slate-600">
-                    Summerlin is home to some of Nevada's highest-performing schools. The community includes
-                    multiple Blue Ribbon schools, advanced STEM programs, and excellent private school options
-                    like The Meadows School and Bishop Gorman High School. Families consistently choose
-                    Summerlin for its exceptional educational opportunities.
+                    Summerlin villages are served by named Clark County School District campuses plus
+                    private options such as The Meadows School and Bishop Gorman High School. Ask Dr. Jan
+                    for the specific campus that serves an address—do not rely on marketing labels.
                   </p>
                 </div>
               </div>
@@ -299,7 +302,7 @@ export default function SummerlinPage() {
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Summerlin isn't just a neighborhood—it's a lifestyle. I've been serving this area since
-                2008, and I can tell you exactly which villages suit young families, which offer the
+                2008, and I can tell you exactly which villages suit first-time buyers, which offer the
                 best investment potential, and where you'll find the hidden gems. That local knowledge is
                 what sets Berkshire Hathaway HomeServices apart."
               </blockquote>
@@ -340,7 +343,7 @@ export default function SummerlinPage() {
                   What makes Summerlin different from other Las Vegas communities?
                 </h3>
                 <p className="text-slate-600">
-                  Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning
+                  Summerlin offers 150+ parks, 150+ miles of trails, named CCSD campuses, and stunning
                   Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with
                   careful planning since 1990, creating distinct villages each with unique character.
                 </p>
@@ -369,11 +372,11 @@ export default function SummerlinPage() {
               for a personalized home search or free market analysis.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17022221964"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 222-1964
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

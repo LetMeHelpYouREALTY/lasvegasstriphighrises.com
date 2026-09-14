@@ -20,11 +20,13 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 
 export const metadata: Metadata = {
   title: "Real Estate Services Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Comprehensive real estate services from Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Buying, selling, luxury, investment, relocation, 55+ communities, and new construction. Call (702) 500-1942.",
+    "Comprehensive real estate services from Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Buying, selling, luxury, investment, relocation, 55+ communities, and new construction. Call (702) 222-1964.",
   keywords: [
     "Las Vegas real estate services",
     "Berkshire Hathaway services",
@@ -42,7 +44,7 @@ const servicesSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17022221964",
   },
   areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
   serviceType: "Real Estate Services",
@@ -171,7 +173,7 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -181,6 +183,8 @@ export default function ServicesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Las Vegas Real Estate Services
             </h1>
+            <SectionVisual heading="Las Vegas Real Estate Services" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600 mb-8">
               Comprehensive real estate solutions from Dr. Jan Duffy, backed by the most trusted
               name in the business—<strong>Berkshire Hathaway HomeServices</strong>. Whether you're 
@@ -208,6 +212,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Core Real Estate Services
             </h2>
+            <SectionVisual heading="Core Real Estate Services" className="max-w-3xl mx-auto" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               These foundational services cover the majority of real estate transactions in Las Vegas. 
               Each service is delivered with the professionalism, resources, and ethical standards 
@@ -221,8 +226,10 @@ export default function ServicesPage() {
                   <Link
                     key={service.slug}
                     href={`/${service.slug}`}
-                    className="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-lg hover:border-blue-300 transition-all group"
+                    className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all group"
                   >
+                    <CardVisual heading={service.title} />
+                    <div className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="bg-blue-100 rounded-lg p-3 group-hover:bg-blue-600 transition-colors flex-shrink-0">
                         <Icon className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
@@ -249,6 +256,7 @@ export default function ServicesPage() {
                         </div>
                       </div>
                     </div>
+                    </div>
                   </Link>
                 );
               })}
@@ -260,10 +268,11 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Specialized Real Estate Services
             </h2>
+            <SectionVisual heading="Specialized Real Estate Services" className="max-w-3xl mx-auto" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Beyond traditional buying and selling, Dr. Jan Duffy offers specialized services 
               for unique situations. Whether you're an investor building a rental portfolio, 
-              a California family relocating for tax savings, or a retiree seeking the perfect 
+              a California buyer relocating for tax savings, or a retiree seeking the perfect 
               55+ community, these focused services ensure you receive expert guidance tailored 
               to your specific needs.
             </p>
@@ -274,8 +283,10 @@ export default function ServicesPage() {
                   <Link
                     key={service.slug}
                     href={`/${service.slug}`}
-                    className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg hover:border-blue-300 transition-all group"
+                    className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all group"
                   >
+                    <CardVisual heading={service.title} />
+                    <div className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="bg-slate-100 rounded-lg p-3 group-hover:bg-blue-600 transition-colors flex-shrink-0">
                         <Icon className="h-5 w-5 text-slate-600 group-hover:text-white transition-colors" />
@@ -296,6 +307,7 @@ export default function ServicesPage() {
                           ))}
                         </div>
                       </div>
+                    </div>
                     </div>
                   </Link>
                 );
@@ -488,11 +500,11 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

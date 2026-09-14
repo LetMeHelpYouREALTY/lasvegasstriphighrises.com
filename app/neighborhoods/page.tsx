@@ -2,8 +2,11 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
+import { MapPin, Home, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import GbpActions from "@/components/gbp/GbpActions";
 
 export const metadata: Metadata = {
   title: "Las Vegas Neighborhoods | Berkshire Hathaway HomeServices",
@@ -24,27 +27,27 @@ const neighborhoods = [
     slug: "summerlin",
     medianPrice: "$625,000",
     priceChange: "+6.8%",
-    description: "Premier master-planned community with parks, trails, and top-rated schools",
-    highlights: ["150+ Parks", "Top Schools", "Red Rock Views", "Downtown Summerlin"],
-    bestFor: "Families, professionals, outdoor enthusiasts",
+    description: "Premier master-planned community with parks, trails, and Red Rock Canyon access",
+    highlights: ["150+ Parks", "Trail miles", "Red Rock Views", "Downtown Summerlin"],
+    bestFor: "Parks, trails, and master-planned amenities",
   },
   {
     name: "Henderson",
     slug: "henderson",
     medianPrice: "$485,000",
     priceChange: "+5.1%",
-    description: "Nevada's second-largest city known for safety, schools, and family-friendly living",
-    highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
-    bestFor: "Families, retirees, commuters",
+    description: "Nevada's second-largest city with master-planned neighborhoods and Lake Las Vegas",
+    highlights: ["Lake Las Vegas", "Green Valley", "Parks and Trails", "Town Center"],
+    bestFor: "Lake Las Vegas, Green Valley, commute to the Strip",
   },
   {
     name: "Green Valley",
     slug: "green-valley",
     medianPrice: "$520,000",
     priceChange: "+4.8%",
-    description: "Established Henderson community with mature landscaping and excellent amenities",
+    description: "Established Henderson community with mature landscaping, golf, and The District",
     highlights: ["Golf Courses", "Walking Trails", "The District", "Mature Trees"],
-    bestFor: "Established families, golfers, professionals",
+    bestFor: "Golf, trails, commute to Henderson Town Center",
   },
   {
     name: "The Ridges",
@@ -62,16 +65,16 @@ const neighborhoods = [
     priceChange: "+7.2%",
     description: "Master-planned luxury community with championship golf and mountain views",
     highlights: ["Golf Community", "Guard-Gated", "Mountain Views", "Luxury Amenities"],
-    bestFor: "Golfers, luxury buyers, families",
+    bestFor: "Golfers, luxury buyers, custom homes",
   },
   {
     name: "North Las Vegas",
     slug: "north-las-vegas",
     medianPrice: "$385,000",
     priceChange: "+3.2%",
-    description: "Rapidly growing area with affordable new construction and family-friendly communities",
-    highlights: ["New Construction", "Affordable", "Growing Area", "Family-Friendly"],
-    bestFor: "First-time buyers, young families, investors",
+    description: "Rapidly growing area with new construction and entry-level price points",
+    highlights: ["New Construction", "Entry-level pricing", "Growing Area", "Aliante amenities"],
+    bestFor: "First-time buyers, investors, new construction",
   },
   {
     name: "Skye Canyon",
@@ -79,17 +82,17 @@ const neighborhoods = [
     medianPrice: "$550,000",
     priceChange: "+5.5%",
     description: "Newer master-planned community in northwest Las Vegas with mountain views",
-    highlights: ["New Homes", "Mountain Views", "Skye Center", "Great Schools"],
-    bestFor: "Young families, outdoor enthusiasts, commuters",
+    highlights: ["New Homes", "Mountain Views", "Skye Center", "Parks and Trails"],
+    bestFor: "Outdoor amenities, new construction, commuters",
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
     medianPrice: "$495,000",
     priceChange: "+4.8%",
-    description: "Northwest Las Vegas community with mountain proximity and family amenities",
-    highlights: ["Mountain Access", "Parks", "Shopping", "Family-Friendly"],
-    bestFor: "Families, outdoor lovers, professionals",
+    description: "Northwest Las Vegas community with mountain proximity, parks, and trail access",
+    highlights: ["Mountain Access", "Parks", "Shopping", "Trail network"],
+    bestFor: "Mountain access, parks, northwest commute",
   },
   {
     name: "Inspirada",
@@ -97,8 +100,8 @@ const neighborhoods = [
     medianPrice: "$525,000",
     priceChange: "+5.0%",
     description: "Henderson master-planned community with resort-style living and modern homes",
-    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Great Schools"],
-    bestFor: "Families, active adults, new home buyers",
+    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Town center"],
+    bestFor: "Resort amenities, new construction, Henderson",
   },
   {
     name: "Mountains Edge",
@@ -107,7 +110,7 @@ const neighborhoods = [
     priceChange: "+4.5%",
     description: "Southwest Las Vegas master-planned community with mountain views and parks",
     highlights: ["Mountain Views", "Parks", "Growing Area", "Affordable Luxury"],
-    bestFor: "Families, commuters, value-seekers",
+    bestFor: "Mountain views, parks, southwest Las Vegas",
   },
 ];
 
@@ -115,7 +118,7 @@ export default function NeighborhoodsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -125,6 +128,8 @@ export default function NeighborhoodsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Las Vegas & Henderson Neighborhoods
             </h1>
+            <SectionVisual heading="Las Vegas & Henderson Neighborhoods" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               Explore the best communities in Southern Nevada with Dr. Jan Duffy, your{" "}
               <strong>Berkshire Hathaway HomeServices</strong> neighborhood expert
@@ -138,8 +143,10 @@ export default function NeighborhoodsPage() {
                 <Link
                   key={neighborhood.slug}
                   href={`/neighborhoods/${neighborhood.slug}`}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-all hover:border-blue-300 group"
+                  className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all hover:border-blue-300 group"
                 >
+                  <CardVisual heading={`${neighborhood.name} Homes`} />
+                  <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -163,6 +170,7 @@ export default function NeighborhoodsPage() {
                       </span>
                     ))}
                   </div>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -173,8 +181,8 @@ export default function NeighborhoodsPage() {
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Every Las Vegas neighborhood has its own personality. Whether you want the
-                family-friendly parks of Summerlin, the established charm of Green Valley, or the
-                luxury of The Ridges, I'll help you find the community that matches your lifestyle.
+                parks and trail miles of Summerlin, the golf and mature trees of Green Valley, or the
+                custom estates of The Ridges, I'll help you find the community that matches your commute and budget.
                 That's the Berkshire Hathaway HomeServices difference—personalized guidance backed
                 by local expertise."
               </blockquote>
@@ -187,6 +195,7 @@ export default function NeighborhoodsPage() {
           {/* Neighborhood Services */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">Neighborhood Services</h2>
+            <SectionVisual heading="Neighborhood matching in Las Vegas" className="max-w-3xl mx-auto mb-8" />
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-3" />
@@ -199,7 +208,7 @@ export default function NeighborhoodsPage() {
                 <GraduationCap className="h-12 w-12 text-blue-400 mx-auto mb-3" />
                 <h3 className="font-bold mb-2">School Research</h3>
                 <p className="text-slate-400 text-sm">
-                  Detailed school district information, ratings, and enrollment guidance
+                  Named schools, district boundaries, and commute times for each village
                 </p>
               </div>
               <div className="text-center">
@@ -221,13 +230,7 @@ export default function NeighborhoodsPage() {
               Dr. Jan Duffy knows every Las Vegas community inside and out. Call for personalized
               neighborhood recommendations.
             </p>
-            <a
-              href="tel:+17025001942"
-              className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
-            >
-              <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
-            </a>
+            <GbpActions className="justify-center" />
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>

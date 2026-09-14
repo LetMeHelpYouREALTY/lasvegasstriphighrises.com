@@ -4,11 +4,12 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Waves, TreePine, GraduationCap, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Inspirada | Henderson Resort Living",
   description:
-    "Find Inspirada homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's resort-style community. Median price $525K. Call (702) 500-1942.",
+    "Find Inspirada homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's resort-style community. Median price $525K. Call (702) 222-1964.",
   keywords: [
     "Berkshire Hathaway HomeServices Inspirada",
     "Inspirada homes for sale",
@@ -43,7 +44,7 @@ const faqSchema = {
       name: "How are the schools in Inspirada?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Inspirada is served by highly-rated Henderson schools including newer facilities built specifically for the growing community. The area attracts families specifically for its educational options and family-friendly environment.",
+        text: "Inspirada is served by named Henderson campuses, including newer facilities built for the growing community. Ask Dr. Jan which school maps to a specific address.",
       },
     },
     {
@@ -65,7 +66,7 @@ export default function InspiradaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -86,6 +87,8 @@ export default function InspiradaPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Berkshire Hathaway HomeServices Inspirada
             </h1>
+            <SectionVisual heading="Berkshire Hathaway HomeServices Inspirada" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               Resort-style living in Henderson. Discover Inspirada with{" "}
               <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
@@ -123,6 +126,7 @@ export default function InspiradaPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Inspirada: Henderson's Award-Winning Resort-Style Community
               </h2>
+              <SectionVisual heading="Inspirada: Henderson's Award-Winning Resort-Style Community" className="max-w-4xl my-6" />
               <p>
                 <strong>Inspirada</strong> redefines what a master-planned community can be. This
                 2,000-acre development in Henderson consistently ranks among the nation's top-selling
@@ -292,7 +296,7 @@ export default function InspiradaPage() {
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Inspirada purchase
                 means working with agents who understand the community's various neighborhoods, which
                 builders offer the best quality, and which lots provide the best value. Dr. Jan Duffy
-                has helped dozens of families find their Inspirada homes, and that experience
+                has helped dozens of clients find their Inspirada homes, and that experience
                 translates into better outcomes for buyers navigating this popular community.
               </p>
             </div>
@@ -345,9 +349,8 @@ export default function InspiradaPage() {
                   How are the schools in Inspirada?
                 </h3>
                 <p className="text-slate-600">
-                  Inspirada is served by highly-rated Henderson schools including newer facilities
-                  built specifically for the growing community. The area attracts families specifically
-                  for its educational options and family-friendly environment.
+                  Inspirada is served by named Henderson campuses, including newer facilities
+                  built for the growing community. Ask Dr. Jan which school maps to a specific address.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -373,11 +376,11 @@ export default function InspiradaPage() {
               for expert guidance in Henderson's premier resort-style community.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17022221964"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 222-1964
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

@@ -23,12 +23,15 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import type { ImageKey } from "@/lib/images";
 
 export const metadata: Metadata = {
   title:
     "55+ Active Adult Communities Las Vegas | Sun City, Del Webb, Heritage | Dr. Jan Duffy",
   description:
-    "Find your perfect 55+ community in Las Vegas. Sun City Summerlin, Sun City Aliante, Del Webb Lake Las Vegas, Heritage at Stonebridge, Solera, Trilogy. Dr. Jan Duffy specializes in active adult living. Call (702) 500-1942.",
+    "Find your perfect 55+ community in Las Vegas. Sun City Summerlin, Sun City Aliante, Del Webb Lake Las Vegas, Heritage at Stonebridge, Solera, Trilogy. Dr. Jan Duffy specializes in active adult living. Call (702) 222-1964.",
   keywords: [
     "55+ communities Las Vegas",
     "active adult communities Las Vegas",
@@ -110,7 +113,7 @@ const localBusinessSchema = {
   name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
   description:
     "55+ community specialist helping active adults find their perfect Las Vegas retirement home",
-  telephone: "(702) 500-1942",
+  telephone: "(702) 222-1964",
   url: "https://heyberkshire.com/55-plus-communities",
   areaServed: {
     "@type": "City",
@@ -147,6 +150,7 @@ const communities = [
     description:
       "Nevada's largest 55+ community with unparalleled amenities against the backdrop of the Spring Mountains.",
     color: "amber",
+    imageKey: "golf-course" as ImageKey,
   },
   {
     name: "Sun City Anthem",
@@ -161,11 +165,12 @@ const communities = [
       "Henderson's premier 55+ community",
       "2 championship golf courses",
       "Stunning mountain views",
-      "America's safest large city location",
+      "Henderson mountain views and golf",
     ],
     description:
       "Henderson's premier 55+ community with stunning mountain views and championship golf.",
     color: "green",
+    imageKey: "golf-course" as ImageKey,
   },
   {
     name: "Sun City Aliante",
@@ -183,8 +188,9 @@ const communities = [
       "Easy freeway access",
     ],
     description:
-      "The most affordable Sun City in Las Vegas with full amenities and great value.",
+      "The most affordable Sun City in Las Vegas with full amenities and golf.",
     color: "blue",
+    imageKey: "north-las-vegas" as ImageKey,
   },
   {
     name: "Del Webb at Lake Las Vegas",
@@ -204,6 +210,7 @@ const communities = [
     description:
       "The newest Del Webb community combines modern construction with stunning Lake Las Vegas setting.",
     color: "blue",
+    imageKey: "lake-las-vegas" as ImageKey,
   },
   {
     name: "Heritage at Stonebridge",
@@ -223,6 +230,7 @@ const communities = [
     description:
       "A boutique 55+ community offering guard-gated privacy in the heart of Summerlin.",
     color: "purple",
+    imageKey: "summerlin" as ImageKey,
   },
   {
     name: "Solera at Anthem",
@@ -240,8 +248,9 @@ const communities = [
       "Henderson location",
     ],
     description:
-      "A more intimate alternative to larger 55+ communities with guard-gated security.",
+      "A more intimate alternative to larger 55+ communities with guard-gated entries.",
     color: "teal",
+    imageKey: "henderson" as ImageKey,
   },
   {
     name: "Trilogy at Summerlin",
@@ -259,8 +268,9 @@ const communities = [
       "Contemporary home designs",
     ],
     description:
-      "Luxury resort-style 55+ living with upscale amenities and contemporary designs.",
+      "Resort-style 55+ living with upscale amenities and contemporary designs.",
     color: "rose",
+    imageKey: "luxury-pool-terrace" as ImageKey,
   },
   {
     name: "Siena",
@@ -280,6 +290,7 @@ const communities = [
     description:
       "Siena offers the Summerlin lifestyle at more accessible price points.",
     color: "slate",
+    imageKey: "golf-course" as ImageKey,
   },
 ];
 
@@ -334,7 +345,7 @@ export default function FiftyFiveCommunitiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -360,6 +371,8 @@ export default function FiftyFiveCommunitiesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Find Your Perfect 55+ Community in Las Vegas
             </h1>
+            <SectionVisual heading="Find Your Perfect 55+ Community in Las Vegas" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl md:text-2xl text-slate-600 mb-8">
               Sun City, Del Webb, Heritage at Stonebridge & more—
               <br className="hidden md:block" />
@@ -367,11 +380,11 @@ export default function FiftyFiveCommunitiesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <a
                 href="http://drjanduffy.realscout.com/"
@@ -529,6 +542,7 @@ export default function FiftyFiveCommunitiesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Las Vegas 55+ Communities
             </h2>
+            <SectionVisual heading="Las Vegas 55+ Communities" className="max-w-3xl mx-auto" />
             <p className="text-lg text-slate-600 text-center mb-8">
               Click "View Homes" to explore each community in detail
             </p>
@@ -536,8 +550,9 @@ export default function FiftyFiveCommunitiesPage() {
               {communities.map((community) => (
                 <div
                   key={community.name}
-                  className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+                  className="group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
+                  <CardVisual heading={community.name} imageKey={community.imageKey} />
                   <div className="bg-slate-900 text-white p-6">
                     <h3 className="text-xl font-bold mb-1">{community.name}</h3>
                     <div className="flex items-center text-slate-300 text-sm">
@@ -621,7 +636,7 @@ export default function FiftyFiveCommunitiesPage() {
                       </Link>
                     ) : (
                       <a
-                        href="tel:+17025001942"
+                        href="tel:+17022221964"
                         className="block text-center bg-slate-600 text-white py-3 px-4 rounded-md font-semibold hover:bg-slate-700 transition-colors"
                       >
                         Call for {community.name} Info
@@ -857,11 +872,11 @@ export default function FiftyFiveCommunitiesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call/Text (702) 500-1942
+                Call/Text (702) 222-1964
               </a>
               <Link
                 href="/contact"

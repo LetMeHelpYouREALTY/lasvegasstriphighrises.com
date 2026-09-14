@@ -205,7 +205,7 @@ export function LeadCaptureForm({
           value={formData.phone}
           onChange={handleChange}
           disabled={loading}
-          placeholder="(702) 555-1234"
+          placeholder="(702) 222-1964"
         />
       </div>
 

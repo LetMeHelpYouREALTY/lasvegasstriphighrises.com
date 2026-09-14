@@ -15,11 +15,12 @@ import {
   CheckCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Sun City Summerlin Homes for Sale | Berkshire Hathaway HomeServices",
   description:
-    "Nevada's largest 55+ community. Sun City Summerlin homes from $320K-$850K. 3 golf courses, 4 rec centers, 100+ clubs. Dr. Jan Duffy, BHHS specialist. Call (702) 500-1942.",
+    "Nevada's largest 55+ community. Sun City Summerlin homes from $320K-$850K. 3 golf courses, 4 rec centers, 100+ clubs. Dr. Jan Duffy, BHHS specialist. Call (702) 222-1964.",
   keywords: [
     "Sun City Summerlin homes for sale",
     "Sun City Summerlin Las Vegas",
@@ -55,7 +56,7 @@ export default function SunCitySummerlinPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -77,6 +78,8 @@ export default function SunCitySummerlinPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Sun City Summerlin
             </h1>
+            <SectionVisual heading="Sun City Summerlin" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               7,700+ homes. 3 golf courses. 4 recreation centers. The gold standard of active adult living.
             </p>
@@ -113,6 +116,7 @@ export default function SunCitySummerlinPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Sun City Summerlin
               </h2>
+              <SectionVisual heading="About Sun City Summerlin" className="max-w-4xl my-6" />
               <p>
                 <strong>Sun City Summerlin</strong> isn't just Nevada's largest 55+ community—it's
                 the model by which all others are measured. Established by Del Webb in 1989, this
@@ -293,11 +297,11 @@ export default function SunCitySummerlinPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-amber-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-amber-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

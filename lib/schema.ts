@@ -6,7 +6,8 @@
  * @see https://developers.google.com/search/docs/appearance/structured-data
  */
 
-import { siteConfig, agentInfo, officeInfo, agentStats } from "./site-config";
+import { siteConfig, agentInfo, agentStats } from "./site-config";
+import { nap } from "./nap";
 
 // ============================================================================
 // Types
@@ -85,31 +86,32 @@ export function generateRealEstateAgentSchema() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    name: nap.businessName,
     alternateName: [
       "HeyBerkshire",
       "BHHS Nevada Properties",
       "Berkshire Hathaway HomeServices",
+      "Dr. Jan Duffy",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
-    image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
+    logo: `${BASE_URL}/images/office/office-lake-mead.webp`,
+    image: `${BASE_URL}/images/office/office-lake-mead.webp`,
     description: siteConfig.description,
-    telephone: "+1-702-500-1942",
-    email: agentInfo.email,
+    telephone: nap.phoneE164,
+    email: nap.email,
     priceRange: "$385K - $10M+",
     address: {
       "@type": "PostalAddress",
-      streetAddress: officeInfo.address.street,
-      addressLocality: officeInfo.address.city,
-      addressRegion: officeInfo.address.state,
-      postalCode: officeInfo.address.zip,
+      streetAddress: nap.streetAddress,
+      addressLocality: nap.addressLocality,
+      addressRegion: nap.addressRegion,
+      postalCode: nap.postalCode,
       addressCountry: "US",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: officeInfo.coordinates.lat,
-      longitude: officeInfo.coordinates.lng,
+      latitude: nap.geo.latitude,
+      longitude: nap.geo.longitude,
     },
     areaServed: [
       {
@@ -135,14 +137,12 @@ export function generateRealEstateAgentSchema() {
         name: "Green Valley",
       },
     ],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "08:00",
-        closes: "20:00",
-      },
-    ],
+    openingHoursSpecification: nap.openingHoursSpecification.map((hours) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: hours.dayOfWeek,
+      opens: hours.opens,
+      closes: hours.closes,
+    })),
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "Real Estate License",
@@ -156,7 +156,7 @@ export function generateRealEstateAgentSchema() {
       },
       identifier: agentInfo.license,
     },
-    sameAs: Object.values(socialProfiles),
+    sameAs: [...nap.socialProfiles],
     parentOrganization: {
       "@type": "Organization",
       "@id": `${BASE_URL}#parent-organization`,

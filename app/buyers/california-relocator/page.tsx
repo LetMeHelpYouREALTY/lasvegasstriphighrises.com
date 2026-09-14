@@ -17,11 +17,12 @@ import {
   TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Relocating from California to Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Moving from California to Las Vegas? Zero state income tax, 40-60% lower home prices, same sunshine. Dr. Jan Duffy helps CA relocators find their perfect Las Vegas home. Call (702) 500-1942.",
+    "Moving from California to Las Vegas? Zero state income tax, 40-60% lower home prices, same sunshine. Dr. Jan Duffy helps CA relocators find their perfect Las Vegas home. Call (702) 222-1964.",
   keywords: [
     "California to Las Vegas relocation",
     "moving from California to Nevada",
@@ -49,7 +50,7 @@ const faqSchema = {
       name: "What neighborhoods do California relocators prefer in Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "California buyers typically gravitate toward Summerlin (similar to Irvine/coastal communities), Henderson (family-friendly like San Diego suburbs), and The Ridges (comparable to Newport Coast luxury). These areas offer the quality and amenities California buyers expect.",
+        text: "California buyers typically gravitate toward Summerlin (similar to Irvine/coastal master-plans), Henderson (Green Valley, Inspirada, Lake Las Vegas), and The Ridges (comparable to Newport Coast luxury). These areas offer parks, golf, and amenities California buyers often request.",
       },
     },
     {
@@ -83,7 +84,7 @@ const realEstateAgentSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-  telephone: "+17025001942",
+  telephone: "+17022221964",
   url: "https://heyberkshire.com/buyers/california-relocator",
   address: {
     "@type": "PostalAddress",
@@ -108,7 +109,7 @@ export default function CaliforniaRelocatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateAgentSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -131,15 +132,17 @@ export default function CaliforniaRelocatorPage() {
               Relocating from California?<br />
               <span className="text-blue-600">Welcome Home to Las Vegas</span>
             </h1>
+            <SectionVisual heading="Relocating from California? Welcome Home to Las Vegas" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl md:text-2xl text-slate-600 mb-8">
               Zero state income tax. 40-60% lower home prices. Same sunshine.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17022221964"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Start Your Tax-Free Life → (702) 500-1942
+              Start Your Tax-Free Life → (702) 222-1964
             </a>
           </div>
 
@@ -235,16 +238,16 @@ export default function CaliforniaRelocatorPage() {
                 </div>
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
-                    "The Irvine of Las Vegas" - Master-planned perfection with top schools,
+                    "The Irvine of Las Vegas" - Master-planned streets with parks,
                     Downtown Summerlin shopping, and Red Rock Canyon views.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Families from Orange County, coastal CA
+                    <strong>Best for:</strong> Buyers from Orange County and coastal CA
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      Top-rated schools
+                      Named school campuses
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -272,10 +275,10 @@ export default function CaliforniaRelocatorPage() {
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
                     Henderson = San Diego suburbs meets tech corridor. Google's data center,
-                    top schools, and "America's Safest City" accolades.
+                    parks, and Lake Las Vegas amenities.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Tech workers, young families, San Diego relocators
+                    <strong>Best for:</strong> Tech workers, San Diego relocators
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">
                     <li className="flex items-center">
@@ -403,9 +406,9 @@ export default function CaliforniaRelocatorPage() {
                 </h3>
                 <p className="text-slate-600">
                   California buyers typically gravitate toward Summerlin (similar to Irvine/coastal
-                  communities), Henderson (family-friendly like San Diego suburbs), and The Ridges
-                  (comparable to Newport Coast luxury). These areas offer the quality and amenities
-                  California buyers expect.
+                  master-plans), Henderson (Green Valley, Inspirada, Lake Las Vegas), and The Ridges
+                  (comparable to Newport Coast luxury). These areas offer parks, golf, and amenities
+                  California buyers often request.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -433,10 +436,9 @@ export default function CaliforniaRelocatorPage() {
                   What about schools compared to California?
                 </h3>
                 <p className="text-slate-600">
-                  Nevada public schools overall rank lower than California's, but individual schools
-                  in Summerlin and Henderson rate highly. Many California families choose areas with
-                  top-rated schools or consider private options. Dr. Jan provides school-specific
-                  guidance for every neighborhood.
+                  Nevada public schools overall rank differently than California's. Compare named campuses
+                  in Summerlin and Henderson, or private options, address by address. Dr. Jan provides
+                  school-boundary maps for every listing you tour.
                 </p>
               </div>
             </div>
@@ -446,7 +448,7 @@ export default function CaliforniaRelocatorPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "I've helped hundreds of California families make the move to Las Vegas. The most
+                "I've helped hundreds of California buyers make the move to Las Vegas. The most
                 common reaction? 'Why didn't we do this sooner?' Between the tax savings, the space,
                 and the lifestyle, most clients can't believe what their California equity buys here.
                 As a <strong>Berkshire Hathaway HomeServices</strong> agent, I coordinate with our
@@ -470,11 +472,11 @@ export default function CaliforniaRelocatorPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call/Text (702) 500-1942
+                Call/Text (702) 222-1964
               </a>
               <Link
                 href="/contact"

@@ -4,11 +4,12 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Shield, Star, Mountain, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices The Ridges | Las Vegas Luxury Real Estate",
   description:
-    "Find luxury homes in The Ridges with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Summerlin's most exclusive guard-gated community. Median price $2.5M. Call (702) 500-1942.",
+    "Find luxury homes in The Ridges with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Summerlin's most exclusive guard-gated community. Median price $2.5M. Call (702) 222-1964.",
   keywords: [
     "Berkshire Hathaway HomeServices The Ridges",
     "The Ridges homes for sale",
@@ -65,7 +66,7 @@ export default function TheRidgesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -86,6 +87,8 @@ export default function TheRidgesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Berkshire Hathaway HomeServices The Ridges
             </h1>
+            <SectionVisual heading="Berkshire Hathaway HomeServices The Ridges" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               Las Vegas's most prestigious address. Experience The Ridges luxury with{" "}
               <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
@@ -123,6 +126,7 @@ export default function TheRidgesPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Ridges: Las Vegas's Ultimate Address for Discerning Buyers
               </h2>
+              <SectionVisual heading="The Ridges: Las Vegas's Ultimate Address for Discerning Buyers" className="max-w-4xl my-6" />
               <p>
                 <strong>The Ridges</strong> represents the pinnacle of Las Vegas luxury living. Nestled
                 within Summerlin along the foothills of Red Rock Canyon, this ultra-exclusive guard-gated
@@ -256,8 +260,7 @@ export default function TheRidgesPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Schools Serving The Ridges</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  The Ridges is served by top-rated public schools in the Palo Verde cluster, plus Las Vegas's
-                  finest private school options:
+                  The Ridges is served by public campuses in the Palo Verde cluster, plus named private options:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -374,11 +377,11 @@ export default function TheRidgesPage() {
               in Las Vegas's most prestigious community.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17022221964"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 222-1964
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

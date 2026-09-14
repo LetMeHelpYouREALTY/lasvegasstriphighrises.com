@@ -19,11 +19,13 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 
 export const metadata: Metadata = {
   title: "Home Buying Guide Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Looking to buy a home in Las Vegas? Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties guides you through every step. Free buyer consultation. Call (702) 500-1942.",
+    "Looking to buy a home in Las Vegas? Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties guides you through every step. Free buyer consultation. Call (702) 222-1964.",
   keywords: [
     "buy home Las Vegas",
     "Las Vegas home buyer",
@@ -42,7 +44,7 @@ const buyerSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17022221964",
   },
   areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
   serviceType: "Buyer Representation",
@@ -83,7 +85,7 @@ const buyingSteps = [
 
 const neighborhoods = [
   { name: "Summerlin", price: "$625K", description: "Master-planned community with Red Rock views" },
-  { name: "Henderson", price: "$485K", description: "Family-friendly with low crime rates" },
+  { name: "Henderson", price: "$485K", description: "Lake Las Vegas, Green Valley, and master-planned streets" },
   { name: "Green Valley", price: "$520K", description: "Established with mature landscaping" },
   { name: "The Ridges", price: "$2.5M", description: "Ultra-luxury guard-gated estates" },
   { name: "North Las Vegas", price: "$385K", description: "Affordable new construction" },
@@ -98,7 +100,7 @@ export default function BuyersPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buyerSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -108,6 +110,8 @@ export default function BuyersPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Buy Your Las Vegas Home with Confidence
             </h1>
+            <SectionVisual heading="Buy Your Las Vegas Home with Confidence" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600 mb-8">
               When you work with a <strong>Berkshire Hathaway HomeServices</strong> buyer's agent,
               you're backed by the most trusted name in real estate—and it costs you nothing.
@@ -207,23 +211,27 @@ export default function BuyersPage() {
               Las Vegas Neighborhoods for Home Buyers
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
-              or affordable new construction, Dr. Jan helps you find the perfect neighborhood. Here's 
-              a quick guide to median prices and what each area offers.
+              Las Vegas offers diverse neighborhoods for every budget and commute. Whether you're 
+              seeking guard-gated estates, golf-course lots, or new construction, Dr. Jan helps you find 
+              square footage and amenities that match. Here's 
+              a quick guide to recent median asking ranges and what each area offers.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {neighborhoods.map((neighborhood) => (
-                <div
+                <Link
                   key={neighborhood.name}
-                  className="bg-white rounded-lg p-4 border border-slate-200"
+                  href={`/neighborhoods/${neighborhood.name.toLowerCase().replace(/ /g, "-")}`}
+                  className="group bg-white rounded-lg overflow-hidden border border-slate-200"
                 >
+                  <CardVisual heading={`${neighborhood.name} Homes`} />
+                  <div className="p-4">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-bold text-slate-900">{neighborhood.name}</h3>
                     <span className="text-blue-600 font-semibold">{neighborhood.price}</span>
                   </div>
                   <p className="text-slate-600 text-sm">{neighborhood.description}</p>
-                </div>
+                  </div>
+                </Link>
               ))}
             </div>
             <div className="text-center mt-6">
@@ -258,7 +266,7 @@ export default function BuyersPage() {
                 </h3>
                 <p className="text-slate-600 text-sm mb-3">
                   0% state income tax, 40-60% lower home prices. See what your CA equity buys in 
-                  Las Vegas. Dr. Jan specializes in helping California families transition to Nevada.
+                  Las Vegas. Dr. Jan specializes in helping California buyers transition to Nevada.
                 </p>
                 <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
               </Link>
@@ -396,7 +404,7 @@ export default function BuyersPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Get answers to the most common questions from Las Vegas home buyers. If you don't 
-              see your question here, call Dr. Jan Duffy at (702) 500-1942 for a free consultation.
+              see your question here, call Dr. Jan Duffy at (702) 222-1964 for a free consultation.
             </p>
             <div className="space-y-4">
               {[
@@ -421,8 +429,8 @@ export default function BuyersPage() {
                   a: "The Las Vegas market is moderately competitive with 2.1 months of inventory—a slight seller's market. Well-priced homes in desirable areas like Summerlin and Henderson often receive multiple offers within the first week. Having a pre-approval and experienced agent gives you a significant advantage.",
                 },
                 {
-                  q: "What are the best neighborhoods for families in Las Vegas?",
-                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering excellent schools, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which Las Vegas neighborhoods have parks, trails, and named schools nearby?",
+                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills have extensive parks and trail miles. Dr. Jan can match you to a street using commute times, square footage, and named-school boundaries—not marketing labels.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -443,11 +451,11 @@ export default function BuyersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

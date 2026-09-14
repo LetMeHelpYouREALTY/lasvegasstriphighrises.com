@@ -14,11 +14,12 @@ import {
   TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Sun City Aliante Homes for Sale | Most Affordable Sun City | Dr. Jan Duffy",
   description:
-    "Sun City Aliante - the most affordable Sun City in Las Vegas. Homes from $280K-$550K with full amenities. 18-hole golf course, pools, fitness center. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
+    "Sun City Aliante - the most affordable Sun City in Las Vegas. Homes from $280K-$550K with full amenities. 18-hole golf course, pools, fitness center. Dr. Jan Duffy, BHHS. Call (702) 222-1964.",
   keywords: [
     "Sun City Aliante homes for sale",
     "Sun City Aliante Las Vegas",
@@ -62,7 +63,7 @@ export default function SunCityAliantePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -88,6 +89,8 @@ export default function SunCityAliantePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Sun City Aliante
             </h1>
+            <SectionVisual heading="Sun City Aliante" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               Full Sun City amenities at the best value. Golf, pools, fitness, and
               100+ clubs—from $280K.
@@ -129,6 +132,7 @@ export default function SunCityAliantePage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Sun City Aliante
               </h2>
+              <SectionVisual heading="About Sun City Aliante" className="max-w-4xl my-6" />
               <p>
                 <strong>Sun City Aliante</strong> proves you don't have to
                 sacrifice quality for value. Built by Del Webb from 2003-2010,
@@ -410,11 +414,11 @@ export default function SunCityAliantePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-green-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-green-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

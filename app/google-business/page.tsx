@@ -18,6 +18,11 @@ import {
   Heart,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
+import GbpActions from "@/components/gbp/GbpActions";
+import { nap } from "@/lib/nap";
 import {
   businessInfo,
   gbpDescription,
@@ -29,7 +34,7 @@ import {
 export const metadata: Metadata = {
   title: "Dr. Jan Duffy, REALTOR® Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 500-1942.",
+    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 222-1964.",
   keywords: [
     "Dr. Jan Duffy realtor",
     "Las Vegas real estate agent",
@@ -62,7 +67,7 @@ export default function GoogleBusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero - NAP Prominent */}
           <section className="max-w-5xl mx-auto mb-16">
@@ -76,6 +81,8 @@ export default function GoogleBusinessPage() {
                   <h1 className="text-4xl md:text-5xl font-bold mb-4">
                     Dr. Jan Duffy
                   </h1>
+            <SectionVisual heading="Dr. Jan Duffy" className="max-w-4xl mx-auto my-6" />
+
                   <p className="text-xl text-blue-200 mb-2">REALTOR® | License {businessInfo.license}</p>
                   <p className="text-slate-300 mb-6">Nevada Properties</p>
                   
@@ -118,7 +125,7 @@ export default function GoogleBusinessPage() {
                   >
                     Call Now: {businessInfo.phone.display}
                   </a>
-                  <p className="text-sm text-blue-300 mt-3">Free Consultation</p>
+                  <GbpActions className="justify-center mt-6" />
                 </div>
               </div>
             </div>
@@ -146,6 +153,7 @@ export default function GoogleBusinessPage() {
           {/* About - 750 Word Description Structure */}
           <section className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">About Dr. Jan Duffy</h2>
+            <SectionVisual heading="About Dr. Jan Duffy" className="max-w-3xl mx-auto" />
             
             {/* Section 1: Who We Are */}
             <div className="mb-8">
@@ -178,15 +186,19 @@ export default function GoogleBusinessPage() {
           {/* Services - Each creates searchable GBP field */}
           <section className="max-w-5xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Real Estate Services</h2>
+            <SectionVisual heading="Real Estate Services" className="max-w-3xl mx-auto" />
             <div className="grid md:grid-cols-3 gap-4">
               {businessInfo.services.map((service) => (
-                <div key={service.name} className="bg-white border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <div key={service.name} className="group bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                  <CardVisual heading={service.name} />
+                  <div className="p-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-slate-900">{service.name}</h3>
                       <p className="text-sm text-slate-600">{service.description}</p>
                     </div>
+                  </div>
                   </div>
                 </div>
               ))}
@@ -196,6 +208,7 @@ export default function GoogleBusinessPage() {
           {/* Service Areas - Distance factor */}
           <section className="max-w-5xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Service Areas</h2>
+            <SectionVisual heading="Las Vegas service areas" className="max-w-3xl mx-auto" />
             <div className="bg-blue-50 rounded-xl p-8">
               <div className="grid md:grid-cols-3 gap-8">
                 <div>
@@ -269,7 +282,7 @@ export default function GoogleBusinessPage() {
                 Mention your neighborhood, type of transaction, and what made the experience valuable.
               </p>
               <a
-                href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+                href={nap.googleReviews}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
@@ -278,6 +291,8 @@ export default function GoogleBusinessPage() {
               </a>
             </div>
           </section>
+
+          <VisitOffice heading="Visit the Lake Mead Boulevard office" />
 
           {/* Contact CTA */}
           <section className="max-w-4xl mx-auto">

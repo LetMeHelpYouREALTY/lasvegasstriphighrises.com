@@ -4,11 +4,12 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Mountain, TreePine, DollarSign, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Mountains Edge | Southwest Las Vegas",
   description:
-    "Find Mountains Edge homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this southwest Las Vegas community. Median price $475K. Call (702) 500-1942.",
+    "Find Mountains Edge homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this southwest Las Vegas community. Median price $475K. Call (702) 222-1964.",
   keywords: [
     "Berkshire Hathaway HomeServices Mountains Edge",
     "Mountains Edge homes for sale",
@@ -65,7 +66,7 @@ export default function MountainsEdgePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -86,6 +87,8 @@ export default function MountainsEdgePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Berkshire Hathaway HomeServices Mountains Edge
             </h1>
+            <SectionVisual heading="Berkshire Hathaway HomeServices Mountains Edge" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               Affordable luxury in southwest Las Vegas. Find your Mountains Edge home with{" "}
               <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
@@ -123,6 +126,7 @@ export default function MountainsEdgePage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Mountains Edge: Southwest Las Vegas's Best Value for Master-Planned Living
               </h2>
+              <SectionVisual heading="Mountains Edge: Southwest Las Vegas's Best Value for Master-Planned Living" className="max-w-4xl my-6" />
               <p>
                 <strong>Mountains Edge</strong> delivers what many Las Vegas buyers are seeking:
                 master-planned community amenities at prices significantly below Summerlin or
@@ -375,11 +379,11 @@ export default function MountainsEdgePage() {
               for expert guidance in finding exceptional value in southwest Las Vegas.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17022221964"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 222-1964
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

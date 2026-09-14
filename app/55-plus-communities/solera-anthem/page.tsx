@@ -15,11 +15,12 @@ import {
   DollarSign,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Solera at Anthem Homes for Sale | Intimate Guard-Gated 55+ Henderson | Dr. Jan Duffy",
   description:
-    "Solera at Anthem - intimate guard-gated 55+ community in Henderson. Homes from $380K-$650K. Lower HOA fees, close-knit atmosphere. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
+    "Solera at Anthem - intimate guard-gated 55+ community in Henderson. Homes from $380K-$650K. Lower HOA fees, close-knit atmosphere. Dr. Jan Duffy, BHHS. Call (702) 222-1964.",
   keywords: [
     "Solera at Anthem homes for sale",
     "Solera Anthem Henderson",
@@ -63,7 +64,7 @@ export default function SoleraAnthemPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -89,9 +90,11 @@ export default function SoleraAnthemPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Solera at Anthem
             </h1>
+            <SectionVisual heading="Solera at Anthem" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
-              The close-knit alternative to mega-communities. Guard-gated security
-              in Henderson's safest neighborhood.
+              The close-knit alternative to mega-communities. Guard-gated entries
+              in Henderson's Anthem corridor.
             </p>
           </div>
 
@@ -132,6 +135,7 @@ export default function SoleraAnthemPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Solera at Anthem
               </h2>
+              <SectionVisual heading="About Solera at Anthem" className="max-w-4xl my-6" />
               <p>
                 <strong>Solera at Anthem</strong> offers something increasingly
                 rare in Las Vegas 55+ living—a genuinely intimate community where
@@ -250,7 +254,7 @@ export default function SoleraAnthemPage() {
           {/* Henderson Location */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Henderson: America's Safest Large City
+              Why Buyers Look at Henderson
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 border border-slate-200">
@@ -258,12 +262,11 @@ export default function SoleraAnthemPage() {
                   <Shield className="h-6 w-6 text-teal-600 mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">
-                      Top Safety Rankings
+                      Guard-gated Anthem corridor
                     </h3>
                     <p className="text-slate-600 text-sm">
-                      Henderson consistently ranks as one of the safest large
-                      cities in America. Double security: Henderson's safety plus
-                      Solera's guard gate.
+                      Solera sits in Henderson's Anthem area with a staffed gate, clubhouse, and
+                      trail access. Compare HOA rules and commute times with Dr. Jan.
                     </p>
                   </div>
                 </div>
@@ -345,11 +348,10 @@ export default function SoleraAnthemPage() {
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
                   <strong className="text-slate-900">
-                    Guard-gated in America's safest city
+                    Guard-gated in Henderson's Anthem corridor
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Double layer of security: Henderson's safety record plus 24/7
-                    guard gate
+                    Double layer of access control: staffed gate plus HOA rules. Compare commute times with Dr. Jan.
                   </p>
                 </div>
               </div>
@@ -397,11 +399,11 @@ export default function SoleraAnthemPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-teal-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-teal-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

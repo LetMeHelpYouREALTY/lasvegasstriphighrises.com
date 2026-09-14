@@ -19,11 +19,12 @@ import {
   Globe,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Relocating to Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Moving to Las Vegas? Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties provides comprehensive relocation services. Schools, neighborhoods, cost of living. Call (702) 500-1942.",
+    "Moving to Las Vegas? Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties provides comprehensive relocation services. Schools, neighborhoods, cost of living. Call (702) 222-1964.",
   keywords: [
     "relocating to Las Vegas",
     "moving to Las Vegas",
@@ -43,7 +44,7 @@ const relocationSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17022221964",
   },
   areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
   serviceType: "Relocation Services",
@@ -52,25 +53,25 @@ const relocationSchema = {
 const popularRelocationAreas = [
   {
     name: "Summerlin",
-    best: "Families, professionals",
-    highlights: "Top-rated schools, 150+ parks, Red Rock Canyon proximity, master-planned living",
+    best: "Professionals, parks and trails",
+    highlights: "150+ parks, Red Rock Canyon proximity, master-planned living, named CCSD campuses",
     from: "$500K",
   },
   {
     name: "Henderson",
-    best: "Families, retirees",
-    highlights: "Lowest crime rates, excellent schools, community feel, diverse neighborhoods",
+    best: "Retirees, Lake Las Vegas, Green Valley",
+    highlights: "60+ parks, Lake Las Vegas, Green Valley, Inspirada, no state income tax",
     from: "$450K",
   },
   {
     name: "Green Valley",
-    best: "Established families",
+    best: "Established owners",
     highlights: "Mature landscaping, championship golf, shopping and dining, Henderson location",
     from: "$480K",
   },
   {
     name: "Skye Canyon",
-    best: "Young families",
+    best: "First-time buyers",
     highlights: "Newest construction, mountain trail access, modern amenities, growing area",
     from: "$500K",
   },
@@ -111,7 +112,7 @@ export default function RelocationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(relocationSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -121,6 +122,8 @@ export default function RelocationPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Relocating to Las Vegas?
             </h1>
+            <SectionVisual heading="Relocating to Las Vegas?" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600 mb-8">
               <strong>Berkshire Hathaway HomeServices</strong> makes your move seamless. With
               50,000+ agents nationwide, we coordinate your relocation from anywhere in the country.
@@ -246,15 +249,14 @@ export default function RelocationPage() {
               Las Vegas Schools & Education
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              For families with children, school quality is often the top priority when 
-              relocating. Las Vegas offers a range of public, charter, and private school 
-              options. Dr. Jan provides detailed school research to help you make informed decisions.
+              For buyers who want named-school boundaries, Las Vegas offers public, charter, and private
+              campuses. Dr. Jan maps the school that serves a specific address—no marketing labels.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <School className="h-5 w-5 text-blue-600 mr-2" />
-                  Top-Rated School Areas
+                  Named School Areas
                 </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
@@ -303,7 +305,7 @@ export default function RelocationPage() {
             <h2 className="text-2xl font-bold mb-4 text-center">Moving from California?</h2>
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
               California to Nevada is one of the most popular relocation routes in the country. 
-              Thousands of California families move to Las Vegas each year seeking lower costs, 
+              Thousands of California buyers move to Las Vegas each year seeking lower costs, 
               no state income tax, and a better quality of life. Here's what the numbers look like.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
@@ -389,8 +391,8 @@ export default function RelocationPage() {
                   a: "Absolutely. Dr. Jan provides virtual tours, video walkthroughs, and detailed neighborhood analysis so you can purchase confidently before relocating. Many clients buy their Las Vegas home without ever visiting in person until closing day.",
                 },
                 {
-                  q: "What are the best areas for families relocating to Las Vegas?",
-                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently rank highest for families due to excellent schools, low crime, and family-friendly amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which areas have parks, trails, and named schools for relocators?",
+                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon have extensive parks and trail miles. Dr. Jan matches streets using commute times, square footage, and named-school boundaries.",
                 },
                 {
                   q: "How does the cost of living compare to California?",
@@ -405,8 +407,8 @@ export default function RelocationPage() {
                   a: "Las Vegas has diversified beyond gaming and hospitality. Major growth sectors include healthcare (Intermountain Health, UMC), technology (Switch, various startups), sports (Raiders, Golden Knights, Aces), logistics (Amazon), and professional services. The economy is growing faster than the national average.",
                 },
                 {
-                  q: "Is Las Vegas safe for families?",
-                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very low crime rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
+                  q: "How do I compare neighborhoods beyond marketing claims?",
+                  a: "Tour streets at the hours you would actually live there. Dr. Jan shares commute times, HOA rules, and named-school boundaries. We do not use crime slogans or 'safe neighborhood' language on this site.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -427,11 +429,11 @@ export default function RelocationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"
