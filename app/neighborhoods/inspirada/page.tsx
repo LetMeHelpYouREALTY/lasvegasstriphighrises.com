@@ -126,6 +126,7 @@ export default function InspiradaPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Inspirada: Henderson's Award-Winning Resort-Style Community
               </h2>
+              <SectionVisual heading="Inspirada: Henderson's Award-Winning Resort-Style Community" className="max-w-4xl my-6" />
               <p>
                 <strong>Inspirada</strong> redefines what a master-planned community can be. This
                 2,000-acre development in Henderson consistently ranks among the nation's top-selling
@@ -295,7 +296,7 @@ export default function InspiradaPage() {
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Inspirada purchase
                 means working with agents who understand the community's various neighborhoods, which
                 builders offer the best quality, and which lots provide the best value. Dr. Jan Duffy
-                has helped dozens of families find their Inspirada homes, and that experience
+                has helped dozens of clients find their Inspirada homes, and that experience
                 translates into better outcomes for buyers navigating this popular community.
               </p>
             </div>

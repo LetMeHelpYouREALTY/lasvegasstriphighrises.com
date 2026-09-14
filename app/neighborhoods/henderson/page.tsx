@@ -142,6 +142,7 @@ export default function HendersonPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Buyers Choose Henderson
               </h2>
+              <SectionVisual heading="Why Buyers Choose Henderson" className="max-w-4xl my-6" />
               <p>
                 <strong>Henderson</strong> is Nevada's second-largest city with over 320,000 residents.
                 It sits southeast of the Strip with Green Valley, Inspirada, MacDonald Highlands, and
@@ -321,7 +322,7 @@ export default function HendersonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Henderson offers something for everyone—young professionals, growing families, active retirees.
+                "Henderson offers something for everyone—young professionals, move-up buyers, active retirees.
                 As a Berkshire Hathaway HomeServices agent, I help clients cut through the options and find
                 the community that fits their lifestyle. There's a reason Henderson keeps winning 'Best Places
                 to Live' awards."

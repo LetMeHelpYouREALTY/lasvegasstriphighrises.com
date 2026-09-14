@@ -116,6 +116,7 @@ export default function SunCitySummerlinPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Sun City Summerlin
               </h2>
+              <SectionVisual heading="About Sun City Summerlin" className="max-w-4xl my-6" />
               <p>
                 <strong>Sun City Summerlin</strong> isn't just Nevada's largest 55+ community—it's
                 the model by which all others are measured. Established by Del Webb in 1989, this

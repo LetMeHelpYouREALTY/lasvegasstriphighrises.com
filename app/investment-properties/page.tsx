@@ -309,7 +309,7 @@ export default function InvestmentPropertiesPage() {
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   <div><span className="font-medium">Entry:</span> $350K-$450K</div>
                   <div><span className="font-medium">Rent:</span> $1,800-$2,200</div>
-                  <div><span className="font-medium">Tenant Pool:</span> Working families, warehouse workers</div>
+                  <div><span className="font-medium">Tenant Pool:</span> workforce renters, warehouse workers</div>
                 </div>
               </div>
               <div className="bg-white rounded-xl p-6">

@@ -126,12 +126,13 @@ export default function CentennialHillsPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Centennial Hills: Northwest Las Vegas's Established Family Community
               </h2>
+              <SectionVisual heading="Centennial Hills: Northwest Las Vegas's Established Family Community" className="max-w-4xl my-6" />
               <p>
                 <strong>Centennial Hills</strong> represents the best of established northwest Las Vegas
                 living. While newer communities like Skye Canyon attract attention, Centennial Hills
                 offers something they can't: mature neighborhoods with proven schools, established
                 landscaping, and a genuine sense of community built over nearly two decades.
-                <strong> Berkshire Hathaway HomeServices</strong> helps families discover why
+                <strong> Berkshire Hathaway HomeServices</strong> helps buyers discover why
                 Centennial Hills remains one of the valley's most desirable addresses.
               </p>
               <p>
@@ -143,8 +144,8 @@ export default function CentennialHillsPage() {
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has represented
-                Centennial Hills families since the community's earliest phases. Dr. Jan Duffy knows
-                which streets offer the best mountain views, which school zones are most sought-after,
+                Centennial Hills buyers since the community's earliest phases. Dr. Jan Duffy knows
+                which streets offer the best mountain views, which named-school boundaries apply,
                 and which HOAs maintain their communities to the highest standards. This deep local
                 knowledge, combined with the BHHS commitment to client service, ensures Centennial
                 Hills buyers and sellers receive exceptional representation.
@@ -276,7 +277,7 @@ export default function CentennialHillsPage() {
                 <div className="grid md:grid-cols-2 gap-4">
                   <ul className="text-slate-600 text-sm space-y-2">
                     <li><strong>Centennial Hills Park:</strong> 120 acres with sports fields, playground, skate park, dog park</li>
-                    <li><strong>Centennial Hills YMCA:</strong> Full fitness facility, pools, youth programs</li>
+                    <li><strong>Centennial Hills YMCA:</strong> Full fitness facility, pools, swim programs</li>
                     <li><strong>Centennial Hills Library:</strong> Modern library with programs and events</li>
                   </ul>
                   <ul className="text-slate-600 text-sm space-y-2">
@@ -311,7 +312,7 @@ export default function CentennialHillsPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Centennial Hills offers something newer communities are still building: a genuine
                 sense of community. The schools have track records, the neighbors have history, and
-                the landscaping is mature. As a Berkshire Hathaway HomeServices agent, I help families
+                the landscaping is mature. As a Berkshire Hathaway HomeServices agent, I help buyers
                 see beyond the shiny new construction to communities that have proven their value
                 over time."
               </blockquote>

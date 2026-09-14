@@ -126,6 +126,7 @@ export default function MountainsEdgePage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Mountains Edge: Southwest Las Vegas's Best Value for Master-Planned Living
               </h2>
+              <SectionVisual heading="Mountains Edge: Southwest Las Vegas's Best Value for Master-Planned Living" className="max-w-4xl my-6" />
               <p>
                 <strong>Mountains Edge</strong> delivers what many Las Vegas buyers are seeking:
                 master-planned community amenities at prices significantly below Summerlin or

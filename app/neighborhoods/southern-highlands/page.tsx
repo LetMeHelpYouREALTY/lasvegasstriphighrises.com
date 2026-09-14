@@ -126,6 +126,7 @@ export default function SouthernHighlandsPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Southern Highlands: Southwest Las Vegas's Premier Master-Planned Community
               </h2>
+              <SectionVisual heading="Southern Highlands: Southwest Las Vegas's Premier Master-Planned Community" className="max-w-4xl my-6" />
               <p>
                 <strong>Southern Highlands</strong> stands as southwest Las Vegas's answer to Summerlin—a
                 meticulously planned 2,200-acre community centered around an award-winning championship

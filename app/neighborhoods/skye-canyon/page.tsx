@@ -126,6 +126,7 @@ export default function SkyeCanyonPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Skye Canyon: Northwest Las Vegas's Most Exciting New Community
               </h2>
+              <SectionVisual heading="Skye Canyon: Northwest Las Vegas's Most Exciting New Community" className="max-w-4xl my-6" />
               <p>
                 <strong>Skye Canyon</strong> represents the future of Las Vegas master-planned living.
                 This 1,700-acre community in northwest Las Vegas has quickly become one of the valley's
@@ -299,7 +300,7 @@ export default function SkyeCanyonPage() {
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Skye Canyon purchase
                 means working with agents who know which builders offer the best quality, which lots
                 have the best views, and which upgrades deliver the best value. Dr. Jan Duffy has
-                helped dozens of families find their Skye Canyon homes, and that experience translates
+                helped dozens of clients find their Skye Canyon homes, and that experience translates
                 into better outcomes for buyers navigating this competitive market.
               </p>
             </div>
@@ -309,7 +310,7 @@ export default function SkyeCanyonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Skye Canyon is where young families want to be right now. The amenities are incredible,
+                "Skye Canyon is where first-time buyers want to be right now. The amenities are incredible,
                 the homes are modern and energy-efficient, and the community vibe is exactly what people
                 are looking for. As a Berkshire Hathaway HomeServices agent, I make sure my clients get
                 the best value—whether that's negotiating builder upgrades or finding a resale with

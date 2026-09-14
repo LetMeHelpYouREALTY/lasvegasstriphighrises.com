@@ -52,7 +52,7 @@ const faqSchema = {
       name: "Is Green Valley a good investment?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Green Valley has shown consistent appreciation due to its prime Henderson location, established infrastructure, and ongoing demand from families seeking top schools and safety. BHHS agents can provide detailed market analysis.",
+        text: "Green Valley has shown consistent appreciation due to its prime Henderson location, established infrastructure, golf, parks, and The District. BHHS agents can provide detailed market analysis.",
       },
     },
   ],
@@ -124,28 +124,29 @@ export default function GreenValleyPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Green Valley: Where Henderson Families Have Thrived for 35+ Years
+                Green Valley: Henderson's Original Master-Planned Community
               </h2>
+              <SectionVisual heading="Green Valley Henderson Homes" className="max-w-4xl my-6" />
               <p>
                 <strong>Green Valley</strong> holds a special place in Henderson's history as the city's
                 original master-planned community. Established in 1988, Green Valley pioneered the concept
                 of thoughtfully designed neighborhoods in Southern Nevada—long before master-planned
                 communities became the norm. Today, <strong>Berkshire Hathaway HomeServices</strong>
-                continues to serve Green Valley families, helping new generations discover what long-time
-                residents already know: this is one of the best places to live in Nevada.
+                continues to serve Green Valley buyers, helping new generations discover what long-time
+                residents already know: parks, golf, mature trees, and The District are the draw.
               </p>
               <p>
                 What makes Green Valley unique is something that can't be replicated: time. Over three
                 decades, the community has matured into a verdant oasis with towering trees, established
                 landscaping, and a genuine neighborhood feel. While newer communities offer shiny amenities,
-                Green Valley offers something more valuable—proven schools with track records of excellence,
+                Green Valley offers something more valuable—named campuses you can map by address,
                 neighbors who've built lifelong friendships, and the kind of community cohesion that only
                 develops over generations.
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> agents have been selling
                 homes in Green Valley since the beginning. Dr. Jan Duffy knows which streets offer the best
-                mountain views, which school zones are most sought-after, and which HOAs maintain their
+                mountain views, which named-school boundaries apply, and which HOAs maintain their
                 communities to the highest standards. This institutional knowledge, combined with the
                 resources and reputation of BHHS, gives Green Valley buyers and sellers a distinct advantage.
               </p>
@@ -183,8 +184,7 @@ export default function GreenValleyPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Green Valley School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Green Valley is home to some of Henderson's most sought-after schools with 35+ years
-                  of proven excellence:
+                  Green Valley is served by named Henderson campuses with 35+ years of enrollment history:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
@@ -338,7 +338,7 @@ export default function GreenValleyPage() {
                 </h3>
                 <p className="text-slate-600">
                   Green Valley has shown consistent appreciation due to its prime Henderson location,
-                  established infrastructure, and ongoing demand from families seeking top schools and
+                  established infrastructure, and ongoing demand from buyers seeking golf, parks, and
                   safety. BHHS agents can provide detailed market analysis.
                 </p>
               </div>

@@ -362,7 +362,7 @@ export default function MoveUpSellerPage() {
                 },
                 {
                   q: "How do schools factor into a move-up decision?",
-                  a: "Schools significantly impact both your quality of life and resale value. Moving to better school zones (like Summerlin's Palo Verde High School district or Henderson's Coronado) often justifies higher prices through appreciation and demand.",
+                  a: "Named-school boundaries can affect resale demand. Moving toward Summerlin's Palo Verde High School attendance area or Henderson's Coronado campus often changes the buyer pool. Confirm the campus that serves a specific address with Dr. Jan.",
                 },
                 {
                   q: "What are the tax implications of selling and buying?",

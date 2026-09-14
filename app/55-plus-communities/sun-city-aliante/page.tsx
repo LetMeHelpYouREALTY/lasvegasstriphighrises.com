@@ -132,6 +132,7 @@ export default function SunCityAliantePage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Sun City Aliante
               </h2>
+              <SectionVisual heading="About Sun City Aliante" className="max-w-4xl my-6" />
               <p>
                 <strong>Sun City Aliante</strong> proves you don't have to
                 sacrifice quality for value. Built by Del Webb from 2003-2010,

@@ -157,7 +157,7 @@ export default function WhyBerkshireHathawayPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Proven Results</h3>
                 <p className="text-slate-600">
-                  BHHS Nevada Properties has helped thousands of families achieve their real estate
+                  BHHS Nevada Properties has helped thousands of clients achieve their real estate
                   goals in Southern Nevada.
                 </p>
               </div>

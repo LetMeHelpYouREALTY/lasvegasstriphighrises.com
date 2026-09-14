@@ -65,13 +65,13 @@ const popularRelocationAreas = [
   },
   {
     name: "Green Valley",
-    best: "Established families",
+    best: "Established owners",
     highlights: "Mature landscaping, championship golf, shopping and dining, Henderson location",
     from: "$480K",
   },
   {
     name: "Skye Canyon",
-    best: "Young families",
+    best: "First-time buyers",
     highlights: "Newest construction, mountain trail access, modern amenities, growing area",
     from: "$500K",
   },
@@ -305,7 +305,7 @@ export default function RelocationPage() {
             <h2 className="text-2xl font-bold mb-4 text-center">Moving from California?</h2>
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
               California to Nevada is one of the most popular relocation routes in the country. 
-              Thousands of California families move to Las Vegas each year seeking lower costs, 
+              Thousands of California buyers move to Las Vegas each year seeking lower costs, 
               no state income tax, and a better quality of life. Here's what the numbers look like.
             </p>
             <div className="grid md:grid-cols-2 gap-8">

@@ -165,6 +165,7 @@ export default function SunCityAnthemPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Sun City Anthem
               </h2>
+              <SectionVisual heading="About Sun City Anthem" className="max-w-4xl my-6" />
               <p>
                 <strong>Sun City Anthem</strong> brings the legendary Sun City lifestyle to Henderson,
                 Nevada's second-largest city. Built by Del Webb from 1998-2008, this

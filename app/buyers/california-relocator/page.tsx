@@ -238,7 +238,7 @@ export default function CaliforniaRelocatorPage() {
                 </div>
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
-                    "The Irvine of Las Vegas" - Master-planned perfection with top schools,
+                    "The Irvine of Las Vegas" - Master-planned streets with parks,
                     Downtown Summerlin shopping, and Red Rock Canyon views.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
@@ -448,7 +448,7 @@ export default function CaliforniaRelocatorPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "I've helped hundreds of California families make the move to Las Vegas. The most
+                "I've helped hundreds of California buyers make the move to Las Vegas. The most
                 common reaction? 'Why didn't we do this sooner?' Between the tax savings, the space,
                 and the lifestyle, most clients can't believe what their California equity buys here.
                 As a <strong>Berkshire Hathaway HomeServices</strong> agent, I coordinate with our

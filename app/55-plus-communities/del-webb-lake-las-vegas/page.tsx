@@ -91,6 +91,7 @@ export default function DelWebbLakeLasVegasPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Del Webb at Lake Las Vegas
               </h2>
+              <SectionVisual heading="About Del Webb at Lake Las Vegas" className="max-w-4xl my-6" />
               <p>
                 <strong>Del Webb at Lake Las Vegas</strong> represents the newest generation of
                 Del Webb communities—modern construction, contemporary floor plans, and a stunning

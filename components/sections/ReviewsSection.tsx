@@ -2,6 +2,8 @@
 
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
+import { nap } from "@/lib/nap";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export interface Review {
   id: number;
@@ -69,7 +71,7 @@ export default function ReviewsSection({
   reviews = defaultReviews,
   title = "What Our Clients Say",
   subtitle = "Real testimonials from satisfied clients across Las Vegas and Henderson",
-  googleReviewsUrl = "https://www.google.com/maps/search/?api=1&query=Dr+Jan+Duffy+Berkshire+Hathaway+HomeServices+Nevada+Properties+reviews+Las+Vegas",
+  googleReviewsUrl = nap.googleReviews,
   className = "",
 }: ReviewsSectionProps) {
   return (
@@ -79,6 +81,7 @@ export default function ReviewsSection({
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             {title}
           </h2>
+          <SectionVisual heading={title} className="max-w-3xl mx-auto" />
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
           {/* Aggregate Rating Display */}
           <div className="flex items-center justify-center gap-2 mt-4">

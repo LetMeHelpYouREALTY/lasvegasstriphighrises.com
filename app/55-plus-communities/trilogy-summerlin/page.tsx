@@ -135,6 +135,7 @@ export default function TrilogySummerlinPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Trilogy at Summerlin
               </h2>
+              <SectionVisual heading="About Trilogy at Summerlin" className="max-w-4xl my-6" />
               <p>
                 <strong>Trilogy at Summerlin</strong> redefines what a 55+
                 community can be. Developed by Shea Homes, Trilogy brings a

@@ -126,6 +126,7 @@ export default function TheRidgesPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Ridges: Las Vegas's Ultimate Address for Discerning Buyers
               </h2>
+              <SectionVisual heading="The Ridges: Las Vegas's Ultimate Address for Discerning Buyers" className="max-w-4xl my-6" />
               <p>
                 <strong>The Ridges</strong> represents the pinnacle of Las Vegas luxury living. Nestled
                 within Summerlin along the foothills of Red Rock Canyon, this ultra-exclusive guard-gated

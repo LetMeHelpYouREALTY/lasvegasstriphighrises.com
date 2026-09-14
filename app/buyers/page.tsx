@@ -266,7 +266,7 @@ export default function BuyersPage() {
                 </h3>
                 <p className="text-slate-600 text-sm mb-3">
                   0% state income tax, 40-60% lower home prices. See what your CA equity buys in 
-                  Las Vegas. Dr. Jan specializes in helping California families transition to Nevada.
+                  Las Vegas. Dr. Jan specializes in helping California buyers transition to Nevada.
                 </p>
                 <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
               </Link>
