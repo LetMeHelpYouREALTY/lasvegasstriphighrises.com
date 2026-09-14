@@ -9,9 +9,9 @@ export default function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
   
   const images = [
-    "/Image/hero_bg_1.jpg",
-    "/Image/hero_bg_2.jpg",
-    "/Image/hero_bg_3.jpg",
+    "/images/hero/las-vegas-homes-hero.webp",
+    "/images/neighborhoods/summerlin.webp",
+    "/images/neighborhoods/henderson.webp",
   ];
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function HeroSection() {
           >
             <Image
               src={src}
-              alt={`Hero image ${index + 1}`}
+              alt={index === 0 ? "Las Vegas Valley homes at sunset" : index === 1 ? "Summerlin homes near Red Rock Canyon" : "Henderson Nevada residential neighborhood"}
               fill
               className="object-cover"
               priority={index === 0}

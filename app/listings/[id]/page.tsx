@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Property Details | Las Vegas & Henderson Real Estate",
@@ -18,13 +19,13 @@ async function getProperty(id: string) {
     name: "Modern Luxury Home",
     location: "Summerlin, Las Vegas, NV",
     price: "$850,000",
-    image: "/Image/hero_bg_1.jpg",
+    image: "/images/neighborhoods/summerlin.webp",
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,
     yearBuilt: 2018,
     description:
-      "Stunning modern home in desirable Summerlin community. Features open floor plan, updated kitchen, and beautiful backyard. Close to schools, shopping, and entertainment.",
+      "Stunning modern home in desirable Summerlin community. Features open floor plan, updated kitchen, and a backyard with mountain views. Minutes to Downtown Summerlin shopping and Red Rock Canyon trailheads.",
   };
 }
 
@@ -39,7 +40,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <nav className="mb-6 text-sm">
@@ -65,6 +66,8 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
               {property.name}
             </h1>
+            <SectionVisual heading="Las Vegas Real Estate" className="max-w-4xl mx-auto my-6" />
+
             <div className="flex items-center text-slate-600 mb-4">
               <MapPin className="h-5 w-5 mr-2" />
               {property.location}
@@ -136,7 +139,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                 </p>
                 <div className="space-y-3">
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
-                    <a href="tel:+17025001942">Call (702) 500-1942</a>
+                    <a href="tel:+17022221964">Call (702) 222-1964</a>
                   </Button>
                   <Button asChild variant="outline" className="w-full">
                     <a href="/contact">Send Message</a>

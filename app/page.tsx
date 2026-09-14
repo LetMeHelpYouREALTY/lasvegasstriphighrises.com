@@ -4,30 +4,47 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
+import PageHero from "@/components/images/PageHero";
+import SectionVisual from "@/components/images/SectionVisual";
+import GbpActions from "@/components/gbp/GbpActions";
 import Link from "next/link";
-import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
+import { Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
+import { nap } from "@/lib/nap";
+import { imageForHeading } from "@/lib/images";
+import { generateFAQSchema } from "@/lib/gbp-schema";
+import { gbpFAQs } from "@/lib/gbp-schema";
+import SchemaScript from "@/components/SchemaScript";
 
 export default async function Home() {
   const config = await getPageDomainConfig();
+  const heroImage = imageForHeading(config.neighborhood).key;
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
+    name: nap.businessName,
     url: `https://${config.domain !== "default" ? config.domain : "heyberkshire.com"}`,
-    telephone: "+17022221964",
+    telephone: nap.phoneTel,
+    email: nap.email,
+    image: `${nap.url}/images/hero/las-vegas-homes-hero.webp`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "9406 W Lake Mead Blvd, Suite 100",
-      addressLocality: "Las Vegas",
-      addressRegion: "NV",
-      postalCode: "89134",
+      streetAddress: nap.streetAddress,
+      addressLocality: nap.addressLocality,
+      addressRegion: nap.addressRegion,
+      postalCode: nap.postalCode,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: nap.geo.latitude,
+      longitude: nap.geo.longitude,
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
+      ratingValue: nap.rating.value,
+      reviewCount: nap.rating.count,
     },
   };
 
@@ -37,53 +54,38 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      <SchemaScript schema={generateFAQSchema(gbpFAQs)} id="home-faq" />
       <Navbar />
       <main>
-        {/* Domain-Aware Hero */}
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: "url('/Image/hero_bg_1.jpg')" }}
-          />
-          <div className="relative z-10 container mx-auto px-4 text-center">
-            {config.ctaBadge && (
-              <span className="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6">
-                {config.ctaBadge}
-              </span>
-            )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {config.heroHeadline}
-            </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
-              {config.heroSubheadline}
-            </p>
-
-            {/* RealScout Search Widget */}
-            <div className="mb-8 flex justify-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
-                }}
-              />
+        <PageHero
+          overlay
+          title={config.heroHeadline}
+          subtitle={config.heroSubheadline}
+          badge={config.ctaBadge}
+          imageKey={heroImage}
+        >
+          <div className="mb-8 flex justify-center">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
+              }}
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm mb-4">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-white">500+</span>
+              <span>Clients Helped</span>
             </div>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">500+</span>
-                <span>Families Helped</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">30+ Years</span>
-                <span>Las Vegas Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">4.9★</span>
-                <span>Client Rating</span>
-              </div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-white">Since 2008</span>
+              <span>Las Vegas Experience</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-white">4.9★</span>
+              <span>Client Rating</span>
             </div>
           </div>
-        </section>
+        </PageHero>
 
         {/* Value Proposition */}
         <section className="py-16 md:py-20 bg-white">
@@ -92,6 +94,7 @@ export default async function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Why Work With Dr. Jan Duffy?
               </h2>
+              <SectionVisual heading="Why Work With Dr. Jan Duffy?" className="max-w-3xl mx-auto" />
               <p className="text-lg text-slate-600">
                 Berkshire Hathaway HomeServices Nevada Properties — the most trusted name in Las Vegas real estate.
               </p>
@@ -122,6 +125,7 @@ export default async function Home() {
               <h2 className="text-3xl font-bold mb-3">
                 {config.neighborhood} Real Estate Market
               </h2>
+              <SectionVisual heading={`${config.neighborhood} Real Estate Market`} className="max-w-3xl mx-auto mb-6" />
               <p className="text-slate-400">Current data — updated regularly</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
@@ -161,22 +165,16 @@ export default async function Home() {
               {config.ctaSubheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+17022221964"
-                className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Call 702-222-1964
-              </a>
+              <GbpActions className="justify-center" />
               <Link
                 href="/contact"
-                className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
+                className="inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
               >
                 Send a Message
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada Properties
+              {nap.shortName} | License {nap.license} | {nap.brokerage} | {nap.addressFull}
             </p>
           </div>
         </section>

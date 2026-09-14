@@ -4,11 +4,12 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Shield, Users, GraduationCap, TreePine } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Henderson | Nevada Real Estate",
   description:
-    "Find Henderson homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's family-friendly communities. Median price $485K. Call (702) 500-1942.",
+    "Find Henderson homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's family-friendly communities. Median price $485K. Call (702) 222-1964.",
   keywords: [
     "Berkshire Hathaway HomeServices Henderson",
     "Henderson homes for sale",
@@ -81,7 +82,7 @@ export default function HendersonPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -102,6 +103,8 @@ export default function HendersonPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Berkshire Hathaway HomeServices Henderson
             </h1>
+            <SectionVisual heading="Berkshire Hathaway HomeServices Henderson" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600">
               Nevada's safest city. Find your Henderson home with Dr. Jan Duffy, your trusted{" "}
               <strong>Berkshire Hathaway HomeServices</strong> Henderson specialist.
@@ -390,11 +393,11 @@ export default function HendersonPage() {
               for personalized guidance and local market insights.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17022221964"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 222-1964
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

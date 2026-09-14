@@ -15,32 +15,34 @@ export const siteConfig = {
     "Expert real estate services in Las Vegas and Henderson, NV. Buy, sell, or invest with Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent.",
 };
 
+import { nap } from "./nap";
+
 export const agentInfo = {
-  name: "Dr. Jan Duffy",
-  title: "REALTOR®",
-  license: "S.0197614.LLC",
-  phone: "(702) 500-1942",
-  phoneFormatted: "(702) 500-1942",
-  phoneTel: "tel:+17025001942",
-  email: "homes@heyberkshire.com",
-  brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
+  name: nap.shortName,
+  title: nap.jobTitle,
+  license: nap.license,
+  phone: nap.phoneDisplay,
+  phoneFormatted: nap.phoneDisplay,
+  phoneTel: nap.phoneHref,
+  email: nap.email,
+  brokerage: nap.brokerage,
 };
 
 export const officeInfo = {
-  name: "Berkshire Hathaway HomeServices Nevada Properties",
+  name: nap.brokerage,
   address: {
-    street: "9406 W Lake Mead Blvd, Suite 100",
-    city: "Las Vegas",
-    state: "NV",
-    zip: "89134",
-    full: "9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134",
+    street: nap.streetAddress,
+    city: nap.addressLocality,
+    state: nap.addressRegion,
+    zip: nap.postalCode,
+    full: nap.addressFull,
   },
   coordinates: {
-    lat: 36.1893,
-    lng: -115.2821,
+    lat: nap.geo.latitude,
+    lng: nap.geo.longitude,
   },
-  phone: "(702) 500-1942",
-  phoneTel: "tel:+17025001942",
+  phone: nap.phoneDisplay,
+  phoneTel: nap.phoneHref,
 };
 
 // Market Statistics (Updated January 2026)
@@ -102,16 +104,16 @@ export const neighborhoods = [
   {
     name: "Summerlin",
     slug: "summerlin",
-    description: "Master-planned community with parks, trails, and top-rated schools",
+    description: "Master-planned community with parks, trails, and Red Rock Canyon access",
     medianPrice: "$625,000",
-    highlights: ["Red Rock views", "150+ parks", "Top schools", "Golf courses"],
+    highlights: ["Red Rock views", "150+ parks", "Downtown Summerlin", "Golf courses"],
   },
   {
     name: "Henderson",
     slug: "henderson",
-    description: "Nevada's second-largest city with family-friendly neighborhoods",
+    description: "Nevada's second-largest city with master-planned neighborhoods and Lake Las Vegas",
     medianPrice: "$485,000",
-    highlights: ["Low crime rate", "Excellent schools", "Lake Las Vegas", "Green Valley"],
+    highlights: ["Lake Las Vegas", "Green Valley", "Parks and trails", "Shopping districts"],
   },
   {
     name: "Green Valley",
@@ -139,28 +141,28 @@ export const neighborhoods = [
     slug: "north-las-vegas",
     description: "Rapidly growing area with affordable new construction",
     medianPrice: "$385,000",
-    highlights: ["New construction", "Affordable", "Growing area", "Family-friendly"],
+    highlights: ["New construction", "Entry-level pricing", "Growing area", "Aliante amenities"],
   },
   {
     name: "Skye Canyon",
     slug: "skye-canyon",
     description: "Newer master-planned community in northwest Las Vegas",
     medianPrice: "$550,000",
-    highlights: ["New homes", "Mountain views", "Modern amenities", "Great schools"],
+    highlights: ["New homes", "Mountain views", "Modern amenities", "Parks and trails"],
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
     description: "Northwest Las Vegas community with mountain proximity",
     medianPrice: "$495,000",
-    highlights: ["Mountain access", "Parks", "Shopping", "Family-friendly"],
+    highlights: ["Mountain access", "Parks", "Shopping", "Trail network"],
   },
   {
     name: "Inspirada",
     slug: "inspirada",
     description: "Henderson master-planned community with resort-style living",
     medianPrice: "$525,000",
-    highlights: ["Resort pools", "Walking trails", "New construction", "Great schools"],
+    highlights: ["Resort pools", "Walking trails", "New construction", "Town center"]
   },
   {
     name: "Mountains Edge",

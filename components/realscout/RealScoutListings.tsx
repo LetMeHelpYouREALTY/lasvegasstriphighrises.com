@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export default function RealScoutListings() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-          <div>
+        <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+          <div className="flex-1">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
               Featured Properties
             </h2>
@@ -20,6 +21,7 @@ export default function RealScoutListings() {
             <a href="http://drjanduffy.realscout.com/" target="_blank" rel="noopener noreferrer">View All Properties</a>
           </Button>
         </div>
+        <SectionVisual heading="Featured Properties in Las Vegas" className="mb-8" />
 
         {/* RealScout Widget - using dangerouslySetInnerHTML per rules */}
         <div

@@ -14,11 +14,12 @@ import {
   Calendar,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Relocation Home Sales Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Leaving Las Vegas for a new opportunity? Dr. Jan Duffy helps relocating homeowners sell fast and coordinates with BHHS offices nationwide. Call (702) 500-1942.",
+    "Leaving Las Vegas for a new opportunity? Dr. Jan Duffy helps relocating homeowners sell fast and coordinates with BHHS offices nationwide. Call (702) 222-1964.",
   keywords: [
     "relocation sale Las Vegas",
     "job relocation Las Vegas",
@@ -32,7 +33,7 @@ export default function RelocationPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -54,16 +55,18 @@ export default function RelocationPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               New Opportunity?<br />We Handle Your Sale.
             </h1>
+            <SectionVisual heading="New Opportunity?We Handle Your Sale." className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600 mb-8">
               Sell your Las Vegas home while you focus on your new chapter.
               We coordinate both ends of your move.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17022221964"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Start Your Relocation → (702) 500-1942
+              Start Your Relocation → (702) 222-1964
             </a>
           </div>
 
@@ -502,11 +505,11 @@ export default function RelocationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/home-valuation"

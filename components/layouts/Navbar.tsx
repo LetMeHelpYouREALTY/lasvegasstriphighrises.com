@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import NapStrip from "@/components/gbp/NapStrip";
+import { nap } from "@/lib/nap";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,11 +40,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300 ${
-        isScrolled ? "py-2" : "py-3"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md"
     >
-      <div className="container mx-auto px-4">
+      <NapStrip />
+      <div className={`container mx-auto px-4 transition-all duration-300 ${isScrolled ? "py-2" : "py-3"}`}>
         <div className="flex justify-between items-center">
           {/* Brand Logo */}
           <Link href="/" className="flex flex-col">
@@ -122,9 +123,9 @@ export default function Navbar() {
             </div>
 
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942" className="flex items-center gap-2">
+              <Link href={nap.phoneHref} className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span className="hidden xl:inline">(702) 500-1942</span>
+                <span className="hidden xl:inline">{nap.phoneDisplay}</span>
                 <span className="xl:hidden">Call</span>
               </Link>
             </Button>
@@ -133,7 +134,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942">
+              <Link href={nap.phoneHref} aria-label={`Call ${nap.phoneDisplay}`}>
                 <Phone className="h-4 w-4" />
               </Link>
             </Button>
@@ -196,11 +197,11 @@ export default function Navbar() {
               <div className="pt-4">
                 <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full">
                   <Link
-                    href="tel:+17025001942"
+                    href={nap.phoneHref}
                     className="flex items-center justify-center gap-2"
                   >
                     <Phone className="h-4 w-4" />
-                    Call Dr. Jan: (702) 500-1942
+                    Call Dr. Jan: {nap.phoneDisplay}
                   </Link>
                 </Button>
               </div>

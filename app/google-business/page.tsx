@@ -18,6 +18,8 @@ import {
   Heart,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
+import { nap } from "@/lib/nap";
 import {
   businessInfo,
   gbpDescription,
@@ -29,7 +31,7 @@ import {
 export const metadata: Metadata = {
   title: "Dr. Jan Duffy, REALTOR® Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 500-1942.",
+    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 222-1964.",
   keywords: [
     "Dr. Jan Duffy realtor",
     "Las Vegas real estate agent",
@@ -62,7 +64,7 @@ export default function GoogleBusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero - NAP Prominent */}
           <section className="max-w-5xl mx-auto mb-16">
@@ -76,6 +78,8 @@ export default function GoogleBusinessPage() {
                   <h1 className="text-4xl md:text-5xl font-bold mb-4">
                     Dr. Jan Duffy
                   </h1>
+            <SectionVisual heading="Dr. Jan Duffy" className="max-w-4xl mx-auto my-6" />
+
                   <p className="text-xl text-blue-200 mb-2">REALTOR® | License {businessInfo.license}</p>
                   <p className="text-slate-300 mb-6">Nevada Properties</p>
                   
@@ -269,7 +273,7 @@ export default function GoogleBusinessPage() {
                 Mention your neighborhood, type of transaction, and what made the experience valuable.
               </p>
               <a
-                href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+                href={nap.googleReviews}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"

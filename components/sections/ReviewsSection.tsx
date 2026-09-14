@@ -21,7 +21,7 @@ export const defaultReviews: Review[] = [
     location: "Las Vegas, NV",
     rating: 5,
     text: "Dr. Duffy made our home buying experience seamless. Her knowledge of the Las Vegas market is unmatched, and she guided us through every step with professionalism and care.",
-    image: "/Image/person1.jpeg",
+    image: undefined,
     date: "2025-11-15",
   },
   {
@@ -30,7 +30,7 @@ export const defaultReviews: Review[] = [
     location: "Henderson, NV",
     rating: 5,
     text: "We couldn't be happier with our new home! The entire process was smooth, and Dr. Duffy's attention to detail and negotiation skills saved us thousands. Highly recommend!",
-    image: "/Image/person_2-min.jpg",
+    image: undefined,
     date: "2025-10-22",
   },
   {
@@ -39,7 +39,7 @@ export const defaultReviews: Review[] = [
     location: "Summerlin, NV",
     rating: 5,
     text: "As first-time homebuyers, we were nervous about the process. Dr. Duffy patiently explained everything and helped us find the perfect home in our budget. Thank you!",
-    image: "/Image/person_4-min.jpg",
+    image: undefined,
     date: "2025-09-08",
   },
 ];
@@ -69,7 +69,7 @@ export default function ReviewsSection({
   reviews = defaultReviews,
   title = "What Our Clients Say",
   subtitle = "Real testimonials from satisfied clients across Las Vegas and Henderson",
-  googleReviewsUrl = "https://g.page/r/heyberkshire/review",
+  googleReviewsUrl = "https://www.google.com/maps/search/?api=1&query=Dr+Jan+Duffy+Berkshire+Hathaway+HomeServices+Nevada+Properties+reviews+Las+Vegas",
   className = "",
 }: ReviewsSectionProps) {
   return (

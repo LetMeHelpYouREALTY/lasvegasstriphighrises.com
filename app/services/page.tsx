@@ -20,11 +20,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Real Estate Services Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Comprehensive real estate services from Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Buying, selling, luxury, investment, relocation, 55+ communities, and new construction. Call (702) 500-1942.",
+    "Comprehensive real estate services from Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Buying, selling, luxury, investment, relocation, 55+ communities, and new construction. Call (702) 222-1964.",
   keywords: [
     "Las Vegas real estate services",
     "Berkshire Hathaway services",
@@ -42,7 +43,7 @@ const servicesSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17022221964",
   },
   areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
   serviceType: "Real Estate Services",
@@ -171,7 +172,7 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -181,6 +182,8 @@ export default function ServicesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Las Vegas Real Estate Services
             </h1>
+            <SectionVisual heading="Las Vegas Real Estate Services" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600 mb-8">
               Comprehensive real estate solutions from Dr. Jan Duffy, backed by the most trusted
               name in the business—<strong>Berkshire Hathaway HomeServices</strong>. Whether you're 
@@ -488,11 +491,11 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

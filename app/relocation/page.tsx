@@ -19,11 +19,12 @@ import {
   Globe,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Relocating to Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Moving to Las Vegas? Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties provides comprehensive relocation services. Schools, neighborhoods, cost of living. Call (702) 500-1942.",
+    "Moving to Las Vegas? Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties provides comprehensive relocation services. Schools, neighborhoods, cost of living. Call (702) 222-1964.",
   keywords: [
     "relocating to Las Vegas",
     "moving to Las Vegas",
@@ -43,7 +44,7 @@ const relocationSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17022221964",
   },
   areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
   serviceType: "Relocation Services",
@@ -111,7 +112,7 @@ export default function RelocationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(relocationSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -121,6 +122,8 @@ export default function RelocationPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Relocating to Las Vegas?
             </h1>
+            <SectionVisual heading="Relocating to Las Vegas?" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600 mb-8">
               <strong>Berkshire Hathaway HomeServices</strong> makes your move seamless. With
               50,000+ agents nationwide, we coordinate your relocation from anywhere in the country.
@@ -427,11 +430,11 @@ export default function RelocationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

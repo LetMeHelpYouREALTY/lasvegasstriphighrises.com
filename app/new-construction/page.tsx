@@ -18,11 +18,12 @@ import {
   HelpCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import SectionVisual from "@/components/images/SectionVisual";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices New Construction Las Vegas | Buyer's Guide",
   description:
-    "Free buyer representation on new construction homes in Las Vegas. Dr. Jan Duffy helps you navigate builder contracts, negotiate upgrades, and secure incentives. Call (702) 500-1942.",
+    "Free buyer representation on new construction homes in Las Vegas. Dr. Jan Duffy helps you navigate builder contracts, negotiate upgrades, and secure incentives. Call (702) 222-1964.",
   keywords: [
     "Berkshire Hathaway HomeServices new construction Las Vegas",
     "new homes Las Vegas",
@@ -59,7 +60,7 @@ const faqSchema = {
       name: "Do I have to register Dr. Jan Duffy as my agent on the first visit?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, most builders require your agent to accompany you or be registered on your FIRST visit. If you visit alone and sign the guest registry, you may forfeit your right to free representation. Call (702) 500-1942 to register Dr. Jan Duffy as your buyer's agent before visiting any model home.",
+        text: "Yes, most builders require your agent to accompany you or be registered on your FIRST visit. If you visit alone and sign the guest registry, you may forfeit your right to free representation. Call (702) 222-1964 to register Dr. Jan Duffy as your buyer's agent before visiting any model home.",
       },
     },
     {
@@ -236,7 +237,7 @@ export default function NewConstructionPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -257,6 +258,8 @@ export default function NewConstructionPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Berkshire Hathaway HomeServices New Construction Las Vegas
             </h1>
+            <SectionVisual heading="Berkshire Hathaway HomeServices New Construction Las Vegas" className="max-w-4xl mx-auto my-6" />
+
             <p className="text-xl text-slate-600 mb-8">
               Your complete buyer's guide to new homes in Las Vegas. Free representation,
               expert contract review, and insider knowledge of builder incentives.
@@ -270,7 +273,7 @@ export default function NewConstructionPage() {
                   </h3>
                   <p className="text-amber-800 text-sm">
                     Most builders require agent registration on your <strong>first visit</strong>.
-                    Call <a href="tel:+17025001942" className="font-bold underline">(702) 500-1942</a> to 
+                    Call <a href="tel:+17022221964" className="font-bold underline">(702) 222-1964</a> to 
                     register Dr. Jan Duffy as your buyer's agent before visiting any model home—or you 
                     may lose your right to free professional representation.
                   </p>
@@ -464,8 +467,8 @@ export default function NewConstructionPage() {
                   </h3>
                   <p className="text-slate-600">
                     Call{" "}
-                    <a href="tel:+17025001942" className="text-blue-600 font-semibold hover:underline">
-                      (702) 500-1942
+                    <a href="tel:+17022221964" className="text-blue-600 font-semibold hover:underline">
+                      (702) 222-1964
                     </a>{" "}
                     to register Dr. Jan Duffy as your buyer's agent before any builder visits. We'll 
                     discuss your needs, budget, and preferred locations, then accompany you to model homes.
@@ -588,8 +591,8 @@ export default function NewConstructionPage() {
                   Yes, most builders require your agent to accompany you or be registered on your
                   FIRST visit. If you visit alone and sign the guest registry, you may forfeit your
                   right to free representation. Call{" "}
-                  <a href="tel:+17025001942" className="text-blue-600 font-semibold hover:underline">
-                    (702) 500-1942
+                  <a href="tel:+17022221964" className="text-blue-600 font-semibold hover:underline">
+                    (702) 222-1964
                   </a>{" "}
                   to register Dr. Jan Duffy as your buyer's agent before visiting any model home.
                 </p>
@@ -665,17 +668,17 @@ export default function NewConstructionPage() {
               Ready to Tour New Construction?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Call <strong>(702) 500-1942</strong> to register Dr. Jan Duffy as your buyer's agent 
+              Call <strong>(702) 222-1964</strong> to register Dr. Jan Duffy as your buyer's agent 
               <strong> before</strong> visiting any model home—or you may lose your right to free 
               professional representation. Current incentive information available.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17022221964"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 222-1964
               </a>
               <Link
                 href="/contact"

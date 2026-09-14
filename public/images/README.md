@@ -1,58 +1,47 @@
-# Image Assets Guide
+# Image Assets
+
+Primary delivery is **Cloudflare Images** (`imagedelivery.net`) when
+`NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED=true`. Git copies in this folder are the
+backup/origin used by Vercel `next/image` until that flag is on.
+
+Upload to Cloudflare:
+
+```bash
+npm run cloudflare:images
+```
+
+Requires `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (Images:Edit).
 
 ## Folder Structure
 
 ```
 images/
-├── hero/           # Homepage hero backgrounds
-├── agent/          # Dr. Jan Duffy photos
-├── properties/     # Listing photos
-├── neighborhoods/  # Area/community photos
-├── testimonials/   # Client headshots
+├── hero/           # Homepage + service heroes (16:9 WebP)
+├── neighborhoods/  # Area photos matched to H1/H2 copy
+├── services/       # Buyer, seller, investment, relocation
+├── office/         # Lake Mead office + consultation table
+├── _source/        # PNG originals (git backup of generated art)
+├── agent/          # Reserved for a verified Dr. Jan Duffy photo
+├── properties/     # Listing photos (MLS)
+├── testimonials/   # Do not use stock headshots as clients
 └── logos/          # Brand assets
 ```
 
-## Recommended Specifications
+## Heading mapping
+
+`lib/images.ts` maps H1/H2/H3 text (Summerlin, Henderson, 55+, new construction,
+contact, etc.) to these files via `imageForHeading()`. `SectionVisual` and
+`PageHero` use that map so every page heading has a relevant photograph instead
+of Unsplash placeholders.
+
+## Specs
 
 | Folder | Size | Format | Notes |
 |--------|------|--------|-------|
-| hero/ | 1920x1080+ | WebP, JPG | 16:9 ratio, compress <200KB |
-| agent/ | 400x400+ | WebP, JPG | Square, professional headshot |
-| properties/ | 1200x800+ | WebP, JPG | Landscape, MLS-quality |
-| neighborhoods/ | 1200x800+ | WebP, JPG | Scenic community shots |
-| testimonials/ | 200x200 | WebP, JPG | Square, optional |
-| logos/ | Various | PNG, SVG | Transparent background |
+| hero/ | 1376x768 | WebP | 16:9, <200KB |
+| neighborhoods/ | 1376x768 | WebP | Location-specific, no people |
+| office/ | 16:9 or 4:3 | WebP | No fake agent likeness |
+| _source/ | PNG | Git backup of generated masters |
 
-## Naming Conventions
-
-- Use lowercase with hyphens: `summerlin-aerial.webp`
-- Be descriptive: `dr-jan-duffy-headshot.jpg`
-- Include size if multiple: `hero-desktop.webp`, `hero-mobile.webp`
-
-## Image Optimization
-
-Before uploading, optimize images:
-
-1. **Online tools**: [Squoosh](https://squoosh.app), [TinyPNG](https://tinypng.com)
-2. **CLI**: `npx @squoosh/cli --webp '{"quality":80}' image.jpg`
-3. **Target**: <200KB for hero, <100KB for thumbnails
-
-## Usage in Code
-
-```tsx
-import Image from 'next/image'
-
-<Image 
-  src="/images/hero/las-vegas-skyline.webp"
-  alt="Las Vegas skyline at sunset"
-  width={1920}
-  height={1080}
-  priority // for above-fold images
-/>
-```
-
-## Notes
-
-- Next.js auto-optimizes images via `next/image`
-- WebP preferred for web (30% smaller than JPEG)
-- Always include descriptive alt text for SEO/accessibility
+Do not generate or label a stock portrait as Dr. Jan Duffy. Use a verified
+headshot in `agent/` when one is supplied.

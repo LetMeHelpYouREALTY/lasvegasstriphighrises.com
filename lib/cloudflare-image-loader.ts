@@ -1,8 +1,7 @@
 /**
- * Cloudflare Image Loader for Next.js
- * 
- * Custom image loader that optimizes images using Cloudflare Images
- * or falls back to standard optimization.
+ * Cloudflare Image Loader for Next.js.
+ * When Cloudflare Images is enabled, rewrite to imagedelivery.net.
+ * Otherwise return the git-backed public path unchanged so Vercel Image Optimization works.
  */
 
 export default function cloudflareImageLoader({
@@ -14,30 +13,15 @@ export default function cloudflareImageLoader({
   width: number;
   quality?: number;
 }): string {
-  // If using Cloudflare Images (requires configuration)
-  const useCloudflareImages = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === 'true';
-  
-  if (useCloudflareImages && process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH) {
-    const accountHash = process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH;
-    // Remove leading slash if present
-    const imagePath = src.startsWith('/') ? src.slice(1) : src;
-    
-    // Build Cloudflare Images URL
-    const params = new URLSearchParams({
-      width: width.toString(),
-      quality: (quality || 85).toString(),
-      format: 'auto', // Automatically serves WebP/AVIF when supported
-    });
-    
-    return `https://imagedelivery.net/${accountHash}/${imagePath}?${params.toString()}`;
+  const useCloudflareImages = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === "true";
+  const accountHash = process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH;
+
+  if (useCloudflareImages && accountHash) {
+    const imagePath = src.startsWith("/") ? src.slice(1) : src;
+    const id = imagePath.replace(/\.(webp|jpg|jpeg|png|avif)$/i, "").replace(/^images\//, "");
+    const q = quality || 85;
+    return `https://imagedelivery.net/${accountHash}/${id}/w=${width},q=${q},fit=cover,format=auto`;
   }
-  
-  // Fallback: Use query parameters for Worker-based optimization
-  const params = new URLSearchParams({
-    w: width.toString(),
-    q: (quality || 85).toString(),
-    f: 'auto',
-  });
-  
-  return `${src}?${params.toString()}`;
+
+  return src;
 }
