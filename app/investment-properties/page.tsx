@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Phone, TrendingUp, DollarSign, Building, BarChart, CheckCircle, Calculator } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Las Vegas Investment Properties | Berkshire Hathaway HomeServices",
@@ -21,48 +23,10 @@ export const metadata: Metadata = {
 };
 
 const investmentAreas = [
-  {
-    area: "North Las Vegas",
-    avgPrice: "$385K",
-    avgRent: "$1,950",
-    capRate: "5.2%",
-    appreciation: "+3.2%",
-  },
-  {
-    area: "Henderson",
-    avgPrice: "$485K",
-    avgRent: "$2,300",
-    capRate: "4.5%",
-    appreciation: "+5.1%",
-  },
-  {
-    area: "Spring Valley",
-    avgPrice: "$420K",
-    avgRent: "$2,100",
-    capRate: "4.8%",
-    appreciation: "+4.0%",
-  },
-  {
-    area: "Summerlin",
-    avgPrice: "$625K",
-    avgRent: "$2,800",
-    capRate: "4.0%",
-    appreciation: "+6.8%",
-  },
-  {
-    area: "Enterprise",
-    avgPrice: "$450K",
-    avgRent: "$2,200",
-    capRate: "4.6%",
-    appreciation: "+4.5%",
-  },
-  {
-    area: "Centennial Hills",
-    avgPrice: "$495K",
-    avgRent: "$2,400",
-    capRate: "4.4%",
-    appreciation: "+4.8%",
-  },
+  { area: "North Las Vegas", note: "New construction rentals and growing infrastructure" },
+  { area: "Henderson", note: "Lake Las Vegas, Green Valley, and master-planned streets" },
+  { area: "Summerlin", note: "Master-planned villages, parks, and Red Rock trail access" },
+  { area: "Centennial Hills", note: "Northwest parks, trail miles, and mountain access" },
 ];
 
 export default function InvestmentPropertiesPage() {
@@ -100,7 +64,7 @@ export default function InvestmentPropertiesPage() {
               <div className="text-center">
                 <TrendingUp className="h-12 w-12 text-blue-400 mx-auto mb-3" />
                 <h3 className="font-bold mb-1">Strong Appreciation</h3>
-                <p className="text-slate-400 text-sm">+4.2% YoY in 2025</p>
+                <p className="text-slate-400 text-sm">Ask for a current CMA, not a stale average</p>
               </div>
               <div className="text-center">
                 <Building className="h-12 w-12 text-purple-400 mx-auto mb-3" />
@@ -110,56 +74,35 @@ export default function InvestmentPropertiesPage() {
               <div className="text-center">
                 <BarChart className="h-12 w-12 text-yellow-400 mx-auto mb-3" />
                 <h3 className="font-bold mb-1">Strong Cap Rates</h3>
-                <p className="text-slate-400 text-sm">4-6% typical returns</p>
+                <p className="text-slate-400 text-sm">Ask for a deal-specific rent roll and cap rate</p>
               </div>
             </div>
           </section>
 
           {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Investment Property Markets | January 2026
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              Investment Property Markets
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white border border-slate-200 rounded-lg">
-                <thead className="bg-slate-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Area
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Avg Price
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Avg Rent
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Cap Rate
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-slate-900">
-                      Appreciation
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {investmentAreas.map((area, index) => (
-                    <tr
-                      key={area.area}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    >
-                      <td className="px-6 py-4 font-medium text-slate-900">{area.area}</td>
-                      <td className="px-6 py-4 text-slate-700">{area.avgPrice}</td>
-                      <td className="px-6 py-4 text-slate-700">{area.avgRent}/mo</td>
-                      <td className="px-6 py-4 text-green-600 font-medium">{area.capRate}</td>
-                      <td className="px-6 py-4 text-blue-600 font-medium">{area.appreciation}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-center text-slate-500 text-sm mt-4">
-              Data represents single-family rental properties. Actual returns vary by property.
+            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Photos match the streets named in each heading. Cap rates and rents change with
+              each lease. Call (702) 222-1964 for a deal-specific analysis.
             </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {investmentAreas.map((area) => (
+                <article
+                  key={area.area}
+                  className="overflow-hidden rounded-lg border border-slate-200 bg-white"
+                >
+                  <CardVisual heading={`${area.area} investment properties`} />
+                  <div className="p-5">
+                    <h3 className="font-medium text-slate-900 mb-1">{area.area}</h3>
+                    <p className="text-sm text-slate-600 mb-2">{area.note}</p>
+                    <p className="text-sm font-medium text-blue-700">Call for current comps</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </section>
 
           {/* Expert Quote */}
@@ -406,7 +349,7 @@ export default function InvestmentPropertiesPage() {
               {[
                 {
                   q: "What returns can I expect from Las Vegas rental property?",
-                  a: "Typical cap rates range from 4-6%, with appreciation adding another 4-5% annually in recent years. Total returns of 8-10% are achievable in the right neighborhoods. Dr. Jan provides detailed ROI analysis on any property you're considering.",
+                  a: "Returns vary by street, condition, and financing. Dr. Jan provides a deal-specific rent roll and cap-rate analysis — we do not publish a valley-wide average as if it were current.",
                 },
                 {
                   q: "Do you help out-of-state investors?",
@@ -428,6 +371,8 @@ export default function InvestmentPropertiesPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Underwrite a deal at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

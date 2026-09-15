@@ -5,6 +5,8 @@ import Link from "next/link";
 import { TrendingUp, TrendingDown, Home, Calendar, DollarSign, BarChart, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market Report January 2026 | Berkshire Hathaway HomeServices",
@@ -64,117 +66,53 @@ export default function MarketReportPage() {
 
           {/* Key Stats Overview */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Las Vegas Market Snapshot | January 2026
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Las Vegas Market Snapshot
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">$450,000</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
-                <div className="flex items-center justify-center mt-1 text-green-400 text-sm">
-                  <TrendingUp className="h-4 w-4 mr-1" />
-                  +4.2% YoY
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">28</div>
-                <div className="text-slate-300 text-sm">Days on Market</div>
-                <div className="flex items-center justify-center mt-1 text-green-400 text-sm">
-                  <TrendingDown className="h-4 w-4 mr-1" />
-                  -3 days
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">4,850</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
-                <div className="flex items-center justify-center mt-1 text-yellow-400 text-sm">
-                  +12% YoY
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">2.1</div>
-                <div className="text-slate-300 text-sm">Months Inventory</div>
-                <div className="flex items-center justify-center mt-1 text-slate-400 text-sm">
-                  Seller's Market
-                </div>
-              </div>
+            <SectionVisual heading="Las Vegas Market Snapshot" className="max-w-3xl mx-auto" />
+            <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
+              Medians, days on market, and inventory change weekly. Search live MLS listings below
+              or call (702) 222-1964 for comps on a specific street — we do not publish stale
+              averages as if they were current.
+            </p>
+            <div className="text-center">
+              <Link
+                href="/listings"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
+                Browse live MLS listings
+              </Link>
             </div>
           </section>
 
           {/* Area Breakdown */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Market Data by Area
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              Market Notes by Area
             </h2>
+            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Photos match the streets named in each heading. Call for current comps.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {
-                  area: "Las Vegas (Overall)",
-                  median: "$450,000",
-                  change: "+4.2%",
-                  dom: 28,
-                  trend: "up",
-                },
-                {
-                  area: "Henderson",
-                  median: "$485,000",
-                  change: "+5.1%",
-                  dom: 24,
-                  trend: "up",
-                },
-                {
-                  area: "Summerlin",
-                  median: "$625,000",
-                  change: "+6.8%",
-                  dom: 22,
-                  trend: "up",
-                },
-                {
-                  area: "North Las Vegas",
-                  median: "$385,000",
-                  change: "+3.2%",
-                  dom: 32,
-                  trend: "up",
-                },
-                {
-                  area: "Southern Highlands",
-                  median: "$750,000",
-                  change: "+7.2%",
-                  dom: 35,
-                  trend: "up",
-                },
-                {
-                  area: "Luxury ($1M+)",
-                  median: "$1,200,000",
-                  change: "+8.5%",
-                  dom: 45,
-                  trend: "up",
-                },
+                { area: "Las Vegas", note: "Valley-wide live MLS — call for a street-level CMA" },
+                { area: "Henderson", note: "Lake Las Vegas, Green Valley, and master-planned streets" },
+                { area: "Summerlin", note: "150+ parks, Red Rock trail access, master-planned villages" },
+                { area: "North Las Vegas", note: "New construction and growing infrastructure" },
+                { area: "Southern Highlands", note: "Guard-gated golf community with mountain views" },
+                { area: "Luxury Homes", note: "The Ridges, MacDonald Highlands, and custom estates" },
               ].map((item) => (
-                <div
+                <article
                   key={item.area}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+                  className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                 >
-                  <h3 className="font-bold text-lg text-slate-900 mb-4">{item.area}</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Median Price</span>
-                      <span className="font-semibold text-slate-900">{item.median}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">YoY Change</span>
-                      <span
-                        className={`font-semibold ${item.trend === "up" ? "text-green-600" : "text-red-600"}`}
-                      >
-                        {item.change}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Days on Market</span>
-                      <span className="font-semibold text-slate-900">{item.dom} days</span>
-                    </div>
+                  <CardVisual heading={`${item.area} market`} />
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg text-slate-900 mb-2">{item.area}</h3>
+                    <p className="text-sm text-slate-600 mb-3">{item.note}</p>
+                    <p className="text-sm font-medium text-blue-700">Call for current comps</p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </section>
@@ -257,8 +195,9 @@ export default function MarketReportPage() {
                 </div>
                 <h3 className="font-bold text-lg mb-2">Luxury Strength</h3>
                 <p className="text-slate-600 text-sm">
-                  The $1M+ segment showing strongest appreciation at 8.5% YoY. The Ridges and
-                  Southern Highlands leading the luxury market.
+                  The luxury segment remains active in The Ridges and Southern Highlands.
+                  Call for current comps on a specific estate — we do not publish stale
+                  appreciation percentages.
                 </p>
               </div>
             </div>
@@ -277,11 +216,11 @@ export default function MarketReportPage() {
                 },
                 {
                   q: "Should I wait for prices to drop?",
-                  a: "Las Vegas prices have historically been resilient. Current appreciation of 4.2% YoY, strong job growth, and continued California migration suggest prices will remain stable or continue gradual increases. Waiting typically costs more than potential savings.",
+                  a: "Las Vegas prices have historically been resilient. Job growth and California relocation continue to support demand. Waiting can cost more than any short-term dip. Dr. Jan can run current comps for your target streets.",
                 },
                 {
                   q: "Is this a buyer's or seller's market?",
-                  a: "With 2.1 months of inventory, Las Vegas is technically still a seller's market (6 months is balanced). However, buyers have more leverage than they've had since 2019. It's a balanced environment that rewards proper pricing.",
+                  a: "Inventory shifts weekly. Buyers often have more leverage than they did in 2021–2022, while well-priced listings still move. Call for the current month of supply on the neighborhood you care about.",
                 },
                 {
                   q: "What's happening with interest rates?",
@@ -295,6 +234,8 @@ export default function MarketReportPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Review comps at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
