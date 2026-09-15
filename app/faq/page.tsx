@@ -6,6 +6,7 @@ import { Phone } from "lucide-react";
 import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
 import SectionVisual from "@/components/images/SectionVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -100,7 +101,7 @@ const faqCategories = [
       },
       {
         q: "Should I wait for prices to go higher?",
-        a: "Current appreciation of 4.2% YoY suggests prices are stable with gradual increases. Timing the market is difficult—most sellers do better by listing when ready rather than waiting. Dr. Jan can provide a personalized market analysis.",
+        a: "Timing the market is difficult—most sellers do better by listing when ready rather than waiting. Dr. Jan can provide a personalized CMA with current comps.",
       },
     ],
   },
@@ -220,6 +221,8 @@ export default function FAQPage() {
               </section>
             ))}
           </div>
+
+          <VisitOffice heading="Ask in person at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="mt-16 text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

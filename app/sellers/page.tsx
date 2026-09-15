@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import HeadingCardGrid from "@/components/images/HeadingCardGrid";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Sell Your Las Vegas Home | Berkshire Hathaway HomeServices",
@@ -159,30 +161,20 @@ export default function SellersPage() {
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Las Vegas Seller Market Statistics | January 2026
+              Las Vegas Seller Market
             </h2>
+            <SectionVisual heading="Las Vegas Seller Market" className="max-w-3xl mx-auto" />
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas housing market remains favorable for sellers with low inventory and 
-              steady demand. Well-priced homes are selling quickly, and appreciation continues 
-              to outpace national averages. Here's what sellers need to know about current conditions.
+              Days on market and list-to-sale ratios change weekly. Call (702) 222-1964 for a
+              CMA on your street — we do not publish stale averages as if they were current.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">+4.2%</div>
-                <div className="text-slate-300 text-sm">Year-Over-Year Appreciation</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">28 Days</div>
-                <div className="text-slate-300 text-sm">Avg. Days on Market</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">2.1 Mo</div>
-                <div className="text-slate-300 text-sm">Inventory (Seller's Market)</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">98.5%</div>
-                <div className="text-slate-300 text-sm">List-to-Sale Price Ratio</div>
-              </div>
+            <div className="text-center">
+              <Link
+                href="/home-valuation"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
+                Request a current CMA
+              </Link>
             </div>
           </section>
 
@@ -253,60 +245,35 @@ export default function SellersPage() {
               with a life change, or relocating for work, Dr. Jan provides customized strategies 
               that address your specific needs and timeline.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Link
-                href="/sellers/move-up"
-                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-              >
-                <div className="text-3xl mb-4">🏡</div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600">
-                  Move-Up Sellers
-                </h3>
-                <p className="text-slate-600 text-sm mb-3">
-                  Leverage your equity into your dream home. Coordinated buy & sell strategies.
-                </p>
-                <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
-              </Link>
-              <Link
-                href="/sellers/downsizing"
-                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-              >
-                <div className="text-3xl mb-4">🌴</div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600">
-                  Downsizing
-                </h3>
-                <p className="text-slate-600 text-sm mb-3">
-                  Extract equity, simplify life. 55+ communities and low-maintenance options.
-                </p>
-                <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
-              </Link>
-              <Link
-                href="/sellers/divorce-probate"
-                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-              >
-                <div className="text-3xl mb-4">⚖️</div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600">
-                  Divorce & Probate
-                </h3>
-                <p className="text-slate-600 text-sm mb-3">
-                  Sensitive situations handled with discretion and professionalism.
-                </p>
-                <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
-              </Link>
-              <Link
-                href="/sellers/relocation"
-                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-              >
-                <div className="text-3xl mb-4">✈️</div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600">
-                  Relocation
-                </h3>
-                <p className="text-slate-600 text-sm mb-3">
-                  Moving for work? BHHS nationwide network coordinates both ends.
-                </p>
-                <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
-              </Link>
-            </div>
+            <HeadingCardGrid
+              columns={4}
+              items={[
+                {
+                  title: "Move-Up Sellers",
+                  href: "/sellers/move-up",
+                  description:
+                    "Leverage your equity into your next home. Coordinated buy and sell strategies.",
+                },
+                {
+                  title: "Downsizing",
+                  href: "/sellers/downsizing",
+                  description:
+                    "Extract equity and simplify. 55+ communities and low-maintenance options.",
+                },
+                {
+                  title: "Divorce & Probate",
+                  href: "/sellers/divorce-probate",
+                  description:
+                    "Sensitive situations handled with discretion and professionalism.",
+                },
+                {
+                  title: "Relocation",
+                  href: "/sellers/relocation",
+                  description:
+                    "Moving for work? The BHHS nationwide network coordinates both ends.",
+                },
+              ]}
+            />
           </section>
 
           {/* Expert Quote */}
@@ -404,7 +371,7 @@ export default function SellersPage() {
                 },
                 {
                   q: "Should I wait for prices to go higher?",
-                  a: "Current appreciation of 4.2% year-over-year suggests prices are stable with gradual increases. Timing the market is difficult—most sellers do better by listing when ready rather than waiting. Dr. Jan can provide a personalized market analysis to help you decide.",
+                  a: "Timing the market is difficult—most sellers do better by listing when ready rather than waiting. Dr. Jan can provide a personalized CMA with current comps so you decide from data, not a stale average.",
                 },
                 {
                   q: "Do I need to be moved out before listing?",
@@ -418,6 +385,8 @@ export default function SellersPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Visit the Lake Mead Boulevard office" />
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

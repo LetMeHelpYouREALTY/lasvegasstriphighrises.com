@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Why Choose Berkshire Hathaway HomeServices | Las Vegas Real Estate",
@@ -80,9 +81,9 @@ export default function WhyBerkshireHathawayPage() {
                   professionals who uphold the highest standards in the industry.
                 </p>
               </div>
-              <div className="bg-slate-800 rounded-lg p-8 text-center">
-                <div className="text-6xl mb-4">🏛️</div>
-                <p className="text-2xl font-bold mb-2">Fortune #1</p>
+              <div className="bg-slate-800 rounded-lg p-8 text-center overflow-hidden">
+                <SectionVisual heading="Why Choose Berkshire Hathaway HomeServices" className="mb-4" />
+                <p className="text-2xl font-bold mb-2">Trusted Brand</p>
                 <p className="text-slate-400">
                   Berkshire Hathaway Inc. consistently ranks among the top companies in the world
                 </p>
@@ -267,6 +268,8 @@ export default function WhyBerkshireHathawayPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Meet your BHHS agent at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

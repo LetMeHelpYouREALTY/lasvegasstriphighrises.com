@@ -124,16 +124,16 @@ export default function CentennialHillsPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Centennial Hills: Northwest Las Vegas's Established Family Community
+                Centennial Hills: Northwest Las Vegas Parks and Trail Community
               </h2>
-              <SectionVisual heading="Centennial Hills: Northwest Las Vegas's Established Family Community" className="max-w-4xl my-6" />
+              <SectionVisual heading="Centennial Hills: Northwest Las Vegas Parks and Trail Community" className="max-w-4xl my-6" />
               <p>
-                <strong>Centennial Hills</strong> represents the best of established northwest Las Vegas
+                <strong>Centennial Hills</strong> represents established northwest Las Vegas
                 living. While newer communities like Skye Canyon attract attention, Centennial Hills
-                offers something they can't: mature neighborhoods with proven schools, established
-                landscaping, and a genuine sense of community built over nearly two decades.
+                offers mature streets with named CCSD campuses, established
+                landscaping, and nearly two decades of completed parks and trail miles.
                 <strong> Berkshire Hathaway HomeServices</strong> helps buyers discover why
-                Centennial Hills remains one of the valley's most desirable addresses.
+                Centennial Hills remains one of the valley's most requested addresses.
               </p>
               <p>
                 The community's appeal starts with location. Positioned at the base of the mountains
@@ -157,13 +157,12 @@ export default function CentennialHillsPage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <Users className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Established Family Community</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">Established Parks and Trails</h4>
                   </div>
                   <p className="text-slate-600">
-                    Centennial Hills has matured into a true community where neighbors know each other
-                    and families put down roots. The area features multiple established parks including
-                    the popular Centennial Hills Park, community events throughout the year, and the
-                    kind of neighborhood stability that creates lifelong friendships and strong property values.
+                    Centennial Hills has mature landscaping and multiple parks including
+                    Centennial Hills Park, community events throughout the year, and trail miles
+                    that connect to the northwest mountain foothills.
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-xl">

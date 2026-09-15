@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices New Construction Las Vegas | Buyer's Guide",
@@ -398,6 +400,7 @@ export default function NewConstructionPage() {
                   key={builder.name}
                   className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
+                  <CardVisual heading={`${builder.communities[0]} new construction`} />
                   <div className="bg-slate-900 text-white p-5 flex justify-between items-center">
                     <div>
                       <h3 className="text-xl font-bold">{builder.name}</h3>
@@ -661,6 +664,8 @@ export default function NewConstructionPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Register as your new-construction agent at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

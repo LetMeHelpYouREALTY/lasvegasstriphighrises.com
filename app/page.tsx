@@ -8,6 +8,7 @@ import Footer from "@/components/layouts/Footer";
 import PageHero from "@/components/images/PageHero";
 import SectionVisual from "@/components/images/SectionVisual";
 import GbpActions from "@/components/gbp/GbpActions";
+import VisitOffice from "@/components/gbp/VisitOffice";
 import Link from "next/link";
 import { Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
@@ -146,6 +147,7 @@ export default async function Home() {
         <WhyChooseUs />
         <ReviewsSection />
         <FAQSection />
+        <VisitOffice heading="Visit Dr. Jan Duffy at Lake Mead Boulevard" />
 
         {/* Domain-Specific CTA */}
         <section className="py-16 md:py-20 bg-blue-600 text-white">

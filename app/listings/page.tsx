@@ -20,6 +20,7 @@ import {
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
 import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
@@ -62,49 +63,37 @@ const popularSearches = [
 ];
 
 const priceRanges = [
-  { range: "Under $400K", description: "Starter homes, condos, townhomes", count: "1,500+" },
-  { range: "$400K - $600K", description: "Family homes, established neighborhoods", count: "2,100+" },
-  { range: "$600K - $1M", description: "Premium locations, larger homes", count: "1,200+" },
-  { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "450+" },
-  { range: "$2M+", description: "Ultra-luxury estates, custom builds", count: "180+" },
+  { range: "Under $400K", description: "Condos, townhomes, and compact lots", count: "Search live MLS" },
+  { range: "$400K - $600K", description: "3–4 bedroom homes in established neighborhoods", count: "Search live MLS" },
+  { range: "$600K - $1M", description: "Premium locations, larger square footage", count: "Search live MLS" },
+  { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "Search live MLS" },
+  { range: "$2M+", description: "Custom estates", count: "Search live MLS" },
 ];
 
 const neighborhoods = [
   {
     name: "Summerlin",
     description: "Master-planned community with Red Rock views, 150+ parks, and trail miles",
-    medianPrice: "$625,000",
-    daysOnMarket: 22,
   },
   {
     name: "Henderson",
     description: "Nevada's second-largest city with Lake Las Vegas, Green Valley, and master-planned streets",
-    medianPrice: "$485,000",
-    daysOnMarket: 24,
   },
   {
     name: "Green Valley",
     description: "Established Henderson community with mature landscaping and golf courses",
-    medianPrice: "$520,000",
-    daysOnMarket: 26,
   },
   {
     name: "Southern Highlands",
     description: "Guard-gated luxury community with championship golf and mountain views",
-    medianPrice: "$750,000",
-    daysOnMarket: 32,
   },
   {
     name: "North Las Vegas",
-    description: "Affordable new construction and growing infrastructure",
-    medianPrice: "$385,000",
-    daysOnMarket: 18,
+    description: "New construction and growing infrastructure",
   },
   {
     name: "Skye Canyon",
     description: "Newer master-planned community with modern amenities and mountain access",
-    medianPrice: "$550,000",
-    daysOnMarket: 20,
   },
 ];
 
@@ -192,10 +181,10 @@ export default function ListingsPage() {
               Las Vegas Home Price Guide
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas real estate market offers exceptional value compared to California and 
-              other western states. With no state income tax and housing prices 40-60% lower than 
-              coastal cities, your dollar stretches further in Southern Nevada. Here's what you can 
-              expect at different price points in the current January 2026 market.
+              The Las Vegas real estate market offers a wide range of price points across
+              Summerlin, Henderson, and the valley. Inventory changes daily. Use the live MLS
+              search above or call (702) 222-1964 for comps — we do not publish stale counts
+              as if they were current.
             </p>
             <div className="space-y-4">
               {priceRanges.map((price, index) => (
@@ -210,7 +199,7 @@ export default function ListingsPage() {
                       <p className="text-sm text-slate-600">{price.description}</p>
                     </div>
                   </div>
-                  <span className="text-blue-600 font-semibold">{price.count} homes</span>
+                  <span className="text-blue-600 font-semibold">{price.count}</span>
                 </div>
               ))}
             </div>
@@ -240,10 +229,7 @@ export default function ListingsPage() {
                   <div className="p-6">
                   <h3 className="font-bold text-lg text-slate-900 mb-2">{neighborhood.name}</h3>
                   <p className="text-slate-600 text-sm mb-4">{neighborhood.description}</p>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-500">Median: <strong className="text-slate-900">{neighborhood.medianPrice}</strong></span>
-                    <span className="text-slate-500">DOM: <strong className="text-slate-900">{neighborhood.daysOnMarket} days</strong></span>
-                  </div>
+                  <p className="text-sm font-medium text-blue-700">Call for current comps</p>
                   </div>
                 </Link>
               ))}
@@ -312,31 +298,21 @@ export default function ListingsPage() {
           {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Las Vegas Real Estate Market Statistics
+              Las Vegas Real Estate Market
             </h2>
+            <SectionVisual heading="Las Vegas Real Estate Market" className="max-w-3xl mx-auto" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              The Las Vegas housing market remains strong heading into 2026, with steady appreciation 
-              and healthy inventory levels. Understanding current market conditions helps buyers 
-              make informed decisions about timing, pricing, and negotiation strategies. Here's a 
-              snapshot of the current market as of January 2026.
+              The Las Vegas housing market changes weekly. Understanding current conditions helps
+              buyers time offers and sellers price listings. Call (702) 222-1964 for comps on a
+              specific street — we do not publish stale averages as if they were current.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">$450K</div>
-                <div className="text-sm text-slate-600">Median Home Price</div>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">28</div>
-                <div className="text-sm text-slate-600">Avg Days on Market</div>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">4,850</div>
-                <div className="text-sm text-slate-600">Active Listings</div>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">+4.2%</div>
-                <div className="text-sm text-slate-600">Year-Over-Year</div>
-              </div>
+            <div className="text-center">
+              <a
+                href="tel:+17022221964"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
+                Call (702) 222-1964 for current comps
+              </a>
             </div>
           </section>
 
@@ -431,10 +407,10 @@ export default function ListingsPage() {
                   How competitive is the Las Vegas housing market in 2026?
                 </h3>
                 <p className="text-slate-600">
-                  The Las Vegas market is moderately competitive with 2.1 months of inventory—a 
-                  slight seller's market. Well-priced homes in desirable areas like Summerlin and 
-                  Henderson often receive multiple offers within the first week. Having a 
-                  pre-approval and experienced agent gives you a significant advantage.
+                  The Las Vegas market is moderately competitive. Well-priced homes in Summerlin and
+                  Henderson often receive multiple offers in the first week. Having a
+                  pre-approval and an experienced agent gives you a significant advantage. Call
+                  for current inventory, not a stale month-of-supply figure.
                 </p>
               </div>
               <div className="bg-slate-50 rounded-lg p-6">
@@ -472,6 +448,8 @@ export default function ListingsPage() {
               </div>
             </div>
           </section>
+
+          <VisitOffice heading="Tour listings from the Lake Mead Boulevard office" />
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

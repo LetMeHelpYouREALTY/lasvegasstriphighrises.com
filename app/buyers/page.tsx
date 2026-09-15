@@ -21,6 +21,8 @@ import {
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
 import CardVisual from "@/components/images/CardVisual";
+import HeadingCardGrid from "@/components/images/HeadingCardGrid";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Home Buying Guide Las Vegas | Berkshire Hathaway HomeServices",
@@ -84,12 +86,12 @@ const buyingSteps = [
 ];
 
 const neighborhoods = [
-  { name: "Summerlin", price: "$625K", description: "Master-planned community with Red Rock views" },
-  { name: "Henderson", price: "$485K", description: "Lake Las Vegas, Green Valley, and master-planned streets" },
-  { name: "Green Valley", price: "$520K", description: "Established with mature landscaping" },
-  { name: "The Ridges", price: "$2.5M", description: "Ultra-luxury guard-gated estates" },
-  { name: "North Las Vegas", price: "$385K", description: "Affordable new construction" },
-  { name: "Southern Highlands", price: "$750K", description: "Golf course community" },
+  { name: "Summerlin", extra: "Call for current comps", description: "Master-planned community with Red Rock views" },
+  { name: "Henderson", extra: "Call for current comps", description: "Lake Las Vegas, Green Valley, and master-planned streets" },
+  { name: "Green Valley", extra: "Call for current comps", description: "Established with mature landscaping" },
+  { name: "The Ridges", extra: "Call for current comps", description: "Ultra-luxury guard-gated estates" },
+  { name: "North Las Vegas", extra: "Call for current comps", description: "New construction and growing infrastructure" },
+  { name: "Southern Highlands", extra: "Call for current comps", description: "Golf course community" },
 ];
 
 export default function BuyersPage() {
@@ -214,7 +216,7 @@ export default function BuyersPage() {
               Las Vegas offers diverse neighborhoods for every budget and commute. Whether you're 
               seeking guard-gated estates, golf-course lots, or new construction, Dr. Jan helps you find 
               square footage and amenities that match. Here's 
-              a quick guide to recent median asking ranges and what each area offers.
+              a photo guide to the streets and amenities in each area. Call for current comps.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {neighborhoods.map((neighborhood) => (
@@ -227,7 +229,7 @@ export default function BuyersPage() {
                   <div className="p-4">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-bold text-slate-900">{neighborhood.name}</h3>
-                    <span className="text-blue-600 font-semibold">{neighborhood.price}</span>
+                    <span className="text-blue-600 font-semibold text-sm">{neighborhood.extra}</span>
                   </div>
                   <p className="text-slate-600 text-sm">{neighborhood.description}</p>
                   </div>
@@ -255,50 +257,28 @@ export default function BuyersPage() {
               neighborhood matching. A luxury buyer needs discretion and access. Dr. Jan Duffy 
               tailors her approach to match your specific situation and goals.
             </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link
-                href="/buyers/california-relocator"
-                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-              >
-                <div className="text-3xl mb-4">🌴</div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600">
-                  California Relocators
-                </h3>
-                <p className="text-slate-600 text-sm mb-3">
-                  0% state income tax, 40-60% lower home prices. See what your CA equity buys in 
-                  Las Vegas. Dr. Jan specializes in helping California buyers transition to Nevada.
-                </p>
-                <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
-              </Link>
-              <Link
-                href="/buyers/first-time-buyers"
-                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-              >
-                <div className="text-3xl mb-4">🔑</div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600">
-                  First-Time Buyers
-                </h3>
-                <p className="text-slate-600 text-sm mb-3">
-                  Down payment assistance programs, FHA/VA loans, and builder incentives explained. 
-                  Step-by-step guidance through your first home purchase.
-                </p>
-                <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
-              </Link>
-              <Link
-                href="/buyers/luxury-homes-las-vegas"
-                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-              >
-                <div className="text-3xl mb-4">💎</div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600">
-                  Luxury Home Buyers
-                </h3>
-                <p className="text-slate-600 text-sm mb-3">
-                  $1M+ properties with discrete service. The Ridges, MacDonald Highlands, Southern 
-                  Highlands, and Las Vegas Strip views. Off-market opportunities available.
-                </p>
-                <span className="text-blue-600 font-semibold text-sm">Learn More →</span>
-              </Link>
-            </div>
+            <HeadingCardGrid
+              items={[
+                {
+                  title: "California Relocators",
+                  href: "/buyers/california-relocator",
+                  description:
+                    "0% state income tax and typically lower purchase prices than coastal California. Dr. Jan helps California buyers match commute, square footage, and named-school boundaries in Las Vegas.",
+                },
+                {
+                  title: "First-Time Buyers",
+                  href: "/buyers/first-time-buyers",
+                  description:
+                    "Down payment assistance programs, FHA/VA loans, and builder incentives explained. Step-by-step guidance through your first home purchase.",
+                },
+                {
+                  title: "Luxury Home Buyers",
+                  href: "/buyers/luxury-homes-las-vegas",
+                  description:
+                    "Guard-gated estates with discreet service. The Ridges, MacDonald Highlands, Southern Highlands, and Strip-view lots. Off-market opportunities available.",
+                },
+              ]}
+            />
           </section>
 
           {/* Why BHHS */}
@@ -370,30 +350,21 @@ export default function BuyersPage() {
           {/* Market Stats */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Las Vegas Buyer Market Statistics | January 2026
+              Las Vegas Buyer Market
             </h2>
+            <SectionVisual heading="Las Vegas Buyer Market" className="max-w-3xl mx-auto" />
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
-              Understanding the current market helps you make informed decisions about timing, 
-              pricing, and negotiation strategies. Here's a snapshot of what buyers are facing 
-              in the Las Vegas market right now.
+              Sale prices, days on market, and inventory change weekly. Search live MLS listings
+              or call (702) 222-1964 for comps on a specific street — we do not publish stale
+              averages as if they were current.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">$450K</div>
-                <div className="text-blue-200 text-sm">Median Home Price</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">4,850</div>
-                <div className="text-blue-200 text-sm">Active Listings</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">28 Days</div>
-                <div className="text-blue-200 text-sm">Avg. Days on Market</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">+4.2%</div>
-                <div className="text-blue-200 text-sm">Year-Over-Year</div>
-              </div>
+            <div className="text-center">
+              <Link
+                href="/listings"
+                className="inline-block bg-white text-blue-700 px-6 py-3 rounded-md font-semibold hover:bg-blue-50 transition-colors"
+              >
+                Browse live MLS listings
+              </Link>
             </div>
           </section>
 
@@ -440,6 +411,8 @@ export default function BuyersPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Visit the Lake Mead Boulevard office" />
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

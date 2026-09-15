@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "First-Time Home Buyers Las Vegas | Berkshire Hathaway HomeServices",
@@ -58,7 +60,7 @@ const faqSchema = {
       name: "What neighborhoods are best for first-time buyers in Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Top neighborhoods for first-time buyers include North Las Vegas ($350K-$450K), Mountains Edge ($380K-$480K), and Centennial Hills ($398K median). These areas offer new construction options, good schools, and strong appreciation potential.",
+        text: "Common first-purchase areas include North Las Vegas, Mountains Edge, and Centennial Hills. These streets offer new construction, parks, trail miles, and commute options. Dr. Jan maps named-school boundaries for a specific address and pulls current MLS comps — we do not publish stale medians.",
       },
     },
     {
@@ -176,105 +178,66 @@ export default function FirstTimeBuyersPage() {
 
           {/* Top Neighborhoods */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Best Neighborhoods for First-Time Buyers
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              Neighborhoods First-Time Buyers Tour
             </h2>
+            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
+              Photos match the streets named in each heading. Call for current comps — we do not
+              publish stale medians as if they were current.
+            </p>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl p-6 border border-slate-200">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-lg text-slate-900">North Las Vegas</h3>
-                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">Best Value</span>
-                </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">$350K - $450K</div>
+              <article className="bg-white rounded-xl overflow-hidden border border-slate-200">
+                <CardVisual heading="North Las Vegas Homes" />
+                <div className="p-6">
+                <h3 className="font-bold text-lg text-slate-900 mb-2">North Las Vegas</h3>
+                <p className="text-sm font-medium text-blue-700 mb-3">Call for current comps</p>
                 <p className="text-slate-600 text-sm mb-4">
-                  Most affordable new construction in the valley. Growing rapidly with new schools,
-                  shopping, and infrastructure investments.
+                  New construction across the northern valley with parks, shopping, and
+                  infrastructure investments.
                 </p>
-                <ul className="text-sm space-y-1 text-slate-700">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    New construction from $350K
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    FHA-friendly pricing
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Strong appreciation
-                  </li>
-                </ul>
                 <Link
                   href="/neighborhoods/north-las-vegas"
-                  className="block mt-4 text-blue-600 font-semibold hover:text-blue-700 text-sm"
+                  className="block text-blue-600 font-semibold hover:text-blue-700 text-sm"
                 >
                   Explore North Las Vegas →
                 </Link>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 border border-slate-200">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-lg text-slate-900">Mountains Edge</h3>
-                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">Great Parks</span>
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">$380K - $480K</div>
+              </article>
+
+              <article className="bg-white rounded-xl overflow-hidden border border-slate-200">
+                <CardVisual heading="Mountains Edge Homes" />
+                <div className="p-6">
+                <h3 className="font-bold text-lg text-slate-900 mb-2">Mountains Edge</h3>
+                <p className="text-sm font-medium text-blue-700 mb-3">Call for current comps</p>
                 <p className="text-slate-600 text-sm mb-4">
-                  Southwest Las Vegas with the valley's largest park. Great community feel,
-                  mountain views, and easy freeway access.
+                  Southwest Las Vegas with Exploration Peak Park, mountain views, and freeway access.
                 </p>
-                <ul className="text-sm space-y-1 text-slate-700">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Exploration Peak Park
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Mountain views
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Trail miles
-                  </li>
-                </ul>
                 <Link
                   href="/neighborhoods/mountains-edge"
-                  className="block mt-4 text-blue-600 font-semibold hover:text-blue-700 text-sm"
+                  className="block text-blue-600 font-semibold hover:text-blue-700 text-sm"
                 >
                   Explore Mountains Edge →
                 </Link>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 border border-slate-200">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-lg text-slate-900">Centennial Hills</h3>
-                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">Trail miles</span>
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">$398K Median</div>
+              </article>
+
+              <article className="bg-white rounded-xl overflow-hidden border border-slate-200">
+                <CardVisual heading="Centennial Hills Homes" />
+                <div className="p-6">
+                <h3 className="font-bold text-lg text-slate-900 mb-2">Centennial Hills</h3>
+                <p className="text-sm font-medium text-blue-700 mb-3">Call for current comps</p>
                 <p className="text-slate-600 text-sm mb-4">
                   Northwest Las Vegas near Centennial Hills Hospital. Named CCSD campuses,
                   Centennial Hills Park, and Red Rock Canyon trail access.
                 </p>
-                <ul className="text-sm space-y-1 text-slate-700">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Highly-rated schools
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Near outdoor recreation
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Medical facilities nearby
-                  </li>
-                </ul>
                 <Link
                   href="/neighborhoods/centennial-hills"
-                  className="block mt-4 text-blue-600 font-semibold hover:text-blue-700 text-sm"
+                  className="block text-blue-600 font-semibold hover:text-blue-700 text-sm"
                 >
                   Explore Centennial Hills →
                 </Link>
-              </div>
+                </div>
+              </article>
             </div>
           </section>
 
@@ -497,6 +460,8 @@ export default function FirstTimeBuyersPage() {
           </section>
 
           {/* CTA */}
+          <VisitOffice heading="Start your first purchase at Lake Mead Boulevard" />
+
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Stop Renting?

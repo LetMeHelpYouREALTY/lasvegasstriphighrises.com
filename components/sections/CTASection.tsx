@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Home } from "lucide-react";
+import GbpActions from "@/components/gbp/GbpActions";
 
 export default function CTASection() {
   return (
@@ -45,6 +46,8 @@ export default function CTASection() {
               </a>
             </Button>
           </div>
+
+          <GbpActions className="justify-center mb-8" />
 
           <div className="flex flex-wrap justify-center gap-6 text-blue-100 text-sm">
             <div className="flex items-center gap-2">

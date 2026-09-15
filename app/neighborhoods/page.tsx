@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
 import CardVisual from "@/components/images/CardVisual";
 import GbpActions from "@/components/gbp/GbpActions";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Las Vegas Neighborhoods | Berkshire Hathaway HomeServices",
@@ -25,8 +26,6 @@ const neighborhoods = [
   {
     name: "Summerlin",
     slug: "summerlin",
-    medianPrice: "$625,000",
-    priceChange: "+6.8%",
     description: "Premier master-planned community with parks, trails, and Red Rock Canyon access",
     highlights: ["150+ Parks", "Trail miles", "Red Rock Views", "Downtown Summerlin"],
     bestFor: "Parks, trails, and master-planned amenities",
@@ -34,8 +33,6 @@ const neighborhoods = [
   {
     name: "Henderson",
     slug: "henderson",
-    medianPrice: "$485,000",
-    priceChange: "+5.1%",
     description: "Nevada's second-largest city with master-planned neighborhoods and Lake Las Vegas",
     highlights: ["Lake Las Vegas", "Green Valley", "Parks and Trails", "Town Center"],
     bestFor: "Lake Las Vegas, Green Valley, commute to the Strip",
@@ -43,8 +40,6 @@ const neighborhoods = [
   {
     name: "Green Valley",
     slug: "green-valley",
-    medianPrice: "$520,000",
-    priceChange: "+4.8%",
     description: "Established Henderson community with mature landscaping, golf, and The District",
     highlights: ["Golf Courses", "Walking Trails", "The District", "Mature Trees"],
     bestFor: "Golf, trails, commute to Henderson Town Center",
@@ -52,8 +47,6 @@ const neighborhoods = [
   {
     name: "The Ridges",
     slug: "the-ridges",
-    medianPrice: "$2,500,000",
-    priceChange: "+8.5%",
     description: "Ultra-luxury guard-gated community with custom estates and celebrity residents",
     highlights: ["Guard-Gated", "Custom Estates", "Bear's Best Golf", "Strip Views"],
     bestFor: "Luxury buyers, celebrities, executives",
@@ -61,8 +54,6 @@ const neighborhoods = [
   {
     name: "Southern Highlands",
     slug: "southern-highlands",
-    medianPrice: "$750,000",
-    priceChange: "+7.2%",
     description: "Master-planned luxury community with championship golf and mountain views",
     highlights: ["Golf Community", "Guard-Gated", "Mountain Views", "Luxury Amenities"],
     bestFor: "Golfers, luxury buyers, custom homes",
@@ -70,8 +61,6 @@ const neighborhoods = [
   {
     name: "North Las Vegas",
     slug: "north-las-vegas",
-    medianPrice: "$385,000",
-    priceChange: "+3.2%",
     description: "Rapidly growing area with new construction and entry-level price points",
     highlights: ["New Construction", "Entry-level pricing", "Growing Area", "Aliante amenities"],
     bestFor: "First-time buyers, investors, new construction",
@@ -79,8 +68,6 @@ const neighborhoods = [
   {
     name: "Skye Canyon",
     slug: "skye-canyon",
-    medianPrice: "$550,000",
-    priceChange: "+5.5%",
     description: "Newer master-planned community in northwest Las Vegas with mountain views",
     highlights: ["New Homes", "Mountain Views", "Skye Center", "Parks and Trails"],
     bestFor: "Outdoor amenities, new construction, commuters",
@@ -88,8 +75,6 @@ const neighborhoods = [
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
-    medianPrice: "$495,000",
-    priceChange: "+4.8%",
     description: "Northwest Las Vegas community with mountain proximity, parks, and trail access",
     highlights: ["Mountain Access", "Parks", "Shopping", "Trail network"],
     bestFor: "Mountain access, parks, northwest commute",
@@ -97,8 +82,6 @@ const neighborhoods = [
   {
     name: "Inspirada",
     slug: "inspirada",
-    medianPrice: "$525,000",
-    priceChange: "+5.0%",
     description: "Henderson master-planned community with resort-style living and modern homes",
     highlights: ["Resort Pools", "Walking Trails", "New Construction", "Town center"],
     bestFor: "Resort amenities, new construction, Henderson",
@@ -106,8 +89,6 @@ const neighborhoods = [
   {
     name: "Mountains Edge",
     slug: "mountains-edge",
-    medianPrice: "$475,000",
-    priceChange: "+4.5%",
     description: "Southwest Las Vegas master-planned community with mountain views and parks",
     highlights: ["Mountain Views", "Parks", "Growing Area", "Affordable Luxury"],
     bestFor: "Mountain views, parks, southwest Las Vegas",
@@ -155,8 +136,7 @@ export default function NeighborhoodsPage() {
                       <p className="text-sm text-slate-500">{neighborhood.bestFor}</p>
                     </div>
                     <div className="text-right">
-                      <div className="font-bold text-slate-900">{neighborhood.medianPrice}</div>
-                      <div className="text-sm text-green-600">{neighborhood.priceChange} YoY</div>
+                      <div className="text-sm font-medium text-blue-700">Call for current comps</div>
                     </div>
                   </div>
                   <p className="text-slate-600 text-sm mb-4">{neighborhood.description}</p>
@@ -220,6 +200,8 @@ export default function NeighborhoodsPage() {
               </div>
             </div>
           </section>
+
+          <VisitOffice heading="Match a neighborhood at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

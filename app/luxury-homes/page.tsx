@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Las Vegas Luxury Homes for Sale | Berkshire Hathaway HomeServices",
@@ -54,7 +56,7 @@ const luxuryNeighborhoods = [
   {
     name: "The Ridges",
     location: "Summerlin",
-    priceRange: "$2M - $15M+",
+    priceRange: "Call for current listings",
     description:
       "Ultra-exclusive guard-gated community with custom estates, celebrity residents, and Bear's Best Golf Club. One of the most prestigious addresses in Las Vegas with stunning Red Rock views.",
     features: ["Guard-gated", "Custom estates", "Celebrity homes", "Golf course"],
@@ -62,7 +64,7 @@ const luxuryNeighborhoods = [
   {
     name: "MacDonald Highlands",
     location: "Henderson",
-    priceRange: "$1.5M - $10M+",
+    priceRange: "Call for current listings",
     description:
       "Prestigious hillside community with Dragon Ridge Country Club and panoramic Strip views. Features modern contemporary architecture and exclusive amenities.",
     features: ["Hillside location", "Strip views", "Country club", "Private lots"],
@@ -70,7 +72,7 @@ const luxuryNeighborhoods = [
   {
     name: "Southern Highlands",
     location: "Las Vegas",
-    priceRange: "$800K - $5M+",
+    priceRange: "Call for current listings",
     description:
       "Guard-gated luxury community featuring championship golf, stunning mountain views, and resort-style living. Multiple neighborhoods within the community.",
     features: ["Guard-gated", "Golf community", "Mountain views", "Multiple villages"],
@@ -78,7 +80,7 @@ const luxuryNeighborhoods = [
   {
     name: "The Summit Club",
     location: "Summerlin",
-    priceRange: "$3M - $20M+",
+    priceRange: "Call for current listings",
     description:
       "Ultra-private Tom Fazio golf community with only 250 homesites. Las Vegas's most exclusive address with membership by invitation only.",
     features: ["Private golf", "250 homesites", "Invitation only", "Tom Fazio design"],
@@ -86,7 +88,7 @@ const luxuryNeighborhoods = [
   {
     name: "Ascaya",
     location: "Henderson",
-    priceRange: "$2M - $12M+",
+    priceRange: "Call for current listings",
     description:
       "Modern architectural community with panoramic views and contemporary custom homes. Known for innovative design and dramatic hillside settings.",
     features: ["Modern architecture", "Panoramic views", "Custom homes", "Hillside lots"],
@@ -94,7 +96,7 @@ const luxuryNeighborhoods = [
   {
     name: "Lake Las Vegas",
     location: "Henderson",
-    priceRange: "$800K - $8M+",
+    priceRange: "Call for current listings",
     description:
       "Resort-style living on a 320-acre private lake with Mediterranean-inspired architecture. Golf, water sports, and a European village atmosphere.",
     features: ["Lakefront living", "Resort amenities", "Golf courses", "Mediterranean style"],
@@ -256,10 +258,12 @@ export default function LuxuryHomesPage() {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {luxuryNeighborhoods.map((neighborhood) => (
-                <div
+                <article
                   key={neighborhood.name}
-                  className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow"
+                  className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
+                  <CardVisual heading={`${neighborhood.name} luxury homes`} />
+                  <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h3 className="font-bold text-lg text-slate-900">{neighborhood.name}</h3>
@@ -277,7 +281,8 @@ export default function LuxuryHomesPage() {
                       </span>
                     ))}
                   </div>
-                </div>
+                  </div>
+                </article>
               ))}
             </div>
             <div className="text-center mt-8">
@@ -418,6 +423,8 @@ export default function LuxuryHomesPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Private luxury consultation at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

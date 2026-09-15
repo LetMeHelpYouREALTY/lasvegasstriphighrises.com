@@ -37,5 +37,10 @@ describe("heading image catalog", () => {
     expect(imageForHeading("Golf Course Communities").key).toBe("golf-course");
     expect(imageForHeading("Del Webb at Lake Las Vegas").key).toBe("lake-las-vegas");
     expect(imageForHeading("Luxury Pool Estates").key).toBe("luxury-pool-terrace");
+    expect(imageForHeading("MacDonald Highlands").key).toBe("luxury-pool-terrace");
+    expect(imageForHeading("California Relocators").key).toBe("relocation");
+    expect(imageForHeading("Downsizing").key).toBe("first-time-buyer");
+    expect(imageForHeading("Divorce & Probate").key).toBe("consultation-office");
+    expect(imageForHeading("Lock-and-Leave Condos").key).toBe("investment-rentals");
   });
 });

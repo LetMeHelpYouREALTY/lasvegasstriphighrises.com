@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Relocating to Las Vegas | Berkshire Hathaway HomeServices",
@@ -55,37 +57,37 @@ const popularRelocationAreas = [
     name: "Summerlin",
     best: "Professionals, parks and trails",
     highlights: "150+ parks, Red Rock Canyon proximity, master-planned living, named CCSD campuses",
-    from: "$500K",
+    from: "Call for current listings",
   },
   {
     name: "Henderson",
-    best: "Retirees, Lake Las Vegas, Green Valley",
+    best: "Lake Las Vegas, Green Valley, parks",
     highlights: "60+ parks, Lake Las Vegas, Green Valley, Inspirada, no state income tax",
-    from: "$450K",
+    from: "Call for current listings",
   },
   {
     name: "Green Valley",
     best: "Established owners",
     highlights: "Mature landscaping, championship golf, shopping and dining, Henderson location",
-    from: "$480K",
+    from: "Call for current listings",
   },
   {
     name: "Skye Canyon",
     best: "First-time buyers",
     highlights: "Newest construction, mountain trail access, modern amenities, growing area",
-    from: "$500K",
+    from: "Call for current listings",
   },
   {
     name: "Southern Highlands",
     best: "Luxury buyers, golfers",
     highlights: "Guard-gated sections, championship golf, mountain views, resort living",
-    from: "$700K",
+    from: "Call for current listings",
   },
   {
     name: "Inspirada",
-    best: "Families, active adults",
+    best: "Resort pools, trails, new construction",
     highlights: "Resort-style pools, extensive trails, new homes, Henderson convenience",
-    from: "$450K",
+    from: "Call for current listings",
   },
 ];
 
@@ -221,19 +223,22 @@ export default function RelocationPage() {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {popularRelocationAreas.map((area) => (
-                <div
+                <article
                   key={area.name}
-                  className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow"
+                  className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
+                  <CardVisual heading={`${area.name} Homes`} />
+                  <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-bold text-lg text-slate-900">{area.name}</h3>
                     <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">
-                      From {area.from}
+                      {area.from}
                     </span>
                   </div>
                   <p className="text-sm text-blue-600 mb-3">Best for: {area.best}</p>
                   <p className="text-slate-600 text-sm">{area.highlights}</p>
-                </div>
+                  </div>
+                </article>
               ))}
             </div>
             <div className="text-center mt-8">
@@ -418,6 +423,8 @@ export default function RelocationPage() {
               ))}
             </div>
           </section>
+
+          <VisitOffice heading="Plan your move at the Lake Mead Boulevard office" />
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">

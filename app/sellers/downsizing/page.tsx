@@ -10,11 +10,11 @@ import {
   CheckCircle,
   Users,
   ArrowDownRight,
-  Shield,
-  Sun,
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
+import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
   title: "Downsizing in Las Vegas | Berkshire Hathaway HomeServices",
@@ -81,10 +81,10 @@ export default function DownsizingPage() {
                   Your Current Home
                 </h3>
                 <p className="text-slate-300 mb-4">
-                  Large family home you've owned for 15+ years. 4-5 bedrooms, big yard,
-                  endless maintenance. Kids are gone, and it's more space than you need.
+                  Larger home you've owned for 15+ years. 4-5 bedrooms, big yard,
+                  ongoing maintenance. More square footage than you use.
                 </p>
-                <div className="text-2xl font-bold text-blue-400">Value: $650K-$900K</div>
+                <div className="text-2xl font-bold text-blue-400">Call for a current CMA</div>
               </div>
               <div className="bg-white/10 rounded-xl p-6">
                 <h3 className="font-bold text-xl mb-4 flex items-center">
@@ -95,13 +95,13 @@ export default function DownsizingPage() {
                   Low-maintenance 55+ community or modern condo. 2-3 bedrooms, no yard work,
                   resort amenities. Travel when you want.
                 </p>
-                <div className="text-2xl font-bold text-green-400">Cost: $400K-$550K</div>
-                <div className="text-sm text-green-300 mt-1">+ $150K-$350K in your pocket</div>
+                <div className="text-2xl font-bold text-green-400">Call for a net sheet</div>
+                <div className="text-sm text-green-300 mt-1">See what equity could remain after the move</div>
               </div>
             </div>
             <p className="text-center text-slate-300 text-lg">
-              Many downsizers walk away with <strong>$150,000-$350,000+ in equity</strong> while
-              upgrading their lifestyle.
+              A current CMA and net sheet show what you could walk away with — we do not publish
+              stale equity ranges as if they were current.
             </p>
           </section>
 
@@ -111,59 +111,59 @@ export default function DownsizingPage() {
               Popular Downsizing Destinations
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
-                <div className="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Sun className="h-6 w-6 text-amber-600" />
-                </div>
+              <article className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <CardVisual heading="55+ Communities" />
+                <div className="p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-2">55+ Communities</h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  Sun City Summerlin, Del Webb, Heritage at Stonebridge. Active lifestyle,
-                  built-in social network, exterior maintenance included.
+                  Sun City Summerlin, Del Webb, Heritage at Stonebridge. Clubhouses,
+                  exterior maintenance included, and resort-style amenities.
                 </p>
-                <div className="text-blue-600 font-semibold">$375K - $650K</div>
+                <div className="text-blue-600 font-semibold">Call for current listings</div>
                 <Link
                   href="/55-plus-communities"
                   className="block mt-3 text-sm text-blue-600 hover:text-blue-700"
                 >
                   Explore 55+ Communities →
                 </Link>
-              </div>
-
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
-                <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <HomeIcon className="h-6 w-6 text-blue-600" />
                 </div>
+              </article>
+
+              <article className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <CardVisual heading="Single-Story Homes" />
+                <div className="p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-2">Single-Story Homes</h3>
                 <p className="text-slate-600 text-sm mb-4">
                   Right-sized single-story in established neighborhoods. No stairs,
                   smaller yard, lower utility costs. Age-in-place features available.
                 </p>
-                <div className="text-blue-600 font-semibold">$400K - $600K</div>
+                <div className="text-blue-600 font-semibold">Call for current listings</div>
                 <Link
                   href="/contact"
                   className="block mt-3 text-sm text-blue-600 hover:text-blue-700"
                 >
                   Search Single-Story Homes →
                 </Link>
-              </div>
-
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-purple-600" />
                 </div>
+              </article>
+
+              <article className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <CardVisual heading="Lock-and-Leave Condos" />
+                <div className="p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-2">Lock-and-Leave Condos</h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  Secure, zero-maintenance living. Travel for months without worry.
-                  Guard-gated options available in Summerlin and Henderson.
+                  Zero-maintenance living with HOA care of common areas. Travel for months
+                  without yard work. Guard-gated options in Summerlin and Henderson.
                 </p>
-                <div className="text-blue-600 font-semibold">$275K - $500K</div>
+                <div className="text-blue-600 font-semibold">Call for current listings</div>
                 <Link
                   href="/contact"
                   className="block mt-3 text-sm text-blue-600 hover:text-blue-700"
                 >
                   View Condo Options →
                 </Link>
-              </div>
+                </div>
+              </article>
             </div>
           </section>
 
@@ -246,36 +246,30 @@ export default function DownsizingPage() {
               Top 55+ Communities for Las Vegas Downsizers
             </h2>
             <p className="text-slate-600 text-center mb-8 max-w-3xl mx-auto">
-              Las Vegas offers some of the nation's best 55+ communities. Here's how the most popular
-              options compare for downsizers looking to maximize their lifestyle while minimizing maintenance.
+              Las Vegas offers several 55+ communities. Photos match the clubhouses and streets
+              named in each heading. Call (702) 222-1964 for current listings and HOA details —
+              we do not publish stale price bands as if they were current.
             </p>
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white border border-slate-200 rounded-lg">
-                <thead className="bg-slate-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">Community</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">Price Range</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">HOA/Mo</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900">Top Amenity</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { name: "Sun City Summerlin", price: "$375K-$650K", hoa: "$165-$220", amenity: "4 golf courses" },
-                    { name: "Sun City Anthem", price: "$400K-$700K", hoa: "$150-$200", amenity: "Mountain views" },
-                    { name: "Heritage at Stonebridge", price: "$450K-$600K", hoa: "$175-$225", amenity: "Resort pool" },
-                    { name: "Del Webb Lake Las Vegas", price: "$400K-$650K", hoa: "$180-$250", amenity: "Lake access" },
-                    { name: "Solera at Anthem", price: "$375K-$550K", hoa: "$140-$180", amenity: "Smaller, intimate" },
-                  ].map((community, index) => (
-                    <tr key={community.name} className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}>
-                      <td className="px-4 py-3 font-medium text-slate-900">{community.name}</td>
-                      <td className="px-4 py-3 text-slate-700">{community.price}</td>
-                      <td className="px-4 py-3 text-slate-700">{community.hoa}</td>
-                      <td className="px-4 py-3 text-slate-700">{community.amenity}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: "Sun City Summerlin", amenity: "Golf courses and clubhouses in Summerlin" },
+                { name: "Sun City Anthem", amenity: "Mountain views and Henderson golf" },
+                { name: "Heritage at Stonebridge", amenity: "Resort pool and clubhouse amenities" },
+                { name: "Del Webb Lake Las Vegas", amenity: "Lake access in Henderson" },
+                { name: "Solera at Anthem", amenity: "Compact 55+ streets in Henderson" },
+              ].map((community) => (
+                <article
+                  key={community.name}
+                  className="overflow-hidden rounded-lg border border-slate-200 bg-white"
+                >
+                  <CardVisual heading={community.name} />
+                  <div className="p-5">
+                    <h3 className="font-medium text-slate-900 mb-1">{community.name}</h3>
+                    <p className="text-sm text-slate-600 mb-2">{community.amenity}</p>
+                    <p className="text-sm font-medium text-blue-700">Call for current listings</p>
+                  </div>
+                </article>
+              ))}
             </div>
             <p className="text-center mt-4">
               <Link href="/55-plus-communities" className="text-blue-600 hover:text-blue-700 font-semibold">
@@ -432,10 +426,10 @@ export default function DownsizingPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-slate-900 text-white rounded-xl p-8">
               <blockquote className="text-lg italic mb-4">
-                "Downsizing clients are some of my favorite to work with. They've worked hard,
-                raised families, and now deserve to enjoy life without maintaining a 4,000 square
+                "Downsizing clients are some of my favorite to work with. They've worked hard
+                and now deserve to enjoy life without maintaining a 4,000 square
                 foot house. I help them extract the equity they've earned, find a home that fits
-                their current lifestyle, and often pocket significant cash for travel, grandkids,
+                their current lifestyle, and often pocket significant cash for travel
                 or just peace of mind. As a <strong>Berkshire Hathaway HomeServices</strong> agent,
                 I have the experience and compassion this transition requires."
               </blockquote>
@@ -444,6 +438,8 @@ export default function DownsizingPage() {
               </cite>
             </div>
           </section>
+
+          <VisitOffice heading="Talk through downsizing at Lake Mead Boulevard" />
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
