@@ -1,0 +1,31 @@
+name: Cloudflare Images Upload
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "public/images/**"
+      - "scripts/upload-cloudflare-images.mjs"
+      - ".github/workflows/cloudflare-images.yml"
+
+jobs:
+  upload:
+    name: Upload git-backed images to Cloudflare Images
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Upload to hosted Images
+        run: node scripts/upload-cloudflare-images.mjs
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

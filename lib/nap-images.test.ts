@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { nap } from "@/lib/nap";
-import { IMAGE_KEYS, imageCatalog, imageForHeading } from "@/lib/images";
+import { IMAGE_KEYS, imageCatalog, imageForHeading, getImageSrc } from "@/lib/images";
+import { CLOUDFLARE_IMAGES, cloudflareDeliveryUrl } from "@/lib/cloudflare-images";
 
 describe("GBP NAP source of truth", () => {
   it("uses the client CTA phone on visible NAP fields", () => {
@@ -42,5 +43,23 @@ describe("heading image catalog", () => {
     expect(imageForHeading("Downsizing").key).toBe("first-time-buyer");
     expect(imageForHeading("Divorce & Probate").key).toBe("consultation-office");
     expect(imageForHeading("Lock-and-Leave Condos").key).toBe("investment-rentals");
+  });
+});
+
+describe("Cloudflare hosted Images delivery", () => {
+  it("uses the account hash and custom ID in the imagedelivery.net URL", () => {
+    expect(CLOUDFLARE_IMAGES.accountHash).toBe("byE6BTe9lNqo21V57n4aPQ");
+    expect(CLOUDFLARE_IMAGES.accountId).toBe("2cc579c1ec9e426ed585e933ebf4753b");
+    expect(cloudflareDeliveryUrl("hero/las-vegas-homes-hero")).toBe(
+      "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/hero/las-vegas-homes-hero/public"
+    );
+  });
+
+  it("points catalog assets at hosted Images by default", () => {
+    const asset = imageCatalog["las-vegas-homes-hero"];
+    expect(getImageSrc(asset)).toBe(
+      "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/hero/las-vegas-homes-hero/public"
+    );
+    expect(asset.src).toBe("/images/hero/las-vegas-homes-hero.webp");
   });
 });

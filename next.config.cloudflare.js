@@ -25,6 +25,10 @@ const nextConfig = {
   // Environment variables
   env: {
     CLOUDFLARE_ENV: process.env.CLOUDFLARE_ENV || 'production',
+    NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH:
+      process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH || 'byE6BTe9lNqo21V57n4aPQ',
+    NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED:
+      process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED ?? 'true',
   },
 
   // Redirect non-www to www (handled by Worker)

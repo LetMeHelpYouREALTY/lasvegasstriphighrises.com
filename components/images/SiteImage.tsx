@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import {
   getImageSrc,
@@ -19,6 +22,10 @@ export function getAsset(imageKey: ImageKey): SiteImageAsset {
   return imageCatalog[imageKey];
 }
 
+/**
+ * Primary src is Cloudflare Images (imagedelivery.net).
+ * Git public path is the backup if hosted Images has not received the file yet.
+ */
 export default function SiteImage({
   imageKey,
   alt,
@@ -28,7 +35,16 @@ export default function SiteImage({
   fill = false,
 }: SiteImageProps) {
   const asset = imageCatalog[imageKey];
-  const src = getImageSrc(asset);
+  const cloudflareSrc = getImageSrc(asset);
+  const gitSrc = asset.src;
+  const [src, setSrc] = useState(cloudflareSrc);
+  const fromCloudflare = src.startsWith("https://imagedelivery.net/");
+
+  function handleError(): void {
+    if (src !== gitSrc) {
+      setSrc(gitSrc);
+    }
+  }
 
   if (fill) {
     return (
@@ -39,6 +55,8 @@ export default function SiteImage({
         className={className}
         sizes={sizes}
         priority={priority}
+        unoptimized={fromCloudflare}
+        onError={handleError}
       />
     );
   }
@@ -52,6 +70,8 @@ export default function SiteImage({
       className={className}
       sizes={sizes}
       priority={priority}
+      unoptimized={fromCloudflare}
+      onError={handleError}
     />
   );
 }

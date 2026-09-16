@@ -1,6 +1,11 @@
+import {
+  cloudflareDeliveryUrl,
+  isCloudflareImagesEnabled,
+} from "@/lib/cloudflare-images";
+
 /**
  * Site image catalog.
- * Primary delivery: Cloudflare Images (imagedelivery.net) when configured.
+ * Primary delivery: Cloudflare Images (imagedelivery.net).
  * Backup: git-tracked files under /public/images (Vercel next/image).
  */
 
@@ -301,17 +306,10 @@ export function imageForHeading(heading: string): SiteImageAsset {
   return imageCatalog["las-vegas-homes-hero"];
 }
 
-export function getImageSrc(asset: SiteImageAsset, width?: number): string {
-  const enabled = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === "true";
-  const hash = process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH;
-
-  if (enabled && hash) {
-    const variant = width
-      ? `w=${width},q=85,fit=cover,format=auto`
-      : "public";
-    return `https://imagedelivery.net/${hash}/${asset.cloudflareId}/${variant}`;
+export function getImageSrc(asset: SiteImageAsset): string {
+  if (isCloudflareImagesEnabled()) {
+    return cloudflareDeliveryUrl(asset.cloudflareId);
   }
-
   return asset.src;
 }
 

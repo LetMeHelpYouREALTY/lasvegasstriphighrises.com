@@ -1,22 +1,35 @@
 #!/usr/bin/env node
 /**
- * Upload git-backed images in public/images to Cloudflare Images.
- * Custom IDs match lib/images.ts cloudflareId values.
+ * Upload git-backed images in public/images to Cloudflare hosted Images.
+ * Custom IDs match lib/images.ts cloudflareId values (e.g. hero/las-vegas-homes-hero).
  *
- * Required env:
- *   CLOUDFLARE_ACCOUNT_ID
+ * Per Cloudflare Images docs (Sep 2026):
+ *   POST https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/images/v1
+ *   form id=<custom path> + file=<bytes>
+ *
+ * Required:
  *   CLOUDFLARE_API_TOKEN   (Account.Cloudflare Images:Edit)
+ * Optional:
+ *   CLOUDFLARE_ACCOUNT_ID  (defaults to the heyberkshire Images account)
  *
  * Usage: node scripts/upload-cloudflare-images.mjs
  */
 
 import { readdirSync, readFileSync, existsSync } from "node:fs";
-import { join, relative, basename } from "node:path";
+import { join, relative, basename, extname } from "node:path";
 
-const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID;
+const ACCOUNT_ID =
+  process.env.CLOUDFLARE_ACCOUNT_ID || "2cc579c1ec9e426ed585e933ebf4753b";
 const TOKEN = process.env.CLOUDFLARE_API_TOKEN;
 const ROOT = join(process.cwd(), "public/images");
 const SKIP_DIRS = new Set(["_source", "testimonials", "logos", "properties", "agent"]);
+
+const MIME = {
+  ".webp": "image/webp",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".png": "image/png",
+};
 
 function walk(dir) {
   const out = [];
@@ -36,11 +49,14 @@ function walk(dir) {
 async function upload(filePath) {
   const rel = relative(ROOT, filePath).replace(/\\/g, "/");
   const id = rel.replace(/\.(webp|jpg|jpeg|png)$/i, "");
+  const ext = extname(filePath).toLowerCase();
+  const type = MIME[ext] || "application/octet-stream";
   const bytes = readFileSync(filePath);
-  const blob = new Blob([bytes], { type: "image/webp" });
+  const blob = new Blob([bytes], { type });
   const form = new FormData();
   form.set("id", id);
   form.set("file", blob, basename(filePath));
+  form.set("requireSignedURLs", "false");
 
   const res = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/images/v1`,
@@ -59,16 +75,19 @@ async function upload(filePath) {
     }
     throw new Error(`${id}: ${JSON.stringify(json.errors || json)}`);
   }
-  console.log(`uploaded ${id}`);
+  const variant = json.result?.variants?.[0];
+  console.log(`uploaded ${id}${variant ? ` -> ${variant}` : ""}`);
 }
 
 async function main() {
-  if (!ACCOUNT_ID || !TOKEN) {
-    console.log("Skipping Cloudflare upload — CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN not set.");
-    console.log("Git backup is in public/images. Set env vars and re-run to push to imagedelivery.net.");
+  if (!TOKEN) {
+    console.log("Skipping Cloudflare upload — CLOUDFLARE_API_TOKEN not set.");
+    console.log("Git backup is in public/images. Set an Images:Edit token and re-run:");
+    console.log("  CLOUDFLARE_API_TOKEN=... npm run cloudflare:images");
     process.exit(0);
   }
   const files = walk(ROOT);
+  console.log(`Uploading ${files.length} git-backed images to account ${ACCOUNT_ID}`);
   for (const file of files) {
     await upload(file);
   }

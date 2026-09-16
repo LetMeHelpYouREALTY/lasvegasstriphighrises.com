@@ -20,6 +20,15 @@ const nextConfig = {
     ],
   },
 
+  // Cloudflare hosted Images (imagedelivery.net). Hash is public.
+  // Disable with NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED=false to force git/Vercel paths.
+  env: {
+    NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH:
+      process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH || "byE6BTe9lNqo21V57n4aPQ",
+    NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED:
+      process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED ?? "true",
+  },
+
   // Compression
   compress: true,
 

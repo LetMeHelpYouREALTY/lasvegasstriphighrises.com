@@ -1,16 +1,20 @@
 # Image Assets
 
-Primary delivery is **Cloudflare Images** (`imagedelivery.net`) when
-`NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED=true`. Git copies in this folder are the
-backup/origin used by Vercel `next/image` until that flag is on.
+Primary delivery is **Cloudflare hosted Images**:
 
-Upload to Cloudflare:
+`https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<image_id>/public`
+
+Git copies in this folder are the origin/backup. `SiteImage` requests Cloudflare first and
+falls back to these files if the hosted image is not uploaded yet.
+
+Upload git backups to hosted Images (needs `CLOUDFLARE_API_TOKEN` with Images:Edit):
 
 ```bash
 npm run cloudflare:images
 ```
 
-Requires `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (Images:Edit).
+Account ID: `2cc579c1ec9e426ed585e933ebf4753b`
+Custom IDs match paths here without `/images/` or extension (e.g. `hero/las-vegas-homes-hero`).
 
 ## Folder Structure
 
