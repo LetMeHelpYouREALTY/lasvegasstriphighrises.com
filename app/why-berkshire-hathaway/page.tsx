@@ -2,9 +2,10 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "lucide-react";
+import { CheckCircle, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import HeadingCardGrid from "@/components/images/HeadingCardGrid";
 import VisitOffice from "@/components/gbp/VisitOffice";
 
 export const metadata: Metadata = {
@@ -93,76 +94,44 @@ export default function WhyBerkshireHathawayPage() {
 
           {/* Key Benefits */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
               The BHHS Advantage
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Shield className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Unmatched Trust</h3>
-                <p className="text-slate-600">
-                  The Berkshire Hathaway name represents integrity and reliability. Our agents
-                  uphold these values in every transaction.
-                </p>
-              </div>
-
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Users className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Global Network</h3>
-                <p className="text-slate-600">
-                  50,000+ agents worldwide means seamless referrals for relocations and connections
-                  to buyers from across the globe.
-                </p>
-              </div>
-
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Globe className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">World-Class Marketing</h3>
-                <p className="text-slate-600">
-                  Your property gets exposure through the most recognized real estate brand in the
-                  world, reaching qualified buyers everywhere.
-                </p>
-              </div>
-
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <Award className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Ethical Standards</h3>
-                <p className="text-slate-600">
-                  BHHS agents adhere to strict ethical guidelines that go beyond industry
-                  requirements. Your interests always come first.
-                </p>
-              </div>
-
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <TrendingUp className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Financial Strength</h3>
-                <p className="text-slate-600">
-                  Backed by one of the most financially secure companies in the world. Our stability
-                  means we'll be here for you long-term.
-                </p>
-              </div>
-
-              <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                  <CheckCircle className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Proven Results</h3>
-                <p className="text-slate-600">
-                  BHHS Nevada Properties has helped thousands of clients achieve their real estate
-                  goals in Southern Nevada.
-                </p>
-              </div>
-            </div>
+            <SectionVisual heading="The BHHS Advantage" className="max-w-3xl mx-auto mb-8" />
+            <HeadingCardGrid
+              items={[
+                {
+                  title: "Unmatched Trust",
+                  description:
+                    "The Berkshire Hathaway name represents integrity and reliability. Our agents uphold these values in every transaction.",
+                },
+                {
+                  title: "Global Network",
+                  description:
+                    "50,000+ agents worldwide means seamless referrals for relocations and connections to buyers from across the globe.",
+                },
+                {
+                  title: "World-Class Marketing",
+                  description:
+                    "Your property gets exposure through the most recognized real estate brand in the world, reaching qualified buyers everywhere.",
+                },
+                {
+                  title: "Ethical Standards",
+                  description:
+                    "BHHS agents adhere to strict ethical guidelines that go beyond industry requirements. Your interests always come first.",
+                },
+                {
+                  title: "Financial Strength",
+                  description:
+                    "Backed by one of the most financially secure companies in the world. Our stability means we'll be here for you long-term.",
+                },
+                {
+                  title: "Proven Results",
+                  description:
+                    "BHHS Nevada Properties has helped thousands of clients achieve their real estate goals in Southern Nevada.",
+                },
+              ]}
+            />
           </section>
 
           {/* Stats Section */}

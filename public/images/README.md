@@ -34,9 +34,10 @@ images/
 ## Heading mapping
 
 `lib/images.ts` maps H1/H2/H3 text (Summerlin, Henderson, 55+, golf, Lake Las Vegas,
-new construction, contact, etc.) to these files via `imageForHeading()`. `SectionVisual`,
-`CardVisual`, and `PageHero` use that map so every heading has a relevant photograph instead
-of Unsplash placeholders.
+MacDonald Highlands, Red Rock, Strip high-rises, move-up, downsizing, divorce/probate,
+FAQ, BHHS office, new construction, contact, etc.) to these files via `imageForHeading()`.
+`SectionVisual`, `CardVisual`, and `PageHero` use that map so every heading has a relevant
+photograph instead of Unsplash placeholders.
 
 ## Specs
 

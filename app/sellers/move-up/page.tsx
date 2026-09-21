@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   Phone,
   TrendingUp,
-  Home as HomeIcon,
   ArrowRight,
   DollarSign,
   CheckCircle,
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 
 export const metadata: Metadata = {
   title: "Move-Up Sellers Las Vegas | Berkshire Hathaway HomeServices",
@@ -70,29 +70,14 @@ export default function MoveUpSellerPage() {
 
           {/* Equity Section */}
           <section className="mb-16 bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
+            <h2 className="text-3xl font-bold mb-6 text-center">
               Your Equity Position is Stronger Than You Think
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">$100K-$250K+</div>
-                <div className="text-green-100">Typical Equity Gain</div>
-                <div className="text-sm text-green-200 mt-2">For 2015-2021 purchases</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">4 Months</div>
-                <div className="text-green-100">Current Inventory</div>
-                <div className="text-sm text-green-200 mt-2">Your purchase is easier</div>
-              </div>
-              <div className="text-center bg-white/10 rounded-xl p-6">
-                <div className="text-4xl font-bold mb-2">28 Days</div>
-                <div className="text-green-100">Avg. Days to Sell</div>
-                <div className="text-sm text-green-200 mt-2">Priced-right homes</div>
-              </div>
-            </div>
-            <p className="text-center text-green-100 text-lg">
-              If you bought between 2015-2021, you likely have significant equity to leverage.
-              <strong> We help you access it strategically.</strong>
+            <SectionVisual heading="Ready for Your Next Chapter?" className="max-w-3xl mx-auto mb-6" />
+            <p className="text-center text-green-100 text-lg max-w-3xl mx-auto">
+              If you bought in the last decade, you may have equity to put toward more square footage
+              or a different neighborhood. Call (702) 222-1964 for a CMA on your street — we do not
+              publish stale averages as if they were current.
             </p>
           </section>
 
@@ -102,52 +87,49 @@ export default function MoveUpSellerPage() {
               Common Upgrade Paths We Help With
             </h2>
             <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-xl p-6 flex items-center">
-                <div className="flex-shrink-0 mr-6">
-                  <div className="bg-blue-100 rounded-full p-3">
-                    <HomeIcon className="h-6 w-6 text-blue-600" />
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden md:flex md:items-center">
+                <div className="md:w-56 flex-shrink-0">
+                  <CardVisual heading="Summerlin Homes" />
+                </div>
+                <div className="p-6 flex items-center flex-grow">
+                  <div className="flex-grow">
+                    <h3 className="font-bold text-slate-900 mb-1">Centennial Hills → Summerlin</h3>
+                    <p className="text-slate-600 text-sm">
+                      Upgrade from a smaller home into Downtown Summerlin-area square footage, walkable amenities, and Red Rock views.
+                    </p>
                   </div>
+                  <ArrowRight className="h-6 w-6 text-blue-600 flex-shrink-0 ml-4" />
                 </div>
-                <div className="flex-grow">
-                  <h3 className="font-bold text-slate-900 mb-1">Centennial Hills → Summerlin</h3>
-                  <p className="text-slate-600 text-sm">
-                    Upgrade from a smaller home into Downtown Summerlin-area square footage. Named CCSD campuses,
-                    walkable amenities, Red Rock views.
-                  </p>
-                </div>
-                <ArrowRight className="h-6 w-6 text-blue-600 flex-shrink-0 ml-4" />
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-6 flex items-center">
-                <div className="flex-shrink-0 mr-6">
-                  <div className="bg-green-100 rounded-full p-3">
-                    <HomeIcon className="h-6 w-6 text-green-600" />
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden md:flex md:items-center">
+                <div className="md:w-56 flex-shrink-0">
+                  <CardVisual heading="MacDonald Highlands" />
+                </div>
+                <div className="p-6 flex items-center flex-grow">
+                  <div className="flex-grow">
+                    <h3 className="font-bold text-slate-900 mb-1">Green Valley → MacDonald Ranch</h3>
+                    <p className="text-slate-600 text-sm">
+                      Move from established Green Valley to luxury Henderson. Larger lots, custom features, mountain views.
+                    </p>
                   </div>
+                  <ArrowRight className="h-6 w-6 text-green-600 flex-shrink-0 ml-4" />
                 </div>
-                <div className="flex-grow">
-                  <h3 className="font-bold text-slate-900 mb-1">Green Valley → MacDonald Ranch</h3>
-                  <p className="text-slate-600 text-sm">
-                    Move from established Green Valley ($520K) to luxury Henderson ($800K+).
-                    Larger lots, custom features, mountain views.
-                  </p>
-                </div>
-                <ArrowRight className="h-6 w-6 text-green-600 flex-shrink-0 ml-4" />
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-6 flex items-center">
-                <div className="flex-shrink-0 mr-6">
-                  <div className="bg-purple-100 rounded-full p-3">
-                    <HomeIcon className="h-6 w-6 text-purple-600" />
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden md:flex md:items-center">
+                <div className="md:w-56 flex-shrink-0">
+                  <CardVisual heading="Southern Highlands Homes" />
+                </div>
+                <div className="p-6 flex items-center flex-grow">
+                  <div className="flex-grow">
+                    <h3 className="font-bold text-slate-900 mb-1">Inspirada → Southern Highlands</h3>
+                    <p className="text-slate-600 text-sm">
+                      Graduate from master-planned living to a golf community with country-club amenities and guard-gated options.
+                    </p>
                   </div>
+                  <ArrowRight className="h-6 w-6 text-purple-600 flex-shrink-0 ml-4" />
                 </div>
-                <div className="flex-grow">
-                  <h3 className="font-bold text-slate-900 mb-1">Inspirada → Southern Highlands</h3>
-                  <p className="text-slate-600 text-sm">
-                    Graduate from master-planned ($525K) to golf community luxury ($750K+).
-                    Country club lifestyle, guard-gated options.
-                  </p>
-                </div>
-                <ArrowRight className="h-6 w-6 text-purple-600 flex-shrink-0 ml-4" />
               </div>
             </div>
           </section>

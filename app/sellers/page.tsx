@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 import HeadingCardGrid from "@/components/images/HeadingCardGrid";
 import VisitOffice from "@/components/gbp/VisitOffice";
 
@@ -194,13 +195,16 @@ export default function SellersPage() {
                 return (
                   <div
                     key={benefit.title}
-                    className="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
+                    className="group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                   >
-                    <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
-                      <Icon className="h-8 w-8 text-blue-600" />
+                    <CardVisual heading={benefit.title} />
+                    <div className="p-8">
+                      <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                        <Icon className="h-8 w-8 text-blue-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
+                      <p className="text-slate-600">{benefit.description}</p>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
-                    <p className="text-slate-600">{benefit.description}</p>
                   </div>
                 );
               })}

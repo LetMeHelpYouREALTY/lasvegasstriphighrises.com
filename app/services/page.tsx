@@ -331,15 +331,18 @@ export default function ServicesPage() {
                 <Link
                   key={type.href}
                   href={type.href}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg hover:border-blue-300 transition-all group"
+                  className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all group"
                 >
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600">
-                    {type.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm mb-3">{type.description}</p>
-                  <span className="text-blue-600 text-sm font-semibold flex items-center">
-                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
-                  </span>
+                  <CardVisual heading={type.title} />
+                  <div className="p-6">
+                    <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                      {type.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm mb-3">{type.description}</p>
+                    <span className="text-blue-600 text-sm font-semibold flex items-center">
+                      Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -361,13 +364,16 @@ export default function ServicesPage() {
                 <Link
                   key={type.href}
                   href={type.href}
-                  className="bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-blue-300 transition-all group"
+                  className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all group"
                 >
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 text-sm">
-                    {type.title}
-                  </h3>
-                  <p className="text-slate-600 text-xs mb-2">{type.description}</p>
-                  <span className="text-blue-600 text-xs font-semibold">Learn More →</span>
+                  <CardVisual heading={type.title} />
+                  <div className="p-5">
+                    <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 text-sm">
+                      {type.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs mb-2">{type.description}</p>
+                    <span className="text-blue-600 text-xs font-semibold">Learn More →</span>
+                  </div>
                 </Link>
               ))}
             </div>

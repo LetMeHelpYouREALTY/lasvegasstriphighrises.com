@@ -55,7 +55,7 @@ export default function RelocationPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               New Opportunity?<br />We Handle Your Sale.
             </h1>
-            <SectionVisual heading="New Opportunity?We Handle Your Sale." className="max-w-4xl mx-auto my-6" />
+            <SectionVisual heading="New Opportunity? We Handle Your Sale." className="max-w-4xl mx-auto my-6" />
 
             <p className="text-xl text-slate-600 mb-8">
               Sell your Las Vegas home while you focus on your new chapter.

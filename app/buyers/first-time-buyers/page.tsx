@@ -121,9 +121,10 @@ export default function FirstTimeBuyersPage() {
 
           {/* Financing Options */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               First-Time Buyer Financing Options
             </h2>
+            <SectionVisual heading="First-Time Buyer Financing Options" className="max-w-3xl mx-auto mb-8" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6 text-center">
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">

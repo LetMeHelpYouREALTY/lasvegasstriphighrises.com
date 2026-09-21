@@ -38,11 +38,22 @@ describe("heading image catalog", () => {
     expect(imageForHeading("Golf Course Communities").key).toBe("golf-course");
     expect(imageForHeading("Del Webb at Lake Las Vegas").key).toBe("lake-las-vegas");
     expect(imageForHeading("Luxury Pool Estates").key).toBe("luxury-pool-terrace");
-    expect(imageForHeading("MacDonald Highlands").key).toBe("luxury-pool-terrace");
+    expect(imageForHeading("MacDonald Highlands").key).toBe("macdonald-highlands");
     expect(imageForHeading("California Relocators").key).toBe("relocation");
-    expect(imageForHeading("Downsizing").key).toBe("first-time-buyer");
-    expect(imageForHeading("Divorce & Probate").key).toBe("consultation-office");
-    expect(imageForHeading("Lock-and-Leave Condos").key).toBe("investment-rentals");
+    expect(imageForHeading("Downsizing").key).toBe("downsizing-patio");
+    expect(imageForHeading("Divorce & Probate").key).toBe("divorce-probate-desk");
+    expect(imageForHeading("Lock-and-Leave Condos").key).toBe("lock-and-leave-condo");
+    expect(imageForHeading("Your First Home in Las Vegas Starts Here").key).toBe("first-time-buyer");
+    expect(imageForHeading("Why Choose Berkshire Hathaway HomeServices?").key).toBe("why-bhhs-office");
+    expect(imageForHeading("Ready for Your Next Chapter?").key).toBe("move-up-home");
+    expect(imageForHeading("Difficult Situations, Expert Guidance").key).toBe("divorce-probate-desk");
+    expect(imageForHeading("Frequently Asked Questions").key).toBe("faq-consultation");
+    expect(imageForHeading("What's Your Las Vegas Home Worth?").key).toBe("home-valuation-cma");
+    expect(imageForHeading("Las Vegas Real Estate Services").key).toBe("real-estate-services");
+    expect(imageForHeading("New Opportunity? We Handle Your Sale.").key).toBe("seller-sold-home");
+    expect(imageForHeading("Sun City Anthem").key).toBe("anthem-henderson");
+    expect(imageForHeading("Guard-Gated Communities").key).toBe("guard-gated-entry");
+    expect(imageForHeading("Dr. Jan Duffy").key).toBe("office-lake-mead");
   });
 });
 

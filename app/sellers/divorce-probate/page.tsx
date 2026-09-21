@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SectionVisual from "@/components/images/SectionVisual";
+import CardVisual from "@/components/images/CardVisual";
 
 export const metadata: Metadata = {
   title: "Divorce & Probate Home Sales Las Vegas | Berkshire Hathaway HomeServices",
@@ -55,7 +56,7 @@ export default function DivorceProbatePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Difficult Situations,<br />Expert Guidance
             </h1>
-            <SectionVisual heading="Difficult Situations,Expert Guidance" className="max-w-4xl mx-auto my-6" />
+            <SectionVisual heading="Divorce & Probate Expert Guidance" className="max-w-4xl mx-auto my-6" />
 
             <p className="text-xl text-slate-600 mb-8">
               When life gets complicated, you need an agent who handles sensitive transactions
@@ -76,7 +77,9 @@ export default function DivorceProbatePage() {
               Situations We Help Navigate
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <CardVisual heading="Divorce Sales" />
+                <div className="p-6">
                 <div className="flex items-center mb-4">
                   <div className="bg-blue-100 rounded-full p-3 mr-4">
                     <Scale className="h-6 w-6 text-blue-600" />
@@ -101,9 +104,12 @@ export default function DivorceProbatePage() {
                     Neutral, documented process
                   </li>
                 </ul>
+                </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <CardVisual heading="Probate & Estate Sales" />
+                <div className="p-6">
                 <div className="flex items-center mb-4">
                   <div className="bg-purple-100 rounded-full p-3 mr-4">
                     <FileText className="h-6 w-6 text-purple-600" />
@@ -128,6 +134,7 @@ export default function DivorceProbatePage() {
                     Property preparation guidance
                   </li>
                 </ul>
+                </div>
               </div>
 
               <div className="bg-white border border-slate-200 rounded-xl p-6">
