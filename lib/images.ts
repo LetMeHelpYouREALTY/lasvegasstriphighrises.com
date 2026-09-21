@@ -433,7 +433,7 @@ const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
   { pattern: /55\+|sun city|trilogy|heritage|active adult/i, key: "active-adult-clubhouse" },
   { pattern: /new construction|builder/i, key: "new-construction" },
   { pattern: /ascaya|summit club/i, key: "luxury-pool-terrace" },
-  { pattern: /luxury|\$1m|estate|pool terrace/i, key: "luxury-pool-terrace" },
+  { pattern: /luxury|\$1m|pool terrace|(?<!real )estate/i, key: "luxury-pool-terrace" },
   { pattern: /faq|frequently asked/i, key: "faq-consultation" },
   { pattern: /why choose|why .{0,24}berkshire|bhhs advantage|unmatched trust|ethical|financial strength|proven results|trusted (brand|expertise)/i, key: "why-bhhs-office" },
   { pattern: /global.{0,12}network|worldwide/i, key: "relocation" },

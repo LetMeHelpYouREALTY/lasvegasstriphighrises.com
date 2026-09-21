@@ -50,6 +50,7 @@ describe("heading image catalog", () => {
     expect(imageForHeading("Frequently Asked Questions").key).toBe("faq-consultation");
     expect(imageForHeading("What's Your Las Vegas Home Worth?").key).toBe("home-valuation-cma");
     expect(imageForHeading("Las Vegas Real Estate Services").key).toBe("real-estate-services");
+    expect(imageForHeading("Las Vegas Luxury Real Estate").key).toBe("luxury-pool-terrace");
     expect(imageForHeading("New Opportunity? We Handle Your Sale.").key).toBe("seller-sold-home");
     expect(imageForHeading("Sun City Anthem").key).toBe("anthem-henderson");
     expect(imageForHeading("Guard-Gated Communities").key).toBe("guard-gated-entry");
