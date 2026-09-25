@@ -48,6 +48,10 @@ export const IMAGE_KEYS = [
   "divorce-probate-desk",
   "faq-consultation",
   "why-bhhs-office",
+  "lake-mead-blvd",
+  "featured-homes",
+  "client-reviews",
+  "neighborhood-matching",
 ] as const;
 
 export type ImageKey = (typeof IMAGE_KEYS)[number];
@@ -407,6 +411,42 @@ export const imageCatalog: Record<ImageKey, SiteImageAsset> = {
     height: 768,
     heading: "Why Choose Berkshire Hathaway HomeServices",
   },
+  "lake-mead-blvd": {
+    key: "lake-mead-blvd",
+    src: "/images/office/lake-mead-blvd.webp",
+    cloudflareId: "office/lake-mead-blvd",
+    alt: "Professional office building on West Lake Mead Boulevard in Las Vegas",
+    width: 1376,
+    height: 768,
+    heading: "Visit the Lake Mead Boulevard office",
+  },
+  "featured-homes": {
+    key: "featured-homes",
+    src: "/images/neighborhoods/featured-homes.webp",
+    cloudflareId: "neighborhoods/featured-homes",
+    alt: "Las Vegas homes for sale on a desert residential street with mountain views",
+    width: 1376,
+    height: 768,
+    heading: "Las Vegas Homes for Sale",
+  },
+  "client-reviews": {
+    key: "client-reviews",
+    src: "/images/office/client-reviews.webp",
+    cloudflareId: "office/client-reviews",
+    alt: "Las Vegas real estate office seating area prepared for client consultations",
+    width: 1376,
+    height: 768,
+    heading: "What Our Clients Say",
+  },
+  "neighborhood-matching": {
+    key: "neighborhood-matching",
+    src: "/images/neighborhoods/neighborhood-matching.webp",
+    cloudflareId: "neighborhoods/neighborhood-matching",
+    alt: "Elevated view of Las Vegas Valley neighborhoods with desert streets and mountains",
+    width: 1376,
+    height: 768,
+    heading: "Neighborhood matching in Las Vegas",
+  },
 };
 
 const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
@@ -415,8 +455,14 @@ const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
   { pattern: /red rock/i, key: "red-rock-canyon" },
   { pattern: /strip|high-?rise|highrise/i, key: "strip-highrise" },
   { pattern: /lock.?and.?leave/i, key: "lock-and-leave-condo" },
-  { pattern: /next chapter|move.?up|upgrade path|your equity/i, key: "move-up-home" },
-  { pattern: /difficult situation|divorce|probate|expert guidance/i, key: "divorce-probate-desk" },
+  {
+    pattern: /next chapter|move.?up|upgrade path|your equity/i,
+    key: "move-up-home",
+  },
+  {
+    pattern: /difficult situation|divorce|probate|expert guidance/i,
+    key: "divorce-probate-desk",
+  },
   { pattern: /guard.?gated|gated/i, key: "guard-gated-entry" },
   { pattern: /anthem|solera/i, key: "anthem-henderson" },
   { pattern: /golf|siena/i, key: "golf-course" },
@@ -430,21 +476,56 @@ const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
   { pattern: /mountains.?edge|mountain.?s edge/i, key: "mountains-edge" },
   { pattern: /north las vegas|aliante/i, key: "north-las-vegas" },
   { pattern: /henderson/i, key: "henderson" },
-  { pattern: /55\+|sun city|trilogy|heritage|active adult/i, key: "active-adult-clubhouse" },
+  {
+    pattern: /55\+|sun city|trilogy|heritage|active adult/i,
+    key: "active-adult-clubhouse",
+  },
   { pattern: /new construction|builder/i, key: "new-construction" },
   { pattern: /ascaya|summit club/i, key: "luxury-pool-terrace" },
-  { pattern: /luxury|\$1m|pool terrace|(?<!real )estate/i, key: "luxury-pool-terrace" },
-  { pattern: /faq|frequently asked/i, key: "faq-consultation" },
-  { pattern: /why choose|why .{0,24}berkshire|bhhs advantage|unmatched trust|ethical|financial strength|proven results|trusted (brand|expertise)/i, key: "why-bhhs-office" },
+  {
+    pattern: /luxury|\$1m|pool terrace|(?<!real )estate/i,
+    key: "luxury-pool-terrace",
+  },
+  {
+    pattern: /faq|frequently asked|still have questions/i,
+    key: "faq-consultation",
+  },
+  {
+    pattern:
+      /lake mead|ask in person|visit .{0,40}office|bring your address|office map/i,
+    key: "lake-mead-blvd",
+  },
+  {
+    pattern: /homes for sale|featured properties|live .{0,16}listings/i,
+    key: "featured-homes",
+  },
+  { pattern: /clients say|testimonial|google reviews/i, key: "client-reviews" },
+  {
+    pattern:
+      /neighborhood matching|service areas|featured las vegas neighborhoods/i,
+    key: "neighborhood-matching",
+  },
+  {
+    pattern:
+      /why choose|why .{0,24}berkshire|bhhs advantage|unmatched trust|ethical|financial strength|proven results|trusted (brand|expertise)/i,
+    key: "why-bhhs-office",
+  },
   { pattern: /global.{0,12}network|worldwide/i, key: "relocation" },
   { pattern: /marketing|pricing strategy/i, key: "seller-kitchen" },
   { pattern: /simplify|downsiz/i, key: "downsizing-patio" },
   { pattern: /worth|valuation|cma/i, key: "home-valuation-cma" },
-  { pattern: /real estate services|core real estate|specialized (real estate|guidance|services)|areas of specialization/i, key: "real-estate-services" },
+  {
+    pattern:
+      /real estate services|core real estate|specialized (real estate|guidance|services)|areas of specialization/i,
+    key: "real-estate-services",
+  },
   { pattern: /new opportunity|handle your sale/i, key: "seller-sold-home" },
   { pattern: /invest|rental|cap rate|1031|condo/i, key: "investment-rentals" },
   { pattern: /relocat|moving|california/i, key: "relocation" },
-  { pattern: /first.?home|first.?time|first time|single-story/i, key: "first-time-buyer" },
+  {
+    pattern: /first.?home|first.?time|first time|single-story/i,
+    key: "first-time-buyer",
+  },
   { pattern: /sell|listing/i, key: "seller-kitchen" },
   { pattern: /buy|buyer representation/i, key: "buyer-front-door" },
   { pattern: /market|insight|report|update/i, key: "market-skyline" },

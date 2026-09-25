@@ -163,7 +163,7 @@ const allFaqs = faqCategories.flatMap((category) =>
   category.faqs.map((faq) => ({
     question: faq.q,
     answer: faq.a,
-  }))
+  })),
 );
 
 // Combined page schemas including all FAQs
@@ -176,7 +176,7 @@ const pageSchemas = combineSchemas(
     url: "/faq",
     dateModified: "2026-01-25",
   }),
-  generateFAQSchema(allFaqs)
+  generateFAQSchema(allFaqs),
 );
 
 export default function FAQPage() {
@@ -195,7 +195,10 @@ export default function FAQPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Frequently Asked Questions
             </h1>
-            <SectionVisual heading="Frequently Asked Questions" className="max-w-4xl mx-auto my-6" />
+            <SectionVisual
+              heading="Frequently Asked Questions"
+              className="max-w-4xl mx-auto my-6"
+            />
 
             <p className="text-xl text-slate-600">
               Everything you need to know about working with{" "}
@@ -207,9 +210,13 @@ export default function FAQPage() {
           <div className="max-w-4xl mx-auto space-y-12">
             {faqCategories.map((category) => (
               <section key={category.title}>
-                <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b border-slate-200">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
                   {category.title}
                 </h2>
+                <SectionVisual
+                  heading={category.title}
+                  className="max-w-4xl mb-6"
+                />
                 <div className="space-y-4">
                   {category.faqs.map((faq, index) => (
                     <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -226,10 +233,12 @@ export default function FAQPage() {
 
           {/* CTA */}
           <section className="mt-16 text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Still Have Questions?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Still Have Questions?
+            </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Dr. Jan Duffy is happy to answer any questions about Las Vegas real estate or working
-              with Berkshire Hathaway HomeServices.
+              Dr. Jan Duffy is happy to answer any questions about Las Vegas
+              real estate or working with Berkshire Hathaway HomeServices.
             </p>
             <a
               href="tel:+17022221964"
@@ -245,7 +254,9 @@ export default function FAQPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">
+          Last Updated: January 2026
+        </div>
       </main>
       <RealScoutListings />
       <Footer />

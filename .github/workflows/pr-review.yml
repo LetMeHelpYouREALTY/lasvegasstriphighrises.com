@@ -323,10 +323,17 @@ jobs:
                   issues.push(`❌ **${file.filename}**: Missing metadata export (SEO)`);
                 }
                 
-                // Check for proper phone numbers
-                if (content.includes('702-222-1964') || content.includes('7022221964') || 
-                    content.includes('702-500-1955') || content.includes('7025001955')) {
-                  issues.push(`❌ **${file.filename}**: Contains old phone number (should be (702) 500-1942)`);
+                // CTA phone is (702) 222-1964. FUB / professional line is (702) 500-1942.
+                // 702-500-1955 is a retired number and must not appear.
+                if (content.includes('702-500-1955') || content.includes('7025001955')) {
+                  issues.push(`❌ **${file.filename}**: Contains retired phone number (use (702) 222-1964 for CTAs)`);
+                }
+                const hasCtaPhone =
+                  content.includes('222-1964') ||
+                  content.includes('22221964') ||
+                  content.includes('17022221964');
+                if (!hasCtaPhone) {
+                  issues.push(`❌ **${file.filename}**: Missing client CTA phone (702) 222-1964`);
                 }
                 
                 // Check for JSON-LD schema
@@ -484,7 +491,7 @@ jobs:
             - [ ] Code follows project conventions
             - [ ] Tests pass with adequate coverage (80%+)
             - [ ] SEO metadata is present and optimized
-            - [ ] Phone numbers are correct: (702) 500-1942
+            - [ ] Phone numbers are correct: (702) 222-1964 CTA; (702) 500-1942 is FUB only
             - [ ] Berkshire Hathaway branding is consistent
             - [ ] Mobile responsive design verified
             - [ ] No console errors
