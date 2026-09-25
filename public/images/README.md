@@ -35,18 +35,18 @@ images/
 
 `lib/images.ts` maps H1/H2/H3 text (Summerlin, Henderson, 55+, golf, Lake Las Vegas,
 MacDonald Highlands, Red Rock, Strip high-rises, move-up, downsizing, divorce/probate,
-FAQ, BHHS office, new construction, contact, etc.) to these files via `imageForHeading()`.
+FAQ, BHHS office, security policy, new construction, contact, etc.) to these files via `imageForHeading()`.
 `SectionVisual`, `CardVisual`, and `PageHero` use that map so every heading has a relevant
 photograph instead of Unsplash placeholders.
 
 ## Specs
 
-| Folder | Size | Format | Notes |
-|--------|------|--------|-------|
-| hero/ | 1376x768 | WebP | 16:9, <200KB |
-| neighborhoods/ | 1376x768 | WebP | Location-specific, no people |
-| office/ | 16:9 or 4:3 | WebP | No fake agent likeness |
-| _source/ | PNG | Git backup of generated masters |
+| Folder         | Size        | Format                          | Notes                        |
+| -------------- | ----------- | ------------------------------- | ---------------------------- |
+| hero/          | 1376x768    | WebP                            | 16:9, <200KB                 |
+| neighborhoods/ | 1376x768    | WebP                            | Location-specific, no people |
+| office/        | 16:9 or 4:3 | WebP                            | No fake agent likeness       |
+| \_source/      | PNG         | Git backup of generated masters |
 
 Do not generate or label a stock portrait as Dr. Jan Duffy. Use a verified
 headshot in `agent/` when one is supplied.

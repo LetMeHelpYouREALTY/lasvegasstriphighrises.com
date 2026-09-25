@@ -117,6 +117,10 @@ describe("heading image catalog", () => {
     expect(imageForHeading("Still Have Questions?").key).toBe(
       "faq-consultation",
     );
+    expect(imageForHeading("Security Policy").key).toBe("security-policy");
+    expect(imageForHeading("Our Commitment to Security").key).toBe(
+      "security-policy",
+    );
   });
 });
 

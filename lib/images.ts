@@ -52,6 +52,7 @@ export const IMAGE_KEYS = [
   "featured-homes",
   "client-reviews",
   "neighborhood-matching",
+  "security-policy",
 ] as const;
 
 export type ImageKey = (typeof IMAGE_KEYS)[number];
@@ -447,6 +448,15 @@ export const imageCatalog: Record<ImageKey, SiteImageAsset> = {
     height: 768,
     heading: "Neighborhood matching in Las Vegas",
   },
+  "security-policy": {
+    key: "security-policy",
+    src: "/images/office/security-policy.webp",
+    cloudflareId: "office/security-policy",
+    alt: "Las Vegas real estate office desk with a security policy document and laptop",
+    width: 1280,
+    height: 720,
+    heading: "Security Policy",
+  },
 };
 
 const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
@@ -489,6 +499,10 @@ const HEADING_IMAGE_MAP: Array<{ pattern: RegExp; key: ImageKey }> = [
   {
     pattern: /faq|frequently asked|still have questions/i,
     key: "faq-consultation",
+  },
+  {
+    pattern: /security policy|responsible disclosure|commitment to security/i,
+    key: "security-policy",
   },
   {
     pattern:

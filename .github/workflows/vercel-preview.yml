@@ -19,25 +19,45 @@ jobs:
     outputs:
       preview-url: ${{ steps.deploy.outputs.url }}
     steps:
+      - name: Check Vercel credentials
+        id: creds
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ] || [ -z "$VERCEL_TOKEN" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "Vercel preview skipped: secrets not configured. Production deploys via GitHub integration."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout code
+        if: steps.creds.outputs.configured == 'true'
         uses: actions/checkout@v4
 
       - name: Setup Node.js
+        if: steps.creds.outputs.configured == 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install Vercel CLI
+        if: steps.creds.outputs.configured == 'true'
         run: npm install -g vercel@latest
 
       - name: Pull Vercel Environment Information
+        if: steps.creds.outputs.configured == 'true'
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts
+        if: steps.creds.outputs.configured == 'true'
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
+        if: steps.creds.outputs.configured == 'true'
         id: deploy
         run: |
           url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
@@ -45,6 +65,7 @@ jobs:
           echo "Deployed to: $url"
 
       - name: Comment PR with Preview URL
+        if: steps.creds.outputs.configured == 'true'
         uses: actions/github-script@v7
         with:
           script: |
@@ -53,12 +74,12 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
-            
+
             const botComment = comments.find(comment => 
               comment.user.type === 'Bot' && 
               comment.body.includes('Preview Deployment Ready')
             );
-            
+
             const commentBody = `## 🚀 Preview Deployment Ready!
 
             ✅ **Preview URL:** ${{ steps.deploy.outputs.url }}
@@ -70,7 +91,7 @@ jobs:
 
             ---
             *Deployed with Vercel • Commit: ${context.sha.substring(0, 7)}*`;
-            
+
             if (botComment) {
               await github.rest.issues.updateComment({
                 owner: context.repo.owner,
@@ -116,18 +137,18 @@ jobs:
           script: |
             const fs = require('fs');
             const results = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
-            
+
             const formatScore = (score) => {
               const percentage = Math.round(score * 100);
               if (percentage >= 90) return `🟢 ${percentage}`;
               if (percentage >= 50) return `🟡 ${percentage}`;
               return `🔴 ${percentage}`;
             };
-            
+
             let comment = `## 📊 Lighthouse Performance Report\n\n`;
             comment += `| Page | Performance | Accessibility | Best Practices | SEO |\n`;
             comment += `|------|-------------|---------------|----------------|-----|\n`;
-            
+
             for (const result of results) {
               const url = new URL(result.url);
               const page = url.pathname === '/' ? 'Home' : url.pathname.split('/').pop();
@@ -135,9 +156,9 @@ jobs:
               
               comment += `| ${page} | ${formatScore(scores.performance)} | ${formatScore(scores.accessibility)} | ${formatScore(scores['best-practices'])} | ${formatScore(scores.seo)} |\n`;
             }
-            
+
             comment += `\n---\n*View full report in Actions artifacts*`;
-            
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
