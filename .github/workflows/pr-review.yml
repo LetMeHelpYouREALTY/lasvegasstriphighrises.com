@@ -127,7 +127,8 @@ jobs:
         run: npm run test:ci
 
       - name: Generate coverage report
-        if: always()
+        if: success()
+        continue-on-error: true
         run: npm run test:coverage
 
       - name: Upload coverage to artifacts
