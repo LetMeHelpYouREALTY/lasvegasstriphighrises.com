@@ -11,7 +11,7 @@ import { generateWebSiteSchema, combineSchemas } from "@/lib/schema";
 import { nap } from "@/lib/nap";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const domain = headers().get("x-domain") || "";
+  const domain = (await headers()).get("x-domain") || "";
   const config = getDomainConfig(domain);
   return {
     metadataBase: new URL(nap.url),
