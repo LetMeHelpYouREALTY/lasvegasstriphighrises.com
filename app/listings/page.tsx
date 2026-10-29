@@ -64,7 +64,7 @@ const popularSearches = [
 
 const priceRanges = [
   { range: "Under $400K", description: "Condos, townhomes, and compact lots", count: "Search live MLS" },
-  { range: "$400K - $600K", description: "3–4 bedroom homes in established neighborhoods", count: "Search live MLS" },
+  { range: "$400K - $600K", description: "3–4 bedroom homes in older neighborhoods", count: "Search live MLS" },
   { range: "$600K - $1M", description: "Premium locations, larger square footage", count: "Search live MLS" },
   { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "Search live MLS" },
   { range: "$2M+", description: "Custom estates", count: "Search live MLS" },

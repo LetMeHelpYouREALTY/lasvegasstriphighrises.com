@@ -36,7 +36,7 @@ const faqSchema = {
       name: "How exclusive is The Ridges community?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Ridges is one of Las Vegas's most exclusive communities with 24/7 guard-gated security, only 900 home sites across six distinct villages, and strict architectural guidelines ensuring estate-quality construction throughout.",
+        text: "The Ridges is a guard-gated Summerlin community with 24/7 staffed entry, only 900 home sites across six distinct villages, and strict architectural guidelines ensuring estate-quality construction throughout.",
       },
     },
     {
@@ -339,7 +339,7 @@ export default function TheRidgesPage() {
                   How exclusive is The Ridges community?
                 </h3>
                 <p className="text-slate-600">
-                  The Ridges is one of Las Vegas's most exclusive communities with 24/7 guard-gated security,
+                  The Ridges is a guard-gated Summerlin community with 24/7 staffed entry,
                   only 900 home sites across six distinct villages, and strict architectural guidelines
                   ensuring estate-quality construction throughout.
                 </p>
